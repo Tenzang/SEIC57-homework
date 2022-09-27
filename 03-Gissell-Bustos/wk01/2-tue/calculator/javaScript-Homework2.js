@@ -47,5 +47,6 @@ function notBad(string){
 
 }
 
-console.log(notBad('This dinner is not not bad pedso super bad!'))
-console.log(notBad('This dinner is not that bad mate!'))
+console.log(notBad('This dinner is not so bad!'));
+console.log(notBad('This dinner is not that bad!'));cd
+
