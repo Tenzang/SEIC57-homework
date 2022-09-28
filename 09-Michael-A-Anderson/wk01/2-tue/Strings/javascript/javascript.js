@@ -28,8 +28,8 @@ mixUp('hippie',"mushrooms");
 
 const fixStart = function(word){
     const firstLetter=word[0];
-    console.log(firstLetter);
-    let fixed= word.replaceAll(firstLetter,'*',1);
+//    console.log(firstLetter);
+    let fixed= word.replaceAll(firstLetter,'*');
     fixed= fixed.replace("*",firstLetter);
     console.log(fixed);
     return fixed;
