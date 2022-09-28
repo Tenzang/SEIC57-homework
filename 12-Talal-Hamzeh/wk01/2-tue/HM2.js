@@ -33,8 +33,8 @@ percentOf(5 , 10);
 function areaOfCircle(radius) {
     const area = Math.PI * radius**2 ;
 
-    console.log(`The area of a circle with radius ${radius} is ${area}`)
-    return area;
+    console.log(`The area of a circle with radius ${radius} is ${area.toFixed(2)}`)
+    return area.toFixed(2);
   
 }
 areaOfCircle(2);
@@ -59,9 +59,6 @@ function drEvil(amount) {
 
   // MixUp
 
-function mixUp(a , b )
-
-}
 
 
 
