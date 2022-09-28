@@ -16,7 +16,7 @@ const displayBlanked = function (blanked) {
     return showBlanked
 }
 
-const testWin = function(blanked){
+const testWin = function (blanked){
     if(blanked===phrase){
         console.log(`Congratulations you win`)
     }
@@ -24,9 +24,9 @@ const testWin = function(blanked){
 
 const guessLetter = function (guess) {
     if(!(chosen.includes(guess))){
-        chosen.push(guess)
+        chosen.push(guess);
         if(phrase.includes(guess)){
-            let found = 0
+            let found = 0;
             while (found >=0){
                 let index = phrase.indexOf(guess,found);
                 if(index > -1){
@@ -36,21 +36,21 @@ const guessLetter = function (guess) {
                     }               
                     found=index+1;
                 }else{
-                    found=index
+                    found=index;
                 }
             }
             let blankedPhrase = displayBlanked(blanked);
-            console.log(blankedPhrase)
-            testWin(blankedPhrase)
+            console.log(blankedPhrase);
+            testWin(blankedPhrase);
         }else{
-            console.log('Letter not found')
+            console.log('Letter not found');
         }
     }else{
-        console.log("already chosen")
-    }
+        console.log("already chosen");
+}
 }
 
-const phrase="DARTH VADER"
+const phrase="DARTH VADER";
 const letters = phrase.split('');
 const chosen=[];
 const blanked = [];
@@ -58,11 +58,5 @@ blanked.length=phrase.length;
 for (let i = 0; i<blanked.length;i++){
     blanked[i]='-';
 }
-console.log("Name this pop culture figure")
-guessLetter(' ');
-
-
-
-
-
-
+console.log("Name this pop culture figure");
+guessLetter(' ')
