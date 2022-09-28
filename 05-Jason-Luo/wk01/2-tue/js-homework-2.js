@@ -60,5 +60,12 @@ const editSen = function notBad(argument) {
     const notLocator = argument.indexOf('not');
     const badLocator = argument.indexOf('bad'); //find the first appearance of the substring
 
-    if 
+    if (notLocator == -1 || badLocator == -1 || notLocator > badLocator) {
+        return argument; //-1 implies not present
+    }
+    return argument.slice(0, notLocator) + 'good' + argument.slice(badLocator + 3);// making sure that bad is deleted in final edited sentence.
 }
+
+console.log(notBad('This dinner is not that bad!'));
+console.log(notBad('This movie is not so bad!'));
+console.log(notBad('This dinner is bad!'));
