@@ -34,7 +34,7 @@ percentOf(5, 10); // To test the function
 
 const areaOfCircle = function(radius){
     const area = radius ** 2 * Math.PI;
-    console.log(`The are for a circle with radius ${ radius } is ${ area.toFixed(2) }`);
+    console.log(`The area for a circle with radius ${ radius } is ${ area.toFixed(2) }`);
     return area.toFixed(2); // bonus below included
 };
 // Bonus: Round the result so there are only two digits after the decimal.
@@ -63,7 +63,6 @@ const utilityFuntion = function ( number ){
 
 console.log(utilityFuntion(10)); //To test the function and log the list of values
 
-//Not sure if I interpreted the exercise correctly
 
 
 
