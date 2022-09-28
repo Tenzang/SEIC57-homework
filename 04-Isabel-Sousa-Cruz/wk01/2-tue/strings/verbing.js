@@ -1,8 +1,8 @@
-const isVowel = function(char) {
+const isVowel = function (char) {
     return char === "a" || char === "e" || char === "i" || char === "o" ||char === "u";
 }
 
-const verbing = function(str) {
+const verbing = function (str) {
     if (str.length < 3) return str;
 
     const strEnding = str.slice(str.length - 3);
