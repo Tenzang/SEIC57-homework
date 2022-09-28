@@ -92,8 +92,16 @@ const array1 = ['coffee','tea','water']
 const filterLongWords= function(array1,i) {
     const output =  [];
     if (array1[i].length > i) {
-        return output.append(array1[i]);
+        return filterLongWords.push(output);
     }
 }
+
+const array1 = ['coffee','tea','water']
+const filterLongWords= function(array1,i) {
+    if (array1[i].length > i) {
+        return filterLongWords.push(array1);
+    }
+}
+
 
 console.log(filterLongWords('array1', 4))
