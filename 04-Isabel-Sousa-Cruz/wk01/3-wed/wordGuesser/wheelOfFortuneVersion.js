@@ -6,7 +6,11 @@ When they guess the word, log their final reward amount.
 */
 
 const wordToBeGuessed = ["F", "O", "X"];
-const guessedWord = ["_", "_", "_"];
+// const guessedWord = ["_", "_", "_"];
+const guessWord = [];
+for (let i = 0; i < wordToBeGuessed.length; i ++) {
+    guessWord.push("_");
+}
 
 const guessedLetter = function(guess) {
     for (let i = 0; i < wordToBeGuessed.length; i++) {
