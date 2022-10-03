@@ -3,7 +3,7 @@
 
 // # MTA Lab
 
-console.log("\nStand clear of the closing doors, please! Use\n\nplanTrip('startLine', 'startStation', 'endLine', 'endStation');\n ");
+console.log("\nStand clear of the closing doors, please!\n\nplanTrip('startLine', 'startStation', 'endLine', 'endStation');\n ");
 
 const network = {
   lineN: {
@@ -33,7 +33,7 @@ function planTrip(startLine, start, endLine, end) {
       message += `MTA does not operate (${ startLine }) Train, have you tried Canada?\n`;
     };
     if (lineExistance[1] === false ) {
-      message += `MTA does not operate (${ endLine }) Train, have you tried Mexico?\n`;
+      message += `MTA does not operate (${ endLine }) Train, have you tried Mexico?`;
     };
     console.log(message);
     return;
@@ -52,8 +52,8 @@ function planTrip(startLine, start, endLine, end) {
     return;
   };
 
-  let startIndex = network[sL].stops.indexOf(start);  // index of starting station on startLine
-  let endIndex = network[eL].stops.indexOf(end);      // index of ending station on endLine
+  let sIndex = network[sL].stops.indexOf(start);      // index of start station on startLine
+  let eIndex = network[eL].stops.indexOf(end);        // index of end station on endLine
   let legA;                                           // stations before interchange
   let legB;                                           // stations after interchange if required
   let destoA;                                         // destination board for legA
@@ -63,8 +63,8 @@ function planTrip(startLine, start, endLine, end) {
 
   // test to see if the user need to catch the train at all /////////////////////
 
-  const stay = (startIndex === endIndex) && (sL === eL) || ((sL !== eL) && (start === network[sL].interchange[0]) && (end === network[eL].interchange[0]));
-  if (stay) { console.log (`\n-------------------------------------\n You are here, no need to choo choo\n-------------------------------------\n `); return; }; // fix this ////////
+  const stay = (sIndex === eIndex) && (sL === eL) || ((sL !== eL) && (start === network[sL].interchange[0]) && (end === network[eL].interchange[0]));
+  if (stay) { console.log (`\n------------------------------------\n You are here, no need to choo choo\n------------------------------------\n `); return; }; // fix this ////////
 
   // test to see what kind of interchange is required ///////////////////////////
 
@@ -72,26 +72,26 @@ function planTrip(startLine, start, endLine, end) {
   if(interchange[0]) {
     // no confusion, interchange required - catches all [true, any, any]
 
-    [destoA, legA] = oneLegOfTrip(sL, startIndex, interchange[1]);
-    [destoB, legB] = oneLegOfTrip(eL, interchange[2], endIndex);
+    [destoA, legA] = oneLegOfTrip(sL, sIndex, interchange[1]);
+    [destoB, legB] = oneLegOfTrip(eL, interchange[2], eIndex);
   } else if (interchange[1]) {
     // startLine confusion - only [false, true, boolean] will flow in
 
-    startIndex = network[eL].stops.indexOf(start);
-    [destoA, legA] = oneLegOfTrip(eL, startIndex, endIndex);
+    sIndex = network[eL].stops.indexOf(start);
+    [destoA, legA] = oneLegOfTrip(eL, sIndex, eIndex);
     startLine = endLine;
     sayBeforeTripPlan += `\n------------------------------------\n Please move to (${ endLine }) Train platforms\n------------------------------------\n `;
   } else if (interchange[2]) {
     // endLine confusion - only [false, false, true] will flow in
 
-    endIndex = network[sL].stops.indexOf(end);
-    [destoA, legA] = oneLegOfTrip(sL, startIndex, endIndex);
+    eIndex = network[sL].stops.indexOf(end);
+    [destoA, legA] = oneLegOfTrip(sL, sIndex, eIndex);
     sayBeforeTotal += `\n-----------------------------\n Alight at [${network[sL].interchange[0] }]\n Walk to (${ endLine }) Train platforms\n-----------------------------\n `
     endLine = startLine;
   } else {
     // no confusion, no interchange required - only [false, false, false] will flow in
 
-    [destoA, legA] = oneLegOfTrip(sL, startIndex, endIndex);
+    [destoA, legA] = oneLegOfTrip(sL, sIndex, eIndex);
   }
 
   // announce final messages with all required information //////////////////////////
@@ -130,25 +130,20 @@ function requireInterchange (sL, start, eL, end) {
   }
 };
 
-function oneLegOfTrip (line, startIndex, endIndex) {
+function oneLegOfTrip (line, sIndex, eIndex) {
   // returns ['string', [array]] for ['terminal', ['nextStops']] for one leg of journey
-
   let nextStops = [];
   let desto;
-  
-  if (startIndex < endIndex) {          // DN direction
 
-    for (let i = startIndex + 1; i <= endIndex; i++) {      // loop down array
-      nextStops.push(network[line].stops[i]);
-    }
+  if (sIndex < eIndex) {                  // DN direction
+    nextStops = network[line].stops.slice(sIndex + 1, eIndex + 1);
     desto = network[line].stops.at(-1);                     // last element in [stations]
-  } else {                              // UP direction
-
-    for (let i = startIndex - 1; i >= endIndex; i--) {      // loop up array
-      nextStops.push(network[line].stops[i]);
-    }
+  } else {                                // UP direction
+    nextStops = network[line].stops.slice(eIndex, sIndex);
+    nextStops.reverse();
     desto = network[line].stops.at(0);                      // first element in [stations]
   };
+
   return [desto, nextStops];
 };
 
@@ -182,7 +177,7 @@ function announceAll (startLine, legA, destoA, endLine, legB, destoB, sayBeforeT
 };
 
 function announceOneLeg (line, leg, desto) {
-  // returns [number, 'message'] for [number of stops, 'list of next stops'] in one leg
+  // returns [number, 'string'] for [number of stops, 'trip plan'] for one leg
 
   const message = `\nContinue on (${ line }) Train towards [${ desto }]\n\nNext stop(s):\n\n${ leg.join('\n') }\n `;
   return [leg.length, message];
