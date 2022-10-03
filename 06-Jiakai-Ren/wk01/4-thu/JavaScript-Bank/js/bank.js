@@ -3,6 +3,8 @@
 
 // # JavaScript Bank
 
+// add a balance();
+
 const bank = {
   name: 'National Bank of Jackville',
   accounts: [],
@@ -56,7 +58,7 @@ function bankBalance () {
     sum += bank.accounts[i].balance;
   }
 
-  console.log(`"National Bank of Jackville" has $${ sum.toFixed(2) }`);
+  console.log(`"National Bank of Jackville" has $${ sum.toFixed(2) } with ${ bank.accounts.length } accounts.`);
   return sum;
 };
 
@@ -68,21 +70,19 @@ function deposit (name, amount, isTransfer = false) {
     return;
   };
 
-  let accountIndex;
-
   if (!(amount > 0)) {
     console.log('You must deposit a positve amount');
   } else {
-    for (i = 0; i < bank.accounts.length; i++) {
-      if (name === bank.accounts[i].name) {
-        bank.accounts[i].balance += amount;
-        accountIndex = i;
-      }
-    }
+
+    const currentAccount = bank.accounts.filter(function(a) { return a.name === name });
+    //  gets the reference to the {object} with matching name
+
+    currentAccount[0].balance += amount;
+
     if (isTransfer === false) {
       // this message only shows when the deposit did not occure during a transfer process
 
-      console.log(`You deposited $${ amount }, balance: $${ bank.accounts[accountIndex].balance }`);
+      console.log(`You deposited $${ amount }, your balance: $${ currentAccount[0].balance }`);
     }
   }
 };
@@ -95,8 +95,6 @@ function withdraw (name, amount, isTransfer = false, toName = '') {
     console.log(`Withdrawal account "${ name }" does not exist`);
     return;
   };
-
-  let accountIndex;       // variable used to console.log account balance
 
   let typeOfWithdrawal;   // string to console.log transfer or withdraw
   let addTransferMsg;     // string to console.log recipient name
@@ -121,25 +119,22 @@ function withdraw (name, amount, isTransfer = false, toName = '') {
   if (!(amount > 0)) {
     console.log(`You must ${ typeOfWithdrawal } a positve amount`);
   } else {
-    for (i = 0; i < bank.accounts.length; i++) {
-      if (name === bank.accounts[i].name) {
-        // search for 'name' in {bank}.accounts
 
-        accountIndex = i;
+    const currentAccount = bank.accounts.filter(function(a) { return a.name === name });
+    //  gets the reference to the {object} with matching name
 
-        if (amount > bank.accounts[i].balance) {
-          // insufficient {bank}.accounts[i].balance
+    if (amount > currentAccount[0].balance) {
+      // insufficient {bank}.accounts[i].balance
 
-          console.log(`Unsuccessful to ${ typeOfWithdrawal }${ addTransferMsg }. You tried to ${ typeOfWithdrawal } $${ amount }, but you only have $${ bank.accounts[i].balance }`);
+      console.log(`Unsuccessful to ${ typeOfWithdrawal }${ addTransferMsg }. You tried to ${ typeOfWithdrawal } $${ amount }, but you only have $${ currentAccount[0].balance }`);
 
-        } else {
-          // sufficient {bank}.accounts[i].balance, proceed
+    } else {
+      // sufficient {bank}.accounts[i].balance, proceed
 
-          bank.accounts[i].balance -= amount;
-          console.log(`Successful to ${ typeOfWithdrawal } $${ amount }${ addTransferMsg }, balance: $${ bank.accounts[accountIndex].balance }`);
-          return true;
-        }
-      }
+      currentAccount[0].balance -= amount;
+
+      console.log(`Successful to ${ typeOfWithdrawal } $${ amount }${ addTransferMsg }, your balance: $${ currentAccount[0].balance }`);
+      return true;
     }
   }
 };
@@ -158,7 +153,7 @@ function transfer (fromName, toName, amount) {
 
 function checkName (name) {
   // this function returns true if 'name' exists in {bank}.accounts[i]
-  
+
   const allNames = [];
 
   for (let i = 0; i < bank.accounts.length; i++) {
@@ -330,3 +325,99 @@ function expired (expiry) {
 // console.log(returnObject('1611-1111-1111-1112', '12/22'));
 // console.log(returnObject('1634-5678-9012-3457', '12/22'));
 // console.log(returnObject('1834-5678-9012-3456', '08/22'));
+
+
+/*   ___________________________________________________________
+    /                                                           \
+   |                           Old codes                        |
+    \___________________________________________________________/
+*/
+
+
+// ------ function deposit(); ------
+
+// function deposit (name, amount, isTransfer = false) {
+//   // this function adds amount to {bank}.accounts[indexOf('name')]
+
+//   if(!checkName(name)) {
+//     console.log(`Deposit account "${ name }" does not exist`);
+//     return;
+//   };
+
+//   let accountIndex;
+
+//   if (!(amount > 0)) {
+//     console.log('You must deposit a positve amount');
+//   } else {
+//     for (i = 0; i < bank.accounts.length; i++) {
+//       if (name === bank.accounts[i].name) {
+//         bank.accounts[i].balance += amount;
+//         accountIndex = i;
+//       }
+//     }
+//     if (isTransfer === false) {
+//       // this message only shows when the deposit did not occure during a transfer process
+
+//       console.log(`You deposited $${ amount }, balance: $${ bank.accounts[accountIndex].balance }`);
+//     }
+//   }
+// };
+
+// ------ function withdraw(); ------
+
+// function withdraw (name, amount, isTransfer = false, toName = '') {
+//   // this function subtracts amount from {bank}.accounts[indexOf('name')]
+//   // returns true if withdraw is successful, for transfer purpose
+
+//   if(!checkName(name)) {
+//     console.log(`Withdrawal account "${ name }" does not exist`);
+//     return;
+//   };
+
+//   let accountIndex;       // variable used to console.log account balance
+
+//   let typeOfWithdrawal;   // string to console.log transfer or withdraw
+//   let addTransferMsg;     // string to console.log recipient name
+
+//   if (isTransfer === true) {
+//     // only execute if isTransfer is explicitly passed in true
+
+//     if(!checkName(toName)) {
+//       console.log(`Recipient account "${ toName }" does not exist`);
+//       return;
+//     };
+
+//     typeOfWithdrawal = 'transfer';
+//     addTransferMsg = ` to ${ toName }`
+//   } else {
+//     // isTransfer not passed in, default to false
+
+//     typeOfWithdrawal = 'withdraw';
+//     addTransferMsg = '';
+//   };
+
+//   if (!(amount > 0)) {
+//     console.log(`You must ${ typeOfWithdrawal } a positve amount`);
+//   } else {
+//     for (i = 0; i < bank.accounts.length; i++) {
+//       if (name === bank.accounts[i].name) {
+//         // search for 'name' in {bank}.accounts
+
+//         accountIndex = i;
+
+//         if (amount > bank.accounts[i].balance) {
+//           // insufficient {bank}.accounts[i].balance
+
+//           console.log(`Unsuccessful to ${ typeOfWithdrawal }${ addTransferMsg }. You tried to ${ typeOfWithdrawal } $${ amount }, but you only have $${ bank.accounts[i].balance }`);
+
+//         } else {
+//           // sufficient {bank}.accounts[i].balance, proceed
+
+//           bank.accounts[i].balance -= amount;
+//           console.log(`Successful to ${ typeOfWithdrawal } $${ amount }${ addTransferMsg }, balance: $${ bank.accounts[accountIndex].balance }`);
+//           return true;
+//         }
+//       }
+//     }
+//   }
+// };
