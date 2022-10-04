@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body {
+    background-color: white;
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+.container {
+    /* display: inline-block; */
+    background-color: lightgray;
+    width: 90%;
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 0.5em;
+}
+
+header {
+    position: relative;
+    height: 118px;
+    width: 100%;
+    top: 0px;
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 0.5em;
+    /* position: fixed; */
+}
+
+h1 {
+    margin: 0px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 40px;
+}
+
+nav {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+header a {
+    color: #5d5d5d;
+    text-decoration: none;
+    margin: 0px 20px;
+    z-index: 100;
+}
+
+header a:hover {
+    text-decoration: underline;
+    text-shadow: 1px 1px lightseagreen;
+}
+
+.header-nav-bar {
+    display: inline-block;
+    height: 118px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 100;
+}
+
+.header-image {
+    position: absolute;
+    display: inline-block;
+    height: 118px;
+    right: 0px;
+    top: 0px;
+}
+
+.header-image img {
+    height: 118px;
+    border-radius: 0.5em;
+}
+
+.index-main {
+    display: inline-block;
+    width: 73%;
+}
+
+aside {
+    display: inline-block;
+    width: 200px;
+    vertical-align: top;
+    margin: 20px auto;
+    border: 1px solid darkgray;
+}
+
+.main-image {
+    display: inline-block;
+    max-width: 30%;
+    padding: 20px 10px;
+}
+
+.main-image img {
+    width: 100%;
+    box-shadow: 7px 7px black;
+}
+
+.main-paragraph {
+    display: inline-block;
+    width: 60%;
+    padding: 0px 10px;
+    vertical-align: top;
+    line-height: 1.5em;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.mapouter {
+    display: inline-block;
+}
+
+.small-text {
+    font-size: 8pt;
+    text-align: center;
+}
+
+.achievements, .effects {
+    padding: 20px;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.trivia-container {
+    width: 75%;
+    margin: 20px auto;
+}
+
+.trivia {
+    display: inline-block;
+    width: 40%;
+    height: 90px;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 0.5em;
+    vertical-align: top;
+}
+
+.trivia p {
+    text-align: center;
+    line-height: 1.2em;
+}
+
+.trivia span {
+    visibility: hidden;
+}
+
+.trivia:hover span {
+    transition: 0.5s all;
+    visibility: visible;
+}
+
+.truth:hover {
+    transition: 0.5s all;
+    /* background-color: darkgreen; */
+    background: linear-gradient(bottom, rgba(1,50,32,1), rgba(0,0,0,.4));
+    background: -webkit-linear-gradient(bottom, rgba(1,50,32,1), rgba(0,0,0,0));
+    background: -moz-linear-gradient(bottom, rgba(1,50,32,1), rgba(0,0,0,0));
+    color: white;
+}
+
+.lie:hover {
+    transition: 0.5s all;
+    background: linear-gradient(bottom, rgba(139,0,0,1), rgba(93,93,93,0.4));
+    background: -webkit-linear-gradient(bottom, rgba(139,0,0,1), rgba(93,93,93,0.4));
+    background: -moz-linear-gradient(bottom, rgba(139,0,0,1), rgba(93,93,93,0.4));
+    color: white;
+}
