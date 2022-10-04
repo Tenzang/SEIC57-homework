@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Gemunu+Libre:wght@400;700&display=swap');
+body{
+    background-color: #ddd ;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    max-width: 900px;
+    background-color:#999 ;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 0 0 1em 1em;
+
+}
+header{
+    background-color: #E8FF00;
+    color:#3A4000;
+    margin-bottom: 0;
+}
+h1{
+    display: inline-block;
+    padding-left: 1em;
+    font-size: 56px;
+    line-height: 5px;
+}
+nav{
+    color: #E8FF00;
+    background-color: #3A4000;
+}
+nav a{
+    color: #E8FF00;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    margin: 0;
+}
+nav li{
+    list-style: none;
+    display: inline-block;
+    width: 30%;
+    height: 30px;
+}
+main{
+    margin: 0 1em;
+    width: 70%;
+    display: inline-block;
+    padding: 0 0 20px 0;
+}
+aside{
+    width: 23%;
+    display: inline-block;
+    vertical-align: top;
+    word-wrap: break-word;
+    background-color: #E8FF00;
+    padding: .5em;
+    margin-top: 0;
+    border-radius: .5em;
+    border:1px solid black;
+
+}
+h2, h3{
+    color:#3A4000;
+}
+h2{
+    padding-top: 0;
+}
+main img{
+    width: 300px;
+    float: right;
+    margin:1em;
+}
+.chartreuse{
+    color: #E8FF00 ;
+}
+h1, h2, h3{
+    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Gemunu Libre', sans-serif;
+}
+
+/* #e8FF00 chartuese Larry's favourite color */
