@@ -5,7 +5,7 @@
 
 // -- CHANGE WORD BELOW ----------------------------
 
-const word = 'tatter';
+const word = 'apple';
 
 // -------------------------------------------------
 
@@ -175,7 +175,7 @@ function putMicrosoftToSleep (letter) {
 
     if (lives === 0) {
         // if lives is zero -> dead
-        
+
         console.log(`Unfortunately, (${ letter }) is also wrong. The word is:\n\n${ word }\n\nAnd now Microsoft is dead. Your $${ reward.toFixed(2) } has been used to purchase the rope.\n\n==+==+==============\n  | /       |\n  |/        |\n  |         |\n  |      ---+---\n  |      |  |  |\n  |      |--+--|\n  |      |  |  |\n  |      ---+---\n  |\n  |\n  |\n==+==`)
     }
 };

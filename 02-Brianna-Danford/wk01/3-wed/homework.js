@@ -35,7 +35,7 @@ function vowelChecker (char) {
     }
     else {
     return "The character is a Consonant";
-    }
+    } 
 }
 console.log (vowelChecker ("e"));
 
