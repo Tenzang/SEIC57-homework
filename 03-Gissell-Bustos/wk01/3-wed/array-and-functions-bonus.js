@@ -1,7 +1,7 @@
 //** Define a function maxOfTwoNumbers that takes two numbers as arguments and returns the largest of them. Use the if-then-else construct available in Javascript. You'll have to remember your pre-work, or do some googling to figure this out. */ 
 function maxOfTwoNumbers(number1, number2){
   let array = [number1, number2];
-  max = number1
+  let max = number1;
   for(let i =0; i< array.length; i++){
     if(array[i] > max){
       max = array[i]
@@ -15,7 +15,8 @@ function maxOfTwoNumbers(number1, number2){
 function maxOfThree(...args){
   return Math.max(...args);
 }
-//console.log(maxOfThree(-2345655, -15, -1));
+// console.log(maxOfThree(-2345655, -15, -1));
+console.log(`testing max of three, result ${maxOfThree(-2345655, -15, -1) === -1}`);
 
 //**  Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
 function isVowel(character){
