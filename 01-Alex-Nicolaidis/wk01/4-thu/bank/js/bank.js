@@ -18,115 +18,58 @@
 
 
 
-// FUNCTIONS FOR THE BANK 
-
-let totalBankMoney = function (bank){
-    let totalMoney = 0;
-    for (let i = 0; i < bank.length; i++){
-        let account = bank[i];
-        totalMoney += account.currentBalance;
+const bank = {
+    accounts: [],
+    totalFunds: function () {
+        let totalMoney = 0;
+        for (i = 0; i < this.accounts.length; i++){
+            totalMoney += this.accounts[i].balance;
+        }
+        return totalMoney;
+    },
+    addAccount: function (name) {
+        const newAccount = {
+            name: name,
+            balance: 0,
+            deposit: function (amount) {
+                return this.balance += amount;
+            },
+            withdraw: function (amount) {
+                if(this.balance > amount){
+                    return this.balance -= amount;
+                }else{
+                    console.log("Insufficient Funds")
+                    return "Insufficient Funds";
+                }
+            }
+        }
+        return this.accounts.push(newAccount);
+    },
+    findAccount: function(findName){ 
+        let b = this.accounts.filter(function(a){
+            return a.name === findName;
+        })
+        return b[0];  // first element in the filtered array which is the account object
+    },
+    transfer: function (tranferFrom,transferTo,amount){
+        if (!(this.findAccount(tranferFrom).withdraw(amount) === "Insufficient Funds")){
+            this.findAccount(transferTo).deposit(amount)
+        }
     }
-    return totalMoney;
-};
+}
 
-//add an account as an object and push into the banks list of accounts
-const addAccount = function (customerName, initalBalance, bank){
-    const customerAccount = {
-        name: customerName,
-        currentBalance: initalBalance
-    };
-    bank.push(customerAccount);
-};
+bank.addAccount("Alex")
+bank.addAccount("Tom")
+bank.addAccount("Matt")
 
-const withdraw = function (amount, customerName, bank){
-    let withdrawn = amount;
-    for (let i = 0; i < bank.length; i++){
-        const account = bank[i]
-        if ( account.name === customerName ){
-            if( account.currentBalance < amount ){
-                withdrawn = account.currentBalance;
-                console.log(`${account.name} you only have ${withdrawn} left. Here is your $${account.currentBalance} your account is now empty.`);
-                account.currentBalance = 0;
-            }else{
-                account.currentBalance -= amount;
-                console.log(`${account.name} your remaining Balance is $${account.currentBalance}. Here is your $${amount}.`)
-            };
-        };
-    };
-    return withdrawn; //by returning withdrawn it allows input into transfer
-};
+bank.findAccount("Alex").deposit(100)
+bank.findAccount("Tom").deposit(1000)
+bank.findAccount("Matt").deposit(2000)
 
-const deposit = function (amount, customerName, bank){
-    for (let i = 0; i < bank.length; i++){
-        const account = bank[i]
-        if ( account.name === customerName ){
-            account.currentBalance += amount;
-            console.log(`${account.name} your $${amount} has been deposited. Your current balance is now $${account.currentBalance}`);
-        };
-    };
-};
+bank.findAccount("Matt").withdraw(500)
+bank.findAccount("Tom").withdraw(200)
 
-const transfer = function (fromName, toName, amount, bank){
-    deposit(withdraw(amount,fromName,bank),toName,bank);
-    console.log(`The above deposit and withdrawal shows an internal bank transfer from ${fromName} to ${toName} with a value of $${amount}`);
-};
+bank.transfer("Matt","Alex",500);
 
-
-// THE STORY OF THE BANK //
-
-//A new bank was opened
-
-const bank = [];
-
-//the bank got 5 new customers
-
-addAccount('Alex', 100, bank);
-addAccount('Tom', 300, bank);
-addAccount('Zoe', 400, bank);
-addAccount('Peter', 1000, bank);
-addAccount('John', 250, bank);
-
-//Display of the bank below refer console
-console.table(bank);
-
-//The bank had a total of ....... // expect 2050 at this point
-
-console.log(totalBankMoney(bank));
-
-//A couple of deposits and withdrawals
-
-withdraw(50,"Alex",bank);
-withdraw(400,"Tom",bank); // note here Tom doesn't have 400.
-withdraw(100,"Zoe",bank);
-
-deposit(500, "Peter",bank);
-deposit(325, "Peter",bank);
-
-//The bank had a total of ....... // expect 2425 at this point
-
-console.log(totalBankMoney(bank));
-
-// A couple more customers join.
-
-addAccount('Lucy', 90, bank);
-addAccount('Jess', 580, bank);
-addAccount('Luke', 340, bank);
-
-//Display of the bank below refer console
-
-console.table(bank);
-
-//New bank total ....... // expect 3435 at this point
-
-console.log(totalBankMoney(bank));
-
-
-// a couple of internal transfers - note at the end shouldn't change the bank total money
-
-transfer("Peter", "Tom", 700, bank);
-transfer("Alex", "Lucy", 100, bank);
-transfer("Jess", "Lucy", 80, bank);
-
-console.table(bank);
-
-console.log(totalBankMoney(bank));
+console.log(bank.totalFunds());
+console.table(bank.accounts);

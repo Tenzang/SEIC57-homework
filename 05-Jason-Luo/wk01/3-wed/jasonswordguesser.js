@@ -49,3 +49,48 @@ console.log(wordGuesser('O'));
 console.log(wordGuesser('M'));
 console.log(wordGuesser('Y'));
 console.log(wordGuesser('N'));
+
+// Start with a reward amount of $0
+// Every time a letter is guessed, generate a random amount and reward the user if they found a letter (multiplying the reward if multiple letters found), otherwise subtract from their reward.
+// When they guess the word, log their final reward amount
+
+let wordLetter = ['D', 'R', 'A', 'G', 'O', 'N'];
+let guessLetter = ['_', '_', '_', '_', '_', '_'];
+
+const wordGuess = function guesLet(text) {
+    let money = 0;
+    let correctGuess = false; //initial setup
+    let moreGuess = false; //letters remaining to be guessed
+
+    for (let i = 0; i < wordLetter.length; i++) {
+        if (wordLetter[i] === text) {  //when correct letter is guessed
+            guessLetter[i] = text;
+
+            correctGuess = true;
+        }
+        if (guessLetter[i] === '_') {  //if there are remaining letters to be guessed
+            moreGuess = true;
+        }
+    }
+    if (correctGuess) {
+        console.log(`You found a correct letter!`);
+        console.log(guessLetter.join('')); //connecting the letters together without the commas in between
+        if (!moreGuess) {
+            console.log(`YOU GUESSED THE WORD!`);
+        }
+    } else {
+        console.log(`PLEASE TRY ANOTHER LETTER!`);
+    }
+    return correctGuess;
+}
+
+console.log(wordGuess('D'));
+console.log(wordGuess('A'));
+console.log(wordGuess('W'));
+console.log(wordGuess('T'));
+console.log(wordGuess('G'));
+console.log(wordGuess('R'));
+console.log(wordGuess('O'));
+console.log(wordGuess('M'));
+console.log(wordGuess('Y'));
+console.log(wordGuess('N'));
