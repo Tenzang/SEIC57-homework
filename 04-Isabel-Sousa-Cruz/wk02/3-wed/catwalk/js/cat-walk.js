@@ -17,29 +17,25 @@ Bonus #3: When the cat reaches the middle of the screen, replace the img with an
 Bonus #4: Pretty much go nuts or whatever.
  */
 const catGif = document.getElementById("main-cat");
-const firstCatPos = 0 - catGif.clientWidth + "px";
-catGif.style.left = firstCatPos;
+catGif.style.left = -catGif.clientWidth + "px";
 
-let reachMostLeft = false;
+let speed = 20;
 const catWalk = function() {
-    const oldLeft = parseInt(catGif.style.left);
-    const screenSize = window.screen.width;
-    
-    let newLeft;
-    if (oldLeft < screenSize && !reachMostLeft) {
-        newLeft = oldLeft + 20;
-        catGif.style.left = newLeft + 'px';
-    } else {
-        reachMostLeft = true;
-        catGif.style.transform = "scaleX(-1)";
-        newLeft = oldLeft - 20;
-        catGif.style.left = newLeft + 'px' 
-    }    
+    const previousLeft = parseInt(catGif.style.left);
+    const screenSize = window.innerWidth;
 
-    if (oldLeft < parseInt(firstCatPos)) {
-        reachMostLeft = false;
-        catGif.style.transform = "scaleX(+1)";
+    const newLeft = previousLeft + speed;
+    catGif.style.left = newLeft + 'px';
+
+    if (newLeft >= screenSize) {
+        speed = -20;
+        catGif.style.transform = "scaleX(-1)";
+    }
+
+    if (newLeft <= -catGif.clientWidth) {
+        speed = 20;
+        catGif.style.transform = "scaleX(1)";
     }
 }
 
-setInterval(catWalk, 100);
+setInterval(catWalk, 50); 
