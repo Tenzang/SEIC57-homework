@@ -16,27 +16,71 @@ Bonus #3: When the cat reaches the middle of the screen, replace the img with an
 
 Bonus #4: Pretty much go nuts or whatever.
  */
+const screenSize = window.innerWidth;
+const tempBackground = document.getElementById("temp-background") ;
+
+const transitionTempBackground = function() {
+    tempBackground.style.opacity = "0%";
+}
+
+// cat
 const catGif = document.getElementById("main-cat");
 catGif.style.left = -catGif.clientWidth + "px";
 catGif.style.transform = "rotate(350deg)";
 catGif.style.top = window.innerHeight - catGif.clientHeight + "px";
 
-const leftSpeed = 20;
-const topSpeed = -3;
+let backgroundShowed = false;
+
+const catLeftSpeed = 30;
+const catTopSpeed = -3;
 const catWalk = function() {
     const previousLeft = parseInt(catGif.style.left);
-    const newLeft = previousLeft + leftSpeed;
+    const newLeft = previousLeft + catLeftSpeed;
     catGif.style.left = newLeft + 'px';
 
     const previousTop = parseInt(catGif.style.top);
-    const newTop = previousTop + topSpeed;
+    const newTop = previousTop + catTopSpeed;
     catGif.style.top = newTop + "px";
+
+    if (newLeft >= screenSize / 2 && !backgroundShowed) {
+        tempBackground.style.opacity = "50%";
+        setTimeout(transitionTempBackground, 800);
+        backgroundShowed = true;
+    }
     
-    const screenSize = window.innerWidth;
     if (newLeft >= screenSize) {
         catGif.style.left = -catGif.clientWidth + "px";
         catGif.style.top = window.innerHeight - catGif.clientHeight + "px";
+        backgroundShowed = false;
     }
 }
 
+// mouse 
+const mouseGif = document.getElementById("mouse");
+mouseGif.style.width = "200px"
+mouseGif.style.left = -mouseGif.clientWidth + "px";
+mouseGif.style.transform = "rotate(350deg)";
+mouseGif.style.top = window.innerHeight - mouseGif.clientHeight + "px";
+
+const mouseLeftSpeed = 40;
+const mouseTopSpeed = -6;
+const mouseWalk = function() {
+    const previousLeft = parseInt(mouseGif.style.left);
+    const newLeft = previousLeft + mouseLeftSpeed;
+    mouseGif.style.left = newLeft + 'px';
+
+    const previousTop = parseInt(mouseGif.style.top);
+    const newTop = previousTop + mouseTopSpeed;
+    mouseGif.style.top = newTop + "px";
+    
+    const catOffset = 30;
+    if (parseInt(catGif.style.left) >= screenSize - catOffset) {
+        mouseGif.style.left = -mouseGif.clientWidth + "px";
+        mouseGif.style.top = window.innerHeight - mouseGif.clientHeight + "px";
+    }
+}
+
+
+
 setInterval(catWalk, 50); 
+setInterval(mouseWalk, 50); 

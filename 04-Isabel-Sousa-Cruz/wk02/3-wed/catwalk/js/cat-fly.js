@@ -1,8 +1,8 @@
 const flyingCat = document.getElementById("flying-cat");
-flyingCat.style.width = "200px"
+flyingCat.style.width = "200px";
 flyingCat.style.left = -flyingCat.clientWidth + "px";
 
-let flyingCatLeftSpeed = 10;
+let flyingCatLeftSpeed = 20;
 const catFly = function() {
     const previousLeft = parseInt(flyingCat.style.left);
     const newLeft = previousLeft + flyingCatLeftSpeed;
