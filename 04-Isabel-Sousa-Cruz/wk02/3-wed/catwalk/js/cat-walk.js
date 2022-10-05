@@ -18,23 +18,24 @@ Bonus #4: Pretty much go nuts or whatever.
  */
 const catGif = document.getElementById("main-cat");
 catGif.style.left = -catGif.clientWidth + "px";
+catGif.style.transform = "rotate(350deg)";
+catGif.style.top = window.innerHeight - catGif.clientHeight + "px";
 
-let speed = 20;
+const leftSpeed = 20;
+const topSpeed = -3;
 const catWalk = function() {
     const previousLeft = parseInt(catGif.style.left);
-    const screenSize = window.innerWidth;
-
-    const newLeft = previousLeft + speed;
+    const newLeft = previousLeft + leftSpeed;
     catGif.style.left = newLeft + 'px';
 
+    const previousTop = parseInt(catGif.style.top);
+    const newTop = previousTop + topSpeed;
+    catGif.style.top = newTop + "px";
+    
+    const screenSize = window.innerWidth;
     if (newLeft >= screenSize) {
-        speed = -20;
-        catGif.style.transform = "scaleX(-1)";
-    }
-
-    if (newLeft <= -catGif.clientWidth) {
-        speed = 20;
-        catGif.style.transform = "scaleX(1)";
+        catGif.style.left = -catGif.clientWidth + "px";
+        catGif.style.top = window.innerHeight - catGif.clientHeight + "px";
     }
 }
 
