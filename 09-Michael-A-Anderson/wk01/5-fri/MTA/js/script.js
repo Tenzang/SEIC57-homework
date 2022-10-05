@@ -1,13 +1,15 @@
-function stationFactory(line,name){
+function stationFactory(line,name,intersection = false,changeLine ){
     return {
         name: name,
-        line:line
+        line:line,
+        intersection: intersection,
+        changeLines: changeLine
     }
 }
 
 const N = [
     stationFactory('N','8th'),
-    stationFactory('N','Union Square'),
+    stationFactory('N','Union Square', true, ['L','6']),
     stationFactory('N','23rd'),
     stationFactory('N','28th'),
     stationFactory('N','35th'),
@@ -17,7 +19,7 @@ const N = [
 const L = [
     stationFactory('L','8th'),
     stationFactory('L','6th'),
-    stationFactory('L','Union Square'),
+    stationFactory('L','Union Square',true, ['N','6']),
     stationFactory('L','3rd'),
     stationFactory('L','1st')
 ]
@@ -27,7 +29,7 @@ const six = [
     stationFactory('6','33rd'),
     stationFactory('6','28th'),
     stationFactory('6','23rd'),
-    stationFactory('6','Union Square'),
+    stationFactory('6','Union Square',true,['N','L']),
     stationFactory('6','Astor')
 ]
 
@@ -51,9 +53,12 @@ function tripadvisor(onLine,onStop,offLine,offStop){
         const stops = legBuilder(on, off) //returns array of stops
         displayStops(stops);
     }else{
-        const legOneOff = findLine(onLine,'Union Square') // returns array with line and array index for stop
-        const legTwoOn = findLine(offLine,'Union Square') // returns array with line and array index for stop
-        // console.log(legOneOff)
+        const legOneOff = findChange(on,offLine);
+    //    const legOneOff = findLine(onLine,'Union Square') // returns array with line and array index for stop
+        const legTwoOn = findLine(offLine,legOneOff[2]) // returns array with line and array index for stop
+        console.log('legOneOff',legOneOff)
+        console.log('legTwoOn', legTwoOn)
+        console.log('on', on)
         const stops1 = legBuilder(on, legOneOff);//returns array of stops
         stops1[stops1.length-1]+=` ** change to ${offLine} line here**`; //directions to change and what line to change to
         const stops2 = legBuilder(legTwoOn, off);//returns array of stops
@@ -62,20 +67,30 @@ function tripadvisor(onLine,onStop,offLine,offStop){
     }
 }
 
+// function findLine(line,stop){ // selects the appropriate array
+//     let station
+//     switch (line){
+//         case 'N': 
+//             station = findStop(N,stop);
+//             break;
+//         case 'L':
+//             station = findStop(L,stop);
+//             break;
+//         case '6':
+//             station = findStop(six,stop);
+//             break;
+//     }
+//     return station
+// }
 function findLine(line,stop){ // selects the appropriate array
-    let station
     switch (line){
         case 'N': 
-            station = findStop(N,stop);
-            break;
+           return findStop(N,stop);
         case 'L':
-            station = findStop(L,stop);
-            break;
+            return findStop(L,stop);
         case '6':
-            station = findStop(six,stop);
-            break;
+            return findStop(six,stop);
     }
-    return station
 }
 
 //findLine('6','33rd');
@@ -119,7 +134,39 @@ function forwards(arr,on,off){ //loops through the line from point to point
     return stops;
 }
 
+// function legBuilder(on,off){ // makes info more easily accessible and chooses a direction
+//     let arr = on[0];
+//     if(start>finish){
+//         console.log('reverse')
+//         arr = arr.reverse()
+//     }
+//     const start = on[1];
+//     const finish = off[1];
+//     let stops = []
+
+//     for( let i = start+1;i<=finish;i++){
+//         stops.push(arr[i].name);
+//     }
+//     return stops;
+// }
+
 function displayStops(stops){ 
     console.log(`${stops.length} stops`)
     console.log(stops.join(`\n`))
+}
+
+function findChange(on,offLine){
+    const line = on[0];
+    const index = line.findIndex(object => {    // this section finds the array index of the first object with a true intersection value
+        return object.intersection === true;
+    });
+    const change=line[index].changeLines;
+    console.log(change.includes(offLine));
+    if(line[index].changeLines.includes(offLine)){ //checks you can change to the correct line
+        const changeInfo= [on[0],index];
+        const changeName = on[0][changeInfo[1]].name;//collects the station name for input as the on value for the second leg
+        console.log(changeName);
+        changeInfo[2]=changeName;
+        return changeInfo;
+    }
 }
