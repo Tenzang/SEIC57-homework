@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik&display=swap');
+/*
+    font-family: 'Rubik', sans-serif;     ---- headings
+    font-family: 'Roboto Mono', monospace; ------ other text
+*/
+
+/* Color Theme Swatches in Hex   https://color.adobe.com/explore  
+.EXPLORATION-1-hex { color: #101C26; }
+.EXPLORATION-2-hex { color: #426A8C; }
+.EXPLORATION-3-hex { color: #2A4359; }
+.EXPLORATION-4-hex { color: #5B89A6; }
+.EXPLORATION-5-hex { color: #99D9F2; }
+*/
+
+:root {
+    --explorehex1: #101C26;
+    --explorehex2: #426A8C;
+    --explorehex3: #2A4359;
+    --explorehex4: #5B89A6;
+    --explorehex5: #99D9F2;
+    --titles:'Rubik', sans-serif;
+    --para-texts: 'Roboto Mono', monospace;
+}
+
+body{
+    background-color: var(--explorehex5);
+    margin: 0;
+    padding: 0;
+    font-family: var(--para-texts);
+}
+
+h1{
+    font-family: var(--titles);
+    color: var(--explorehex2);
+    font-style: italic;
+    display: inline-block;
+    margin:0;
+    padding: 1em 3em 1em 1em;
+}
+
+nav {
+    padding:1em;
+    text-align: rights;
+    display: inline-block;
+    width:100%;
+    text-align:center;
+}
+
+nav a {
+    padding: 3em;
+    text-decoration: none;
+    color: var(--explorehex2)
+}
+
+a:hover{
+    color: var(--explorehex1);
+    font-size: 120%;
+}
+
+h2, h3, h4 {
+    font-family: var(--titles);
+    color: var(--explorehex1);
+}
+
+.container {
+    background-color: var(--explorehex4);
+    width: 70%;
+    margin:auto;   
+    border-radius:2em;
+    border: 3px dashed var(--explorehex1);
+    padding:0.5em;
+}
+
+img.profile {
+    border-radius: 20%;
+    display:block;
+    margin: auto;
+    height: 400px;
+    width:auto;
+
+}
+
+aside {
+    text-align: center;
+}
+
+aside.about {
+    text-align:left;
+}
+
+img.award{
+    max-width: 600px;
+    height:auto;
+    border-bottom-left-radius: 2em;
+    border-top-left-radius:2em;
+}
+
+section {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+li{
+    padding: 0.2em 0 0.2em 0;
+    list-style: none;
+}
+
+main{
+    display:block;
+    margin:0;
+}
+
+img.c-symbol{
+    border-radius: 50%;
+    height:300px;
+    width:auto;
+}
+
+section.left{
+    width:45%;
+
+}
+section.right{
+    width:45%;
+    display: inline-block;
+}
+
+main.c-lang{
+    display: inline-block;
+}
+
+
+
