@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik&display=swap');
+/*
+    font-family: 'Rubik', sans-serif;     ---- headings
+    font-family: 'Roboto Mono', monospace; ------ other text
+*/
+
+/* Color Theme Swatches in Hex   https://color.adobe.com/explore  
+.EXPLORATION-1-hex { color: #101C26; }
+.EXPLORATION-2-hex { color: #426A8C; }
+.EXPLORATION-3-hex { color: #2A4359; }
+.EXPLORATION-4-hex { color: #5B89A6; }
+.EXPLORATION-5-hex { color: #99D9F2; }
+*/
+
+:root {
+    --explorehex1: #101C26;
+    --explorehex2: #426A8C;
+    --explorehex3: #2A4359;
+    --explorehex4: #5B89A6;
+    --explorehex5: #99D9F2;
+    --titles:'Rubik', sans-serif;
+    --para-texts: 'Roboto Mono', monospace;
+}
+
+body{
+    background-color: var(--explorehex5);
+    margin: 0;
+    padding: 0;
+    font-family: var(--para-texts);
+}
+
+h1{
+    font-family: var(--titles);
+    color: var(--explorehex2);
+    font-style: italic;
+    display: inline-block;
+    margin:0;
+    padding: 1em 3em 1em 1em;
+}
+
+nav {
+    padding:1em;
+    text-align: rights;
+    display: inline;
+}
+
+nav a {
+    padding: 3em;
+}
+
+h2, h3, h4 {
+    font-family: var(--titles);
+    color: var(--explorehex1);
+}
+
+.container.cover {
+    background-color: var(--explorehex4);
+    width: 70%;
+    margin:auto;   
+    border-radius:2em;
+    border: 3px dashed var(--explorehex1);
+    padding:0.5em;
+}
+
+.container.about {
+
+}
+
+.container.c-lang{
+
+}
+
+img.profile {
+    border-radius: 20%;
+    display:block;
+    margin: auto;
+
+}
+
+aside {
+    text-align: center;
+}
+
+
