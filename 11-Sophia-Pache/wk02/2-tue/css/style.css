@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;800&display=swap');
+
+html {
+	margin: 0;
+	padding: 0;
+	}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 0.75em;
+    color: #fff;
+    background: rgb(219,217,213);
+    background: radial-gradient(circle, rgba(219,217,213,1) 0%, rgba(192,193,196,1) 100%);
+      }
+.p2 {
+    text-align: justify;
+    margin-left: 720px;
+    width: 620px;
+    margin-top: -525px;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    color: #584c46;
+    display: block;
+}
+.p3 {
+    text-align: justify;
+    margin-left: 720px;
+    width: 375px;
+    margin-top: -490px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    color: #584c46;
+    display: block;
+}
+p { 
+    text-align: justify;
+    margin-left: 720px;
+    width: 375px;
+    margin-top: -480px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: #584c46;
+	}
+h1 {
+    text-align: justify;
+    margin-left: 720px;
+    width: 375px;
+    margin-top: -670px;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    color: #473e47;
+}
+
+.header2 {
+    text-align: justify;
+    margin-left: 720px;
+    width: 375px;
+    margin-top: -700px;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    color: #473e47;
+}
+
+.header3 {
+    text-align: justify;
+    margin-left: 720px;
+    width: 375px;
+    margin-top: -680px;
+    font-size: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    color: #473e47;
+}
+h2 {
+    visibility: hidden;
+}
+h3 { 
+	font: italic normal 1.4em georgia, sans-serif;
+	letter-spacing: 1px; 
+	margin-bottom: 0; 
+	color: #7D775C;
+	}
+a:link { 
+	text-decoration: none; 
+	color: #c0c1c4;
+    padding: 30px;
+	}
+a:visited { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #D4CDDC;
+	}
+a:hover, a:focus, a:active { 
+	text-decoration: underline; 
+	color: #a39c9c;
+	}
+abbr {
+	border-bottom: none;
+	}
+
+.box {
+    width: 250px;
+    height: 200px;
+    color: white;
+    background-color: #584c46;
+    margin-left: 800px;
+    box-shadow: 0px 15px 15px #473e47;
+    text-align: center;
+    padding-top: 25px;
+    font-family: 'Poppins', sans-serif;
+    color: #c0c1c4;
+    margin-top: -15px;
+  }
+
+.picture {
+    margin-top: -100px;
+    margin-left: 0px;
+}
+
+.box2 {
+    width: auto;
+    height: 300px;
+    color: white;
+    background: rgb(88,76,70);
+    background: linear-gradient(0deg, rgba(88,76,70,1) 0%, rgba(135,122,120,1) 100%);
+    margin-top: -120px;
+    box-shadow: 0px 0px 30px 0px #473e47;
+  }
+
+img {
+    opacity: 0.9;
+    box-shadow: 0px 15px 30px #473e47;
+}
+
+nav {
+    text-align: center;
+    font-size: 90px;
+    font-family: 'Poppins', sans-serif;
+    color: #c0c1c4;
+    font-style: italic;
+    padding-top: 40px;
+}
