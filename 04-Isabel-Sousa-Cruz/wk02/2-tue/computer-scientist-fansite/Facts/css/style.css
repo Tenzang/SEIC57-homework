@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@100&family=Gemunu+Libre:wght@400;700&display=swap');
+
+body {
+    background-color: #616247FF;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #DAA03DFF;
+    margin: auto;
+    max-width: 960px;
+    padding: 1em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    font-family: 'Gantari', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    background-color:  #616247FF;
+    color: #DAA03DFF;
+    margin: 1em;
+    text-transform: uppercase;
+    font-size: 400%;
+    padding: 0.5em;
+    font-family: 'Gemunu Libre', sans-serif;
+}
+
+nav {
+    text-align: right;
+}
+
+nav a {
+    color: black;
+    padding-right: 1em;
+    font-size: 130%;
+}
+
+img {
+    width: 80%;
+    height: 500px;
+    border-radius: 20px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    display: block;
+    margin: auto;
+}
+
+p {
+    font-size: 110%;
+}
+
+h2, h3 {
+    font-family: 'Gemunu Libre', sans-serif;
+}

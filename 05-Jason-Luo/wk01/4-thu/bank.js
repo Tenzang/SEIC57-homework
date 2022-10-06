@@ -22,33 +22,66 @@ const bankAccounts = {
     acc6: "2562.36"
 };
 
-const this = [
+const accountDetails = [
     {
-        name:
-            balance:
+        name: 'Robert Smith',
+        balance: '300'
     },
     {
-        name:
-            balance:
+        name: 'Sarah Blake',
+        balance: '1235'
     },
     {
-        name:
-            balance:
+        name: 'Jacob Welsh',
+        balance: '4673'
     },
     {
-        name:
-            balance:
+        name: 'Timothy Decor',
+        balance: '38'
     },
     {
-        name:
-            balance:
+        name: 'Adam Fuse',
+        balance: '5391'
     },
     {
-        name:
-            balance:
+        name: 'Rachael Timber',
+        balance: '724'
     }
 
-]
+];
+
+function selectAccount(accountName) {
+    for (let i = 0; i < accountDetails.length; i++) {
+        let currentAccount = accountDetails[i];
+        if (currentAccount.name === accountName) {
+            console.log(currentAccount);
+            return currentAccount;
+        }
+    }
+}
+
+
+function addAccount(accountName, accountBalance) {
+    accountDetails.push({
+        name: accountName, //referencing as object
+        balance: accountBalance
+    })
+    console.log(accountDetails);
+};
+
+function addDeposit(accountName, depositMoney) {
+    let currentBalance = true; //validating the balance
+    const mainAccount = selectAccount(accountName);
+    mainAccount.balance = mainAccount.balance + depositMoney;
+
+    if (this.valid(amount)) {
+        console.log(`${this.name} new bank balance is ${this.balance}`);
+        return true;
+    } else {
+        return false;
+    }
+}
+
 
 function Account(name, balance) {
     this.name = name; //referencing as object
@@ -77,21 +110,7 @@ Account.prototype.withdraw = function (money) {
 
 
 
-function bankSystem(bankArray) {
-    let currentAccount = Object.keys(bankArray); //converts back to normal array form
-    let total = 0;
-    console.log(currentAccount);
-    for (let i = 0; i < currentAccount.length; i++) {
-        let bankList = currentAccount[i]; //list the item names in array
-        console.log(bankList);
-        let bankBalance = bankArray[bankList]; //find the price for currentAccount linked together
-        console.log(bankArray[bankList]); //cartforparty is the door, itemname is the key, the value is the item behind the door.
-        // total += bankArray.bankBalance;
-        total = parseFloat(bankBalance); //Addition while converting string format to number format.
-        console.log(parseFloat(bankBalance));
-    }
-    return total;
-}
+
 
 
 
