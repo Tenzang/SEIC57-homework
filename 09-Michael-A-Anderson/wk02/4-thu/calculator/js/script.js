@@ -1,0 +1,12 @@
+$('#square-button').on('click',function(){
+    $('#solution').html(`<p>${$('#square-input').val()**2}</p>`)
+});
+$('#half-button').on('click',function(){
+    $('#solution').html(`<p>${$('#half-input').val()/2}</p>`)
+});
+$('#percent-button').on('click',function(){
+    $('#solution').html(`<p>${$('#percent1-input').val()/$('#percent2-input').val()*100}</p>`)
+});
+$('#area-button').on('click',function(){
+    $('#solution').html(`<p>${Math.PI*$('#area-input').val()**2}</p>`)
+});
