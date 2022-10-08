@@ -119,8 +119,8 @@ $(document).ready(function () {
         const availableNotes = [5000000, 2000000, 1000000, 500000, 200000, 100000, 50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5];
         const availableCoins = [2, 1, 0.5, 0.2, 0.1, 0.05];
 
-        const [notesQty, remainingAmount] = calculateQty(availableNotes, amount);
-        const [coinsQty, zero] = calculateQty(availableCoins, remainingAmount);
+        const [notesQty, remainingAmount] = calculateQty(availableNotes, amount, 'notes');
+        const [coinsQty, zero] = calculateQty(availableCoins, remainingAmount, 'coins');
 
         showMoney(availableNotes, notesQty, 'notes');
         showMoney(availableCoins, coinsQty, 'coins');
@@ -151,12 +151,12 @@ $(document).ready(function () {
                 .fadeIn(400)
                 .animate({
                     top: `+=${ innerHeight * 0.6 + innerHeight * 0.3 * Math.random() }`,
-                }, (7000 + 3000 * Math.random()));
+                }, (5000 + 5000 * Math.random()));
             }
         }
     };
 
-    function calculateQty (availableValue, amount) {
+    function calculateQty (availableValue, amount, type) {
         let remainingAmount = amount;
         const dispenseQuantity = new Array(availableValue.length).fill(0);
         for (let i = 0; i < availableValue.length; i++) {
@@ -165,13 +165,12 @@ $(document).ready(function () {
             remainingAmount = remainingAmount % valueToCheck;
         }
 
-        if (remainingAmount < 0.5) {
+        if (remainingAmount < 0.5 && type === 'coins') {
             remainingAmount = Number(remainingAmount.toFixed(2));
             if (remainingAmount >= 0.03) {
                 dispenseQuantity[dispenseQuantity.length - 1] += 1;
             }
         }
-
         return [dispenseQuantity, remainingAmount];
     };
 
