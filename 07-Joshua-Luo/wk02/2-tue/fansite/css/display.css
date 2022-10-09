@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&family=Proza+Libre:wght@500&display=swap');
+body {
+    background:
+    linear-gradient(63deg, #999 23%, transparent 23%) 7px 0,
+    linear-gradient(63deg, transparent 74%, #999 78%),
+    linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%),
+    #444;
+    background-size: 16px 48px;
+}
+
+
+header{
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px; /* poor person's lazy responsive container */
+    height:auto;
+    margin: auto; /* center */
+    background-color: #fff;
+    padding: 0em; /* a chunky pixel */
+    border-radius: 2em;
+    
+}
+h1{
+    font-family: 'Alkalami', serif;
+    margin: 0;
+    padding: 100px 100px 50px 100px;
+    font-size: 80px;
+}
+
+
+
+main img {
+    width: 50%;
+    display: block;  
+    margin: 40px auto;
+}
+
+nav {
+    text-align: center;
+}
+
+
+nav a {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 75px;
+    text-decoration: none;
+    width: 200px;
+    font-family: 'Proza Libre', sans-serif;
+}
+ 
+/* 鼠标移动到选项上修改背景颜色 */
+nav a:hover {
+    background-color: #800300;
+    color: white;
+    font-size: larger;
+}
+
+p{
+    margin:auto 200px;
+    font-family: 'Proza Libre', sans-serif;
+}
+
+footer{
+    height: 200px;
+}
+
+.mapouter{
+    margin: 50px auto;
+}
