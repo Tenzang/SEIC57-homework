@@ -1,5 +1,4 @@
-// Jiakai Ren
-// SEI57 Wk02 Fri Homework
+// Jiakai Ren - SEI57 Wk02 Fri Homework
 // ATM
 
 $(document).ready(function () {
@@ -11,7 +10,6 @@ $(document).ready(function () {
         checkingBalance: Number($checkingBalance.html().slice(1)),
         savingsBalance: Number($savingsBalance.html().slice(1)),
     };
-    
 
     $('[type = button]').on('click', function (event) { 
         const transInfo = (this.id).split('-');     // ['string', 'string']
@@ -19,31 +17,30 @@ $(document).ready(function () {
         const transType = transInfo[1];
         const amount = getAmount(accType);
         const decimalCount = countDecimal(amount);
-        
 
         if (!isNaN(amount) && amount > 0 && decimalCount <= 2) {
+            // only positive numbers with max decimal places of 2 is allowed
+
             if (transType === 'deposit') {
-                deposit(accType, amount);
+                deposit(accType, amount);       // updateScreen() for deposit is done in deposit()
             } else {
                 withdraw(accType, amount);
                 updateScreen(accType);
             }
 
-            if ($('#clear-input').is(':checked')) {
+            if ($('#clear-input').is(':checked')) {     // clears input field
                 clearAmount(accType);
             }
             
-        } else {                                    // invalid input
-            $(`#${ accType }-amount`).effect('shake', {distance: 10, times: 4});
+        } else {                                        // invalid input
+            $(`#${ accType }-amount`).effect('shake', {distance: 10, times: 4});    // shake input field
         }
 
         const totalBal = bank.checkingBalance + bank.savingsBalance;
         $totalBalance.html(`$${ totalBal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) }`);
     });
 
-    function getAmount (accType) { 
-        return Number($(`#${ accType }-amount`).val());
-    };
+    function getAmount (accType) { return Number($(`#${ accType }-amount`).val()); };
 
     function countDecimal (amount) {
         const amountStr = amount.toString();
@@ -66,7 +63,6 @@ $(document).ready(function () {
         if (accType === 'savings') {
             otherAcc = 'checking';                  // used in overdraft
         } else { otherAcc = 'savings'; }            // used in overdraft
-
         const allowOverdraft = $overdraftBox.is(':checked');
         const totalBalance = bank.checkingBalance + bank.savingsBalance;
         
@@ -76,22 +72,22 @@ $(document).ready(function () {
             updateScreen(otherAcc);
             eval(`$${ otherAcc }Balance`).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
         } else if (amount > accTypeBalance) {                                       // insuffient funds
-            eval(`$${ accType }Balance`).effect('shake', {distance: 10, times: 4});
-            if (allowOverdraft) {               // and shake both if overdraft allowed
+            eval(`$${ accType }Balance`).effect('shake', {distance: 10, times: 4}); // shake account balance...
+            if (allowOverdraft) {               // ...and shake both if overdraft allowed
                 eval(`$${ otherAcc }Balance`).effect('shake', {distance: 10, times: 4});
             }
             return;                             // exit function here - do not dispense cash
-        } else {
+        } else {                                // successful withdrawal
             bank[`${ accType }Balance`] -= amount;
         }
 
-        if ($('#dispense-cash').is(':checked')) {
-            giveMoney(amount);
+        if ($('#dispense-cash').is(':checked')) { 
+            giveMoney(amount); 
         }
     }; 
 
     function updateScreen (accType) {
-        if (Math.abs(bank[`${ accType }Balance`]).toFixed(2) === '0.00') {
+        if (Math.abs(bank[`${ accType }Balance`]).toFixed(2) === '0.00') {      // takes care of floating point precision error
             eval(`$${ accType }Balance`).parent().addClass('zero').removeClass('non-zero');
             bank[`${ accType }Balance`] = 0;
         } else {
@@ -102,35 +98,51 @@ $(document).ready(function () {
         $balance.html(`$${ bank[accString].toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) }`);
     };
 
-    function clearAmount (accType) {
-        $(`#${ accType }-amount`).val('');
-    };
+    function clearAmount (accType) { $(`#${ accType }-amount`).val(''); };
 
     // how to avoid eval?
-    // fix eval
-    // function evil (fn) {
+    // function evaluate (fn) {
     //     return new Function('return ' + fn)();
     // };
-
     // console.log(evil(`$${ 'checking' }Balance`));
     // console.log($(`$${ 'checking'}Balance`));
 
     function giveMoney (amount) {
-        const availableNotes = [5000000, 2000000, 1000000, 500000, 200000, 100000, 50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5];
+        const availableNotes = [100, 50, 20, 10, 5];
         const availableCoins = [2, 1, 0.5, 0.2, 0.1, 0.05];
+        let cashAmount = amount;
 
-        const [notesQty, remainingAmount] = calculateQty(availableNotes, amount, 'notes');
+        if (amount > 2000) {
+            const [$cheque, chequeAmount] = makeCheque(amount - 2000);
+            cashAmount = 2000;
+            showMoney(undefined, [1], 'cheque', chequeAmount, $cheque);
+        }
+
+        const [notesQty, remainingAmount] = calculateQty(availableNotes, cashAmount, 'notes');
         const [coinsQty, zero] = calculateQty(availableCoins, remainingAmount, 'coins');
 
         showMoney(availableNotes, notesQty, 'notes');
         showMoney(availableCoins, coinsQty, 'coins');
     };
 
-    function showMoney (availableValue, qty, type) {
+    function showMoney (availableValue, qty, type, chequeAmount, $cheque) {
+        // this function only displays cash/cheque divs on html
+        // [availableValue] should only be defined for cash
+        // qty should be [1] for cheque
+        // 'type' will be added as class
+        // chequeAmount and {$cheque} should only be defined for cheque
+
         for (let i = 0; i < qty.length; i++) {
-            const value = availableValue[i];
-            let valueOnFace;
+            let value;                  // value number only
+            let valueOnFace;            // value with '$' or 'c' symbols for cash
             const valueQty = qty[i];
+
+            if (type === 'cheque') {
+                value = chequeAmount;
+            } else {
+                value = availableValue[i];
+            }
+
             for (let j = 0; j < valueQty; j++) {
                 if (value < 1) {
                     valueOnFace = value * 100;
@@ -139,24 +151,41 @@ $(document).ready(function () {
                     valueOnFace = '$' + value;
                 }
 
-                $(`<div><p>${ valueOnFace }</p></div>`)
-                .addClass(`cash ${ type }`)
+                let $newChequeOrCash;
+                if (type === 'cheque') {
+                    $newChequeOrCash = $cheque;
+                } else {
+                    $newChequeOrCash = $(`<div><p>${ valueOnFace }</p></div>`);
+                }
+                
+                $newChequeOrCash
+                .addClass(`cash ${ type }`)     // .cash also added to cheque for deletion purpose
                 .hide()
                 .appendTo($('body'))
                 .css({
                     top: '0px',
-                    left: Math.random() * innerWidth * 0.8,
+                    left: innerWidth * 0.1 + (Math.random() * innerWidth * 0.7),
                 })
                 .delay(Math.random() * 2000)
                 .fadeIn(400)
                 .animate({
-                    top: `+=${ innerHeight * 0.6 + innerHeight * 0.3 * Math.random() }`,
+                    top: `+=${ innerHeight * 0.65 + innerHeight * 0.2 * Math.random() }`,
                 }, (5000 + 5000 * Math.random()));
             }
         }
     };
 
+    function makeCheque (amount) {
+        return [$(`<div>
+        <div id="cheque-title">Bank of Jackville</div>
+        <div id="cheque-name">Cheque</div>
+        <div id="cheque-amount">$${ amount.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}) }</div>
+        </div>`), amount];
+    };
+
     function calculateQty (availableValue, amount, type) {
+        // this function returns [[array], number]
+
         let remainingAmount = amount;
         const dispenseQuantity = new Array(availableValue.length).fill(0);
         for (let i = 0; i < availableValue.length; i++) {
@@ -165,9 +194,9 @@ $(document).ready(function () {
             remainingAmount = remainingAmount % valueToCheck;
         }
 
-        if (remainingAmount < 0.5 && type === 'coins') {
+        if (remainingAmount < 0.5 && type === 'coins') {    // rounding
             remainingAmount = Number(remainingAmount.toFixed(2));
-            if (remainingAmount >= 0.03) {
+            if (remainingAmount >= 0.03) {                  // round up
                 dispenseQuantity[dispenseQuantity.length - 1] += 1;
             }
         }
