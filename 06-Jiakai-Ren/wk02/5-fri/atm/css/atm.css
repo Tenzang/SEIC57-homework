@@ -1,0 +1,228 @@
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script);
+@import url(http://fonts.googleapis.com/css?family=Ruluko);
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+
+h1 {
+  font-family: 'Prompt', sans-serif;
+  color: white;
+}
+
+#content {
+  margin: 20px auto;
+  text-align: center;
+  width: 725px;
+}
+
+#nav {
+  margin: 50px 0px 0px 0px;
+}
+
+#title {
+  color: #F52F4F;
+  font-family: 'Oleo Script', cursive;
+  font-size: 50px;
+}
+
+#checking {
+  float: left;
+}
+
+#savings {
+  float: right;
+}
+
+.accounts{
+  height: 275px;
+}
+
+.account {
+  background-color: #888780;
+  border: 1px solid #6c6b67;
+  padding: 10px;
+  border-radius: 1em;
+  width: 45%;
+  
+}
+
+.balance, .non-zero {
+  transition: 0.3s all;
+  background-color: #E3E3E3;
+  border: 1px solid #676767;
+  font-family: 'Ruluko', sans-serif;
+  font-size: 40px;
+  padding: 25px 0;
+  margin: 10px;
+  height: 50px;
+  border-radius: 0.2em;
+}
+
+.clear {
+  clear: both;
+}
+
+.zero {
+  transition: 0.3s all;
+  background-color: #F52F4F;
+  color: #FFF;
+}
+
+input[type='text'] {
+  width: 120px;
+  margin: 0 5px;
+  font-family: 'Ruluko', sans-serif;
+}
+
+input[type='button'] {
+  transition: 0.3s all;
+  padding: 3px;
+  border-radius: 1.5em;
+  width: 75px;
+  font-family: 'Prompt', sans-serif;
+}
+
+input[type='button']:active {
+  transform: scale(0.9);
+}
+
+input[value='Deposit'] {
+  background-color: white;
+  color: green;
+  border: 1px solid green;
+}
+
+input[value='Deposit']:hover {
+  background-color: green;
+  color: white;
+}
+
+input[value='Withdraw'] {
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+}
+
+input[value='Withdraw']:hover {
+  background-color: red;
+  color: white;
+}
+
+h4 {
+  display: inline;
+  font-family: 'Prompt', sans-serif;
+  font-size: 16px;
+}
+
+.checkboxes {
+  display: inline-block;
+  margin: 0px 20px;
+  padding: 15px;
+  border: 1px solid #6c6b67;
+  border-radius: 2em;
+}
+
+.checkboxes:active {
+  color: green;
+  border: 1px solid green;
+}
+
+.wallet {
+  margin: 0px 0px 10px 0px;
+}
+
+h3 {
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+  width: 78%;
+  font-family: 'Ruluko', sans-serif;
+}
+
+h3 span {
+  padding: 0px 5px;
+  font-size: 24px;
+}
+
+#collect-all {
+  display: inline-block;
+  position: relative;
+  background-color: green;
+  border: 1px solid green;
+  color: white;
+  width: 120px;
+}
+
+#collect-all:hover {
+  background-color: white;
+  color: green;
+}
+
+.notes {
+  position: absolute;
+  width: 120px;
+  height: 50px;
+  background-color: darkolivegreen;
+  color: white;
+  box-shadow: 2px 2px 2px black;
+  border: 5px solid darkgreen;
+}
+
+.notes p {
+  position: relative;
+  text-align: center;
+  margin: 5px auto;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.coins {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 3em;
+  background-color: silver;
+  color: #444444;
+  box-shadow: 2px 2px 2px black;
+  border: 5px solid lightgray
+}
+
+.coins p {
+  position: relative;
+  text-align: center;
+  margin: 5px auto;
+  font-size: 30px;
+  font-weight: bold;
+  top: 30px;
+}
+
+#disclaimer {
+  font-family: 'Ruluko', sans-serif;
+}
+
+.cheque {
+  position: absolute;
+  width: 250px;
+  height: 125px;
+  background-color: bisque;
+  box-shadow: 2px 2px 2px #888780;
+}
+
+#cheque-title {
+  color: #F52F4F;
+  font-family: 'Oleo Script', cursive;
+  font-size: 20px;
+  text-align: left;
+  margin: 5px 10px 0px 10px;
+}
+
+#cheque-name {
+  color: #888780;
+  font-family: 'Oleo Script', cursive;
+  font-size: 40px;
+  text-align: center;
+  opacity: 50%;
+}
+
+#cheque-amount {
+  text-align: right;
+  margin: 10px;
+}
