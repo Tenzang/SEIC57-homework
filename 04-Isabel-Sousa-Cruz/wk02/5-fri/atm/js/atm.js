@@ -3,11 +3,12 @@ const INITIAL_AMOUNT = 0;
 function accountFactory() {
     return {
         amount: INITIAL_AMOUNT,
+        fallbackAccount: undefined,
         $depositButton: undefined,
         $withdrawButton: undefined,
         $balanceDiv: undefined,
         $amountInputBox: undefined,
-        setBackgroundColor: function() {
+        setBackgroundColor() {
             if (this.amount === 0) {
                 this.$balanceDiv.addClass("zero");
             } else {
@@ -34,14 +35,11 @@ function accountFactory() {
                 return;
             } 
 
-            if (this === Bank.checking) {
-                const savings = Bank.savings;
-                const bothAccountsAmount = this.amount + savings.amount;
-                if (bothAccountsAmount >= valueToBeWithdrawn) {
-                    const remainingAmount = valueToBeWithdrawn - this.amount;
-                    this.withdraw(this.amount);
-                    savings.withdraw(remainingAmount);
-                }
+            const bothAccountsAmount = this.amount + this.fallbackAccount.amount;
+            if (bothAccountsAmount >= valueToBeWithdrawn) {
+                const remainingAmount = valueToBeWithdrawn - this.amount;
+                this.withdraw(this.amount);
+                this.fallbackAccount.withdraw(remainingAmount);
             }
         }
     }
@@ -51,13 +49,15 @@ const Bank = {
     checking: accountFactory(),
     savings: accountFactory()
 };
+Bank.checking.fallbackAccount = Bank.savings;
+Bank.savings.fallbackAccount = Bank.checking;
 
 function getJqueryChildElement(selector, $parent) {
     return $parent.children(selector).first();
 }
 
 $(document).ready(function() {   
-    $(".account").each( function() {
+    $(".account").each(function() {
         const accountName = $(this).attr("id");
         const account = Bank[accountName];
         account.$depositButton = getJqueryChildElement(".deposit-button", $(this));
