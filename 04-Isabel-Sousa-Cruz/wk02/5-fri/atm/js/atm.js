@@ -1,64 +1,57 @@
 const INITIAL_AMOUNT = 0;
 
 const Bank = {
-    checkingAccountAmount: INITIAL_AMOUNT,
-    savingsAccountAmount: INITIAL_AMOUNT,
-    makeDeposit: function(button) {
+    checking: INITIAL_AMOUNT,
+    savings: INITIAL_AMOUNT
+}
 
-        button.on("click", function() {
-            const $currentButton = $(this);
-            const $amountBox = $currentButton.siblings(".amount").first();
-            const valueToBeDeposited = Number($amountBox.val());
-            const $balanceDiv = $currentButton.siblings(".balance").first();
+function makeDeposit() {
+    const $currentButton = $(this);
+    const $amountBox = $currentButton.siblings(".amount").first();
+    const valueToBeDeposited = Number($amountBox.val());
+    const $balanceDiv = $currentButton.siblings(".balance").first();
+    const accountName = $currentButton.parent().attr("id");
 
-            if ($currentButton.parent("#checking").length === 1) {
-                Bank.checkingAccountAmount += valueToBeDeposited;
-                $balanceDiv.html(`$${Bank.checkingAccountAmount}`);
-                insertBackgroundColor($balanceDiv, Bank.checkingAccountAmount);
-            } else {
-                Bank.savingsAccountAmount += valueToBeDeposited;
-                $balanceDiv.html(`$${Bank.savingsAccountAmount}`);
-                insertBackgroundColor($balanceDiv, Bank.savingsAccountAmount);
+    Bank[accountName] += valueToBeDeposited;
+    $balanceDiv.html(`$${Bank[accountName]}`);
+    insertBackgroundColor($balanceDiv, Bank[accountName]);
+}
+
+function makeWithdraw() {
+    const $currentButton = $(this);
+    const $amountBox = $currentButton.siblings(".amount").first();
+    const valueToBeWithdraw = Number($amountBox.val());
+    const $balanceDiv = $currentButton.siblings(".balance").first();
+    const accountName = $currentButton.parent().attr("id");
+
+    if (accountName === "checking") {
+        const amountAfterWithdraw = Bank.checking - valueToBeWithdraw;
+        if (isPositiveAmount(amountAfterWithdraw)) {
+            Bank.checking -= valueToBeWithdraw;
+            $balanceDiv.html(`$${Bank.checking}`);
+            insertBackgroundColor($balanceDiv, Bank.checking);
+        } else {
+            const bothAccountsAmount = Bank.checking + Bank.savings;
+            if (bothAccountsAmount >= valueToBeWithdraw) {
+                const remainingAmount = valueToBeWithdraw - Bank.checking;
+                Bank.checking = 0;
+                $balanceDiv.html(`$${Bank.checking}`);
+                Bank.savings -= remainingAmount;
+                $("#savings-balance").html(`$${Bank.savings}`);
+                insertBackgroundColor($balanceDiv, Bank.checking);
+                insertBackgroundColor($("#savings-balance"), Bank.savings);
             }
-        });
-    },
-    makeWithdraw: function(button) {
-
-        button.on("click", function() {
-            const $currentButton = $(this);
-            const $amountBox = $currentButton.siblings(".amount").first();
-            const valueToBeWithdraw = Number($amountBox.val());
-            const $balanceDiv = $currentButton.siblings(".balance").first();
-
-            if ($currentButton.parent("#checking").length === 1) {
-                const amountAfterWithdraw = Bank.checkingAccountAmount - valueToBeWithdraw;
-                if (isPositiveAmount(amountAfterWithdraw)) {
-                    Bank.checkingAccountAmount -= valueToBeWithdraw;
-                    $balanceDiv.html(`$${Bank.checkingAccountAmount}`);
-                    insertBackgroundColor($balanceDiv, Bank.checkingAccountAmount);
-                } else {
-                    const bothAccountsAmount = Bank.checkingAccountAmount + Bank.savingsAccountAmount;
-                    if (bothAccountsAmount >= valueToBeWithdraw) {
-                        const remainingAmount = valueToBeWithdraw - Bank.checkingAccountAmount;
-                        Bank.checkingAccountAmount = 0;
-                        $balanceDiv.html(`$${Bank.checkingAccountAmount}`);
-                        Bank.savingsAccountAmount -= remainingAmount;
-                        $("#savings-balance").html(`$${Bank.savingsAccountAmount}`);
-                        insertBackgroundColor($balanceDiv, Bank.checkingAccountAmount);
-                        insertBackgroundColor($("#savings-balance"), Bank.savingsAccountAmount);
-                    }
-                }
-            } else {
-                const amountAfterWithdraw = Bank.savingsAccountAmount - valueToBeWithdraw;
-                if (isPositiveAmount(amountAfterWithdraw)) {
-                    Bank.savingsAccountAmount -= valueToBeWithdraw;
-                    $balanceDiv.html(`$${Bank.savingsAccountAmount}`);
-                    insertBackgroundColor($balanceDiv, Bank.savingsAccountAmount);
-                }
-            }
-        });
+        }
+    } else {
+        const amountAfterWithdraw = Bank.savings - valueToBeWithdraw;
+        if (isPositiveAmount(amountAfterWithdraw)) {
+            Bank.savings -= valueToBeWithdraw;
+            $balanceDiv.html(`$${Bank.savings}`);
+            insertBackgroundColor($balanceDiv, Bank.savings);
+        }
     }
 }
+
 
 function isPositiveAmount(amount) {
     return amount >= 0;
@@ -76,6 +69,6 @@ $(document).ready(function() {
     insertBackgroundColor($("#checking-balance"), INITIAL_AMOUNT);
     insertBackgroundColor($("#savings-balance"), INITIAL_AMOUNT);
 
-    Bank.makeDeposit($(".deposit-button"));
-    Bank.makeWithdraw($(".withdraw-button"));
+    $(".deposit-button").on("click", makeDeposit);
+    $(".withdraw-button").on("click", makeWithdraw);
 });
