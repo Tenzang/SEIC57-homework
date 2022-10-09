@@ -27,56 +27,56 @@ const savings = {
 $(document).ready(function(){
     $("#checking-deposit").on('click',function (){
         if(validate($('#checking-amount').val())){
-            checking.deposit()
+            checking.deposit();
         }
     });
     $("#checking-withdraw").on('click',function (){
         if(validate($('#checking-amount').val())){
-            checking.withdraw()
+            checking.withdraw();
         }
     });
     $("#savings-deposit").on('click',function (){
         if(validate($('#savings-amount').val())){
-            savings.deposit()
+            savings.deposit();
         }
     });
     $("#savings-withdraw").on('click',function (){
         if(validate($('#savings-amount').val())){
-            savings.withdraw()
+            savings.withdraw();
         }
     });
     updateBalance();
 
 });
 function updateBalance(){
-    const cBalance = checking.balance
-    const sBalance = savings.balance
+    const cBalance = checking.balance;
+    const sBalance = savings.balance;
     $('#checking-balance').html(`$${cBalance}`);
     $('#savings-balance').html(`$${sBalance}`);
     $('.balance').each(function(){
         if(Number($(this).html().slice(1))===0){
-            $(this).addClass('zero')
+            $(this).addClass('zero');
         };
     })
 }
 function validate(value){
-    value=Number(value)
+    value=Number(value);
     if(value>0 && !isNaN(value)){
-        return true
+        return true;
     }
-    error("must be a number above 0")
-    return false
+    error("must be a number above 0");
+    return false;
 }
 function deposit(balance,account){
-    return balance + (Number($(account).val()))
+    return balance + (Number($(account).val()));
 }
 function withdraw(balance,value,account){
-    withdrawAmount = Number($(value).val())
-    const newBal = balance - withdrawAmount
+    withdrawAmount = Number($(value).val());
+    const newBal = balance - withdrawAmount;
     if (newBal>=0){ 
         return newBal;
     }else{
-        balance = overdraw(balance,withdrawAmount,account)
+        balance = overdraw(balance,withdrawAmount,account);
         return balance;
     }
 }
@@ -86,15 +86,15 @@ function overdraw(notEnough,withdraw,account){
         const remainder = withdraw-notEnough;
         switch (account){
             case "savings": 
-            checking.balance -=remainder
+            checking.balance -=remainder;
             return 0;
             case "checking": 
-            savings.balance -=remainder
+            savings.balance -=remainder;
             return 0; 
         }
     }
-    error("Not enough money in both accounts")
-    return notEnough
+    error("Not enough money in both accounts");
+    return notEnough;
 }
 
 
@@ -107,7 +107,7 @@ function error(message){
     $('#content').addClass('blur')
     setTimeout(function(){
         $('.error').addClass('hidden');
-        $('#content').removeClass('blur')
+        $('#content').removeClass('blur');
     },4000);
 }
 
