@@ -22,9 +22,9 @@
 // * Are there ways to refactor your code to make it DRYer?
 
 
-$(document).ready(function(){
+$(document).ready(function () {
 
-    $('#checking-deposit').on('click',function(){
+    $('#checking-deposit').on('click', function () {
         const checkingAmount = parseInt($('#checking-amount').val());
         const balance = parseInt($('#checking-balance').text().substring(1));
         const newBalance = balance + checkingAmount;
@@ -34,13 +34,13 @@ $(document).ready(function(){
         $('#checking-balance').html(`$${newBalance}`);
     })
 
-    $('#checking-withdraw').on('click',function(){
+    $('#checking-withdraw').on('click', function () {
         const checkingAmount = parseInt($('#checking-amount').val());
         const balance = parseInt($('#checking-balance').text().substring(1));
         const savingsBalance = parseInt($('#savings-balance').text().substring(1));
         const newBalance = balance - checkingAmount;
-        const newSavingsBlance =balance + savingsBalance - checkingAmount;
-        if (newBalance > 0 ) {
+        const newSavingsBlance = balance + savingsBalance - checkingAmount;
+        if (newBalance > 0) {
             $('#checking-balance').html(`$${newBalance}`);
             $('#checking-balance').attr('class', 'balance');
         } else if (newBalance === 0) {
@@ -56,7 +56,7 @@ $(document).ready(function(){
             $('#checking-balance').attr('class', 'balance zero');
             $('#savings-balance').html(`$0`);
             $('#savings-balance').attr('class', 'balance zero');
-        } 
+        }
     })
     // $('#checking-deposit').on('click',function(){
     //     const checkingAmount = parseInt($('#checking-amount').val());
@@ -104,7 +104,7 @@ $(document).ready(function(){
     //     }
     // })
 
-    $('#savings-deposit').on('click',function(){
+    $('#savings-deposit').on('click', function () {
         const savingsAmount = parseInt($('#savings-amount').val());
         const balance = parseInt($('#savings-balance').text().substring(1));
         const newBalance = balance + savingsAmount;
@@ -114,13 +114,13 @@ $(document).ready(function(){
         $('#savings-balance').html(`$${newBalance}`);
     })
 
-    $('#savings-withdraw').on('click',function(){
+    $('#savings-withdraw').on('click', function () {
         const savingsAmount = parseInt($('#savings-amount').val());
         const balance = parseInt($('#savings-balance').text().substring(1));
         const checkingBalance = parseInt($('#checking-balance').text().substring(1));
         const newBalance = balance - savingsAmount;
-        const newCheckingBlance =balance + checkingBalance - savingsAmount;
-        if (newBalance > 0 ) {
+        const newCheckingBlance = balance + checkingBalance - savingsAmount;
+        if (newBalance > 0) {
             $('#savings-balance').html(`$${newBalance}`);
             $('#savings-balance').attr('class', 'balance');
         } else if (newBalance === 0) {
@@ -136,7 +136,7 @@ $(document).ready(function(){
             $('#savings-balance').attr('class', 'balance zero');
             $('#checking-balance').html(`$0`);
             $('#checking-balance').attr('class', 'balance zero');
-        } 
+        }
 
     })
 
