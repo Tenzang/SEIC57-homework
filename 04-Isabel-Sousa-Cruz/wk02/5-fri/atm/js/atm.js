@@ -24,32 +24,51 @@ function makeWithdraw() {
     const $balanceDiv = $currentButton.siblings(".balance").first();
     const accountName = $currentButton.parent().attr("id");
 
+    const amountAfterWithdraw = Bank[accountName] - valueToBeWithdraw;
+    if (isPositiveAmount(amountAfterWithdraw)) {
+        Bank[accountName] -= valueToBeWithdraw;
+        $balanceDiv.html(`$${Bank[accountName]}`);
+        insertBackgroundColor($balanceDiv, Bank[accountName]);
+        return;
+    } 
+
     if (accountName === "checking") {
-        const amountAfterWithdraw = Bank.checking - valueToBeWithdraw;
-        if (isPositiveAmount(amountAfterWithdraw)) {
-            Bank.checking -= valueToBeWithdraw;
-            $balanceDiv.html(`$${Bank.checking}`);
-            insertBackgroundColor($balanceDiv, Bank.checking);
-        } else {
-            const bothAccountsAmount = Bank.checking + Bank.savings;
-            if (bothAccountsAmount >= valueToBeWithdraw) {
-                const remainingAmount = valueToBeWithdraw - Bank.checking;
-                Bank.checking = 0;
-                $balanceDiv.html(`$${Bank.checking}`);
-                Bank.savings -= remainingAmount;
-                $("#savings-balance").html(`$${Bank.savings}`);
-                insertBackgroundColor($balanceDiv, Bank.checking);
-                insertBackgroundColor($("#savings-balance"), Bank.savings);
-            }
-        }
-    } else {
-        const amountAfterWithdraw = Bank.savings - valueToBeWithdraw;
-        if (isPositiveAmount(amountAfterWithdraw)) {
-            Bank.savings -= valueToBeWithdraw;
-            $balanceDiv.html(`$${Bank.savings}`);
-            insertBackgroundColor($balanceDiv, Bank.savings);
+        const bothAccountsAmount = Bank[accountName] + Bank.savings;
+        if (bothAccountsAmount >= valueToBeWithdraw) {
+            const remainingAmount = valueToBeWithdraw - Bank[accountName];
+            Bank[accountName] = 0;
+            $balanceDiv.html(`$${Bank[accountName]}`);
+            Bank.savings -= remainingAmount;
+            $("#savings-balance").html(`$${Bank.savings}`);
+            insertBackgroundColor($balanceDiv, Bank[accountName]);
+            insertBackgroundColor($("#savings-balance"), Bank.savings);
         }
     }
+    // if (accountName === "checking") {
+    //     if (isPositiveAmount(amountAfterWithdraw)) {
+    //         Bank.checking -= valueToBeWithdraw;
+    //         $balanceDiv.html(`$${Bank.checking}`);
+    //         insertBackgroundColor($balanceDiv, Bank.checking);
+    //     } else {
+    //         const bothAccountsAmount = Bank.checking + Bank.savings;
+    //         if (bothAccountsAmount >= valueToBeWithdraw) {
+    //             const remainingAmount = valueToBeWithdraw - Bank.checking;
+    //             Bank.checking = 0;
+    //             $balanceDiv.html(`$${Bank.checking}`);
+    //             Bank.savings -= remainingAmount;
+    //             $("#savings-balance").html(`$${Bank.savings}`);
+    //             insertBackgroundColor($balanceDiv, Bank.checking);
+    //             insertBackgroundColor($("#savings-balance"), Bank.savings);
+    //         }
+    //     }
+    // } else {
+    //     const amountAfterWithdraw = Bank.savings - valueToBeWithdraw;
+    //     if (isPositiveAmount(amountAfterWithdraw)) {
+    //         Bank.savings -= valueToBeWithdraw;
+    //         $balanceDiv.html(`$${Bank.savings}`);
+    //         insertBackgroundColor($balanceDiv, Bank.savings);
+    //     }
+    // }
 }
 
 
