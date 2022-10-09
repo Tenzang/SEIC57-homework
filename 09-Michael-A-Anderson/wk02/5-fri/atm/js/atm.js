@@ -56,6 +56,8 @@ function updateBalance(){
     $('.balance').each(function(){
         if(Number($(this).html().slice(1))===0){
             $(this).addClass('zero');
+        }else{
+            $(this).removeClass('zero');
         };
     })
 }
