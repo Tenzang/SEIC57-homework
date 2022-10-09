@@ -9,7 +9,7 @@ body {
 
 .container {
     /* display: inline-block; */
-    background-color: lightgray;
+    background-color: #878681;
     width: 90%;
     max-width: 960px;
     margin: 20px auto;
@@ -103,6 +103,7 @@ aside {
     padding: 0px 10px;
     vertical-align: top;
     line-height: 1.5em;
+    color: white;
 }
 
 .bold {
@@ -122,6 +123,7 @@ aside {
     padding: 20px;
     width: 75%;
     margin: 0 auto;
+    color: white;
 }
 
 .trivia-container {
@@ -157,16 +159,16 @@ aside {
 .truth:hover {
     transition: 0.5s all;
     /* background-color: darkgreen; */
-    background: linear-gradient(bottom, rgba(1,50,32,1), rgba(0,0,0,.4));
-    background: -webkit-linear-gradient(bottom, rgba(1,50,32,1), rgba(0,0,0,0));
-    background: -moz-linear-gradient(bottom, rgba(1,50,32,1), rgba(0,0,0,0));
+    background: linear-gradient(bottom, rgba(1,50,32,1), rgba(135,134,129,.4));
+    background: -webkit-linear-gradient(bottom, rgba(1,50,32,1), rgba(135,134,129,.4));
+    background: -moz-linear-gradient(bottom, rgba(1,50,32,1), rgba(135,134,129,.4));
     color: white;
 }
 
 .lie:hover {
     transition: 0.5s all;
-    background: linear-gradient(bottom, rgba(139,0,0,1), rgba(93,93,93,0.4));
-    background: -webkit-linear-gradient(bottom, rgba(139,0,0,1), rgba(93,93,93,0.4));
-    background: -moz-linear-gradient(bottom, rgba(139,0,0,1), rgba(93,93,93,0.4));
+    background: linear-gradient(bottom, rgba(139,0,0,1), rgba(135,134,129,.4));
+    background: -webkit-linear-gradient(bottom, rgba(139,0,0,1), rgba(135,134,129,.4));
+    background: -moz-linear-gradient(bottom, rgba(139,0,0,1), rgba(135,134,129,.4));
     color: white;
 }
