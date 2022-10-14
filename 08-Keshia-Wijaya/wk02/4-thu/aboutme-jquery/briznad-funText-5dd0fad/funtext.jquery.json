@@ -1,0 +1,32 @@
+{
+    "name": "funtext",
+    "version": "1.0.3",
+    "title": "funText",
+    "author": {
+        "name": "Brad Mallow",
+        "email" : "brad.mallow@gmail.com",
+        "url" : "http://bradmallow.com/"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://raw.github.com/briznad/funText/master/MIT-LICENSE.txt"
+        }
+    ],
+    "dependencies": {
+        "jquery": ">=1.7"
+    },
+    "description": "A plugin for jQuery/Zepto that adds colorful 3D shadows to text, which respond to mouse movement.",
+    "keywords": [
+        "text-shadow",
+        "text",
+        "shadow",
+        "3D",
+        "rainbow",
+        "fun"
+    ],
+    "homepage": "https://github.com/briznad/funText",
+    "docs": "http://briznad.github.io/funText",
+    "demo": "http://briznad.github.io/funText",
+    "bugs": "https://github.com/briznad/funText/issues"
+}
