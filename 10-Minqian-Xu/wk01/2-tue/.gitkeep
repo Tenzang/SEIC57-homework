@@ -51,11 +51,4 @@ areaOfCircle(2)
 // // Calculate the area of a circle with the result of #2 as the radius.
 // // Calculate what percentage that area is of the squared result (#3).
 
-const allResult = function(num){
-    const half = halfNumber(num);
-    const squared = squareNumber(half);
-    const area = areaOfCircle(squared);
-    percentOf(area, squared);
-}
 
-allResult(5)
