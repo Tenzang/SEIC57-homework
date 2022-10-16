@@ -1,0 +1,29 @@
+body {
+    background-color: rgb(221, 211, 211) ;
+    padding-left: 125px;
+    padding-right: 50px;
+    padding-top: 200px;
+    font-family: 'montserrat', arial;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+img {
+    height: 350px;
+}
+
+.image1 {
+    width: 45%;
+    height: 400px;
+    display: inline-block;
+
+   
+}
+
+.aside {
+    display: inline-block;
+    width: 40%;
+    padding-top: 0px;
+    margin-top: 0px;
+    vertical-align: top;
+}
+

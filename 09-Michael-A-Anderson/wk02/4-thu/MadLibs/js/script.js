@@ -6,3 +6,4 @@ $('#lib-button').on("click", function(){
     console.log('click')
     $("#story").html(`${$('#person').val()} really likes ${$('#adjective').val()} ${$("#noun").val()}s`)
 });
+$('h1').funText(33,'candy')

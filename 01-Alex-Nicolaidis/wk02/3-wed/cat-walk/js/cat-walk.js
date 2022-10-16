@@ -29,3 +29,5 @@ const catWalkRight = function (){
     }
 }
 const stopTimerRight = setInterval(catWalkRight,50);
+
+
