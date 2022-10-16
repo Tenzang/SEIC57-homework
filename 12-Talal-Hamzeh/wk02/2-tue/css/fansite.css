@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&display=swap');
+
+
+body {
+    background:url("https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/UT5I3KGZJQI6TINFCYVYVHE4UI.jpg&w=916");
+
+    
+    background-size: cover;
+    font-family: 'Kanit', sans-serif;
+    display: inline-block;
+    background-color: black;
+    width: 100%;
+    
+
+}
+.container{
+    max-width: 960px;
+    margin: auto; /*auto*/
+    padding: 1em;
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+}
+
+nav {
+    position: relative;
+    width: 100%;
+    top: 0px;
+}
+main{
+    display: inline-block;
+    width: 75%;
+
+}
+.quotes{
+
+    font-size: 150%;
+    color: white;
+    
+
+}
+nav ul {
+    text-decoration: none;
+    text-align: center;
+    margin-top: 0px;
+    font-family: 'Alkalami', serif;
+    background-color: none;
+    padding: 1em;
+
+}
+main img {
+    
+    position: center ;
+    top: 100px;
+    left: 100px;
+    border: 1px black solid;
+       
+}
+
+nav li {
+    
+    display: inline;
+    color:grey;
+    margin: 2em;
+    font-size: 30px;
+}
+
+nav ul a {
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    color: white;
+    font: size 100%;
+}
+
+
+
+h1 {
+   text-align: center;
+    background-color:transparent;
+    color:white;
+    font-size: 200%;
+    padding: 0.5em;
+    text-transform: uppercase;
+    font-family: 'Kanit', sans-serif;
+
+}
+h2 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 25px;
+    color:rgb(161, 140, 16);
+  }
+
+
+.bio {
+    margin: auto;
+    font-size: 20px;
+    line-height: 1.3em;
+    text-align: justify;
+    color: white;
+    display: inline-block;
+    width: 100%;
+    font-family: 'Kanit', sans-serif;
+
+}
+
+
+
+.container ul,.container ol {
+    
+    font-family: 'Alkalami', serif;
+    font-size: 20px;
+    line-height: 3em;
+    color: white;
+}
