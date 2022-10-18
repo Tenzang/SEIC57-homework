@@ -49,22 +49,27 @@ console.log(vowelCheck('c'))
 *******
 const array1 = [3,10,5,2,6];
 
-const sumArray = function (array) {
-	const value = 0;
-    for (let i=0; i<array.length; i+=1) {
-        let value += array[i];
-        return value;
+const sumArray = function (arr) {
+	let value = 0;
+    for (let i=0; i<arr.length; i++) {
+        value = value + arr[i]
     }
-}
-const array = [2,3,6]
-function multiplyArray(array) {
-	const value = 1;
-	for (var i = 0; i < array.length; i++) {
-		value = (value * array[i]);
-	}
-	return value;
+    return (value);
+    console.log(value);
 }
 
+sumArray([1,2,3]);
+
+
+function multiplyArray(arr) {
+	let value = 1;
+	for (var i = 0; i < arr.length; i++) {
+		value = value * arr[i]
+	}
+	return (value);
+    console.log(value);
+}
+multiplyArray[2,3,6];
 // ## Bonus
 
 // 5. Define a function `reverseString` that computes the reversal of a string. For example, reverseString("jag testar") should return the string "ratset gaj".
@@ -76,32 +81,30 @@ console.log(reverseString('jag testar'))
 
 // 6. Write a function `findLongestWord` that takes an array of words and returns the length of the longest one.
 ******
-const start = 0;
+
 const findLongestWord= function(array) {
+    let start = 0;
 for (i = 0; i < array.length; i++) {
-    if ( array[i].length > start.length ) {
-        start = array[i];
+    if ( array[i].length > start ) {
+        start = array[i].length;
     }
 }
+    console.log(start);
+    return (start);
 }
-console.log(findLongestWord('an','ban','elephant'))
+findLongestWord(['an','ban','elephant'])
 
 // 7. Write a function `filterLongWords` that takes an array of words and an number `i` and returns the array of words that are longer than i.
 *****
-const array1 = ['coffee','tea','water']
-const filterLongWords= function(array1,i) {
+\
+
+const filterLongWords= function(array,i) {
     const output =  [];
-    if (array1[i].length > i) {
-        return filterLongWords.push(output);
+    if (array[i].length > i) {
+        filterLongWords.push(output);
     }
+    console.log(output);
+    return output
 }
 
-const array1 = ['coffee','tea','water']
-const filterLongWords= function(array1,i) {
-    if (array1[i].length > i) {
-        return filterLongWords.push(array1);
-    }
-}
-
-
-console.log(filterLongWords('array1', 4))
+filterLongWords(['coffee','tea','water'])
