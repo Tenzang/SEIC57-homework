@@ -1,0 +1,13 @@
+print "How many miles are your travelling? "
+miles = gets.to_i
+print "How many gallons per mile does your car get? "
+mpg = gets.to_i
+print "How much was the price per gallon? "
+price = gets.to_f
+print "What is the speed you will trael in miles/hour? "
+speed = gets.to_i
+
+time = (miles / speed).to_f
+cost = (miles/mpg)*price
+
+puts "The trip will take #{time} hours and cost $#{cost}"
