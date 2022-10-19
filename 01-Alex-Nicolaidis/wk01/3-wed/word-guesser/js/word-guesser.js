@@ -37,7 +37,7 @@ const checkCompleteWord = function (array){
 
 
 // input the word to guess in the below array
-const wordToGuess = ["F","O","X"];
+const wordToGuess = ["F","O","O","L"];
 let emptyWordToGuess = emptyArray(wordToGuess);
 
 
