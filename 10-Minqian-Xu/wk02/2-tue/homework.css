@@ -1,0 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {font-family: 'Poppins', sans-serif;
+    background-color: rgb(11, 234, 230); /* expands to #222222: #123 => #112233 */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    background-color: black;
+    padding: 0
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+img {
+    margin: 40px 0px 0px 0px;
+    border: 7px solid white;
+    border-radius: 20px;
+  }
+
+  article {
+    max-width: 500px;
+    padding: 20px;
+    margin: 0 auto;
+  }
