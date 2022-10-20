@@ -1,0 +1,50 @@
+body {
+    background-image: url('https://media3.giphy.com/media/JEhCPFfqi2Hy8/giphy.gif');
+    background-size: cover;
+    font-family: 'Comfortaa', cursive;
+    color: white;
+}
+
+.container {
+    background-color: rgb(166, 143, 112);
+    padding: 1em;
+    opacity: 0.8;
+}
+
+nav {
+    background-image: url('https://i.pinimg.com/originals/5f/a8/31/5fa831d24ca7a7e48adaa051a9970e29.jpg');
+    background-size: cover;
+    padding: 1em;
+    opacity: 0.8;
+}
+
+a {
+    color: white;
+}
+
+h1 {
+    font-size: 200%;
+    color: white;
+}
+
+footer {
+    padding: 0.5em;
+    color: white;
+}
+
+.form {
+    padding: 1.3em;
+}
+
+h2 {
+    font-size: 200%;
+    color: white;
+}
+
+h3 {
+    color: rgb(101, 17, 17);
+}
+.container:hover {
+    transition: width 2s, height 4s;
+    opacity: 1.0;
+}
