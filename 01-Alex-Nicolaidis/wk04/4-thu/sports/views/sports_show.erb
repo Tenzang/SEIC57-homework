@@ -1,0 +1,11 @@
+<h1><%= @sport["name"] %></h1>
+
+<p>The greatest to ever play <%= "#{@sport["name"]}  is  #{@sport["goat"]}"%></p>
+
+<img src="<%= @sport["image"] %>" alt="<%= "Photo of #{@sport["name"]} "%>" class="feature">
+
+
+<div class="controls">
+    <a href="/sports/<%= @sport["id"] %>/edit">Edit Sport</a>
+    <a href="/sports/<%= @sport["id"] %>/delete">Delete Sport</a>
+</div>
