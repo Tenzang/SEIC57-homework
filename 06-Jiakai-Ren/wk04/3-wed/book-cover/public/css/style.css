@@ -1,0 +1,103 @@
+* {
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 960px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dynamic-area {
+    background-color: #23395d;
+    padding: 20px;
+    color: white;
+    border-radius: 1em;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: #23395d;
+}
+
+a:hover {
+    color: orange;
+}
+
+form {
+    position: relative;
+    margin: 0 auto;
+}
+
+.input-zone {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0px;
+}
+
+.input-zone input {
+    height: 50px;
+    width: 300px;
+    margin: 0px 25px 0px 0px;
+    padding: 0px 10px;
+    font-size: 18px;
+    vertical-align: top;
+    border-radius: 0.5em;
+    border: 0px;
+}
+
+.input-zone button {
+    transition: 0.1s all;
+    height: 50px;
+    vertical-align: top;
+    font-size: 18px;
+    padding: 0px 10px;
+    color: white;
+    background-color: #23395d;
+    border: 1px solid white;
+    border-radius: 0.5em;
+}
+
+.input-zone button:hover {
+    background-color: white;
+    color: #23395d;
+    border: 1px solid #23395d;
+}
+
+.input-zone button:active {
+    transform: scale(0.9);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #23395d;
+}
+
+img {
+    width: 100%;
+}
+
+.result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.book-cover {
+    width: 25%;
+}
+
+.book-description {
+    width: 75%;
+    padding: 20px;
+}
