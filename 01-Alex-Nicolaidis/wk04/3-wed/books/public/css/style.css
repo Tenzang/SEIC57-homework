@@ -1,0 +1,10 @@
+.container{
+    width: 960px;
+    margin: auto;
+    background-color:goldenrod;
+    padding: 20px;
+}
+
+input{
+    width: 300px;
+}
