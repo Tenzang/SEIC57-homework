@@ -1,0 +1,13 @@
+<h3>Search result for: <%= @search_name %></h3>
+<p>There are <%= @total_results%> search results.</p>
+<p>Best match: <%= @title %></p>
+<p>- by <%= @authors %></p>
+<div class="result-container">
+    <div class="book-cover">
+    <img src=<%= @cover_link %> alt="A book cover of <%= @search_name %>">
+    </div>
+    <div class="book-description">
+    <p>Book description:</p>
+    <p><%= @description %></p>
+    </div>
+</div>
