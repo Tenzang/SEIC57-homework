@@ -1,0 +1,18 @@
+<h1>Edit a Sport Here</h1>
+
+<form action="/sports/<%= @sport['id'] %>" method="post">
+    <label>
+        Sport:
+        <input type="text" name="name" required value="<%= @sport["name"] %>">
+    </label>
+    <label>
+        Greatest of All Time:
+        <input type="text" name="goat" required value="<%= @sport["goat"] %>">
+    </label>
+    <label>
+        Image:
+        <input type="url" name="image" placeholder="http://www.imageofsport.com" value="<%= @sport["image"] %>">
+    </label>
+
+    <button>Update Sport</button>
+</form>

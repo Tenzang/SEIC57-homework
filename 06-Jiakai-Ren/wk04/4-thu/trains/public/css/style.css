@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 0px 0px 20px 0px;
+}
+
+.container {
+    max-width: 720px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+main {
+    border-top: 2px solid orangered;
+    padding: 20px;
+}
+
+nav {
+    text-align: center;
+    margin: 20px auto;
+}
+
+a {
+    transition: 0.2s all;
+    margin: 0 10px;
+    text-decoration: none;
+    color: orangered;
+    padding: 5px;
+}
+
+a:hover {
+    color: white;
+    background-color: orangered;
+}
+
+.feature {
+    width: 100%;
+}
+
+.index-list {
+    text-align: center;
+}
+
+.score {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: orangered;
+    margin: 0px 5px;
+}
+
+.actions {
+    text-align: right;
+}
+
+.action-buttons {
+    display: inline-block;
+}
+
+button {
+    transition: 0.2s all;
+    background-color: orangered;
+    color: white;
+    border: 1px solid orangered;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px;
+    margin: 0px 5px;
+    width: 70px;
+}
+
+.long-button-container {
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.long-button {
+    display: inline;
+    width: 150px;
+}
+
+button:hover {
+    color: orangered;
+    background-color: white;
+}
+
+label {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+input {
+    margin: 0px 10px;
+}
+
+.line-squares {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 40px;
+    width: 40px;
+    background-color: black;
+    color: white;
+    border-radius: 0.3em;
+    font-size: 24px;
+    margin: 0px 10px;
+}
+
+.line-squares-container {
+    display: flex;
+}
+
+#T1 {
+    background-color: orange;
+}
+
+#T2 {
+    background-color: darkcyan;
+}
+
+#T3 {
+    background-color: orangered;
+}
+
+#T4 {
+    background-color: darkblue;
+}
+
+#T5 {
+    background-color: magenta;
+}
+
+#T7 {
+    background-color: gray;
+}
+
+#T8 {
+    background-color: green;
+}
+
+#T9 {
+    background: red;
+}
