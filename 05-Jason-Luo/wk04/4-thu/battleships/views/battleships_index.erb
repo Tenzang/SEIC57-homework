@@ -1,0 +1,9 @@
+<h1>Battleships Database</h1>
+<!-- each allows code to loop through entire database -->
+<% @battleships.each do |battleship|%>
+    <p>
+        <a href="/battleships/<%= battleship["id"] %>">
+            <%= battleship["name"] %>
+        </a>
+    </p>
+<% end %>
