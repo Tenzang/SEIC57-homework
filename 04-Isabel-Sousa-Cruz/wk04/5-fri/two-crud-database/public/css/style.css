@@ -1,0 +1,21 @@
+.thumbnail {
+    width: 20%;
+}
+
+@media (min-width: 576px) { 
+    .row {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .row {
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .row {
+        font-size: 1.4rem;
+    }
+}

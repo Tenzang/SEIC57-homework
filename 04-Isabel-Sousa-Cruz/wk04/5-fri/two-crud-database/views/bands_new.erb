@@ -1,0 +1,21 @@
+<div>
+    <h1>Add a new band</h1>
+
+    <% if @already_exists %>
+        <div>This band already exists!</div>
+    <% end %>
+
+    <form action="/bands" method="post">
+        <label>Band</label>
+        <input placeholder="The Kooks" name="name" required>
+
+        <label>Band image</label>
+        <input placeholder="url" name="image" required>
+
+        <label>Albums</label>
+        <input placeholder="Inside In/Inside Out, Konk, Junk of the Heart..." name="albums">
+
+        <br>
+        <button>Add</button>
+    </form>
+</div>

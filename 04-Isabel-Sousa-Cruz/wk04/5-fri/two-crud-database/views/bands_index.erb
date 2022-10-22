@@ -1,0 +1,11 @@
+<h1>Bands list</h1>
+
+<%  @bands.each do |band| %>
+    <div>
+        <a href="/bands/<%= band.id %>">
+            <%= band.name %>
+        </a>
+        <br>
+        <img class="thumbnail" src="<%= band.image %>" >
+    </div>
+<% end %>

@@ -1,0 +1,23 @@
+<div>
+    <h1>Edit album</h1>
+
+    <form action="/albums/<%= @album.id %>" method="post">
+        <label>Album</label>
+        <input value="<%= @album.name %>" name="name" required>
+
+        <label>Band</label>
+        <input value="<%= @album.band %>" name="band" required>
+
+        <label>Thumbnail</label>
+        <input value="<%= @album.image %>" name="image" required>
+
+        <label>Released year</label>
+        <input value="<%= @album.released_year %>" name="released_year">
+
+        <label>Info</label>
+        <input value="<%= @album.info %>" name="info">
+
+        <br>
+        <button>Edit</button>
+    </form>
+</div>

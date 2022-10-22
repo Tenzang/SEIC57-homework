@@ -1,0 +1,7 @@
+<h1><%= @band.name %></h1>
+
+<img class="thumbnail" src="<%= @band.image %>" alt=<%= @band.name %> >
+<h3>Albums: <%= @band.albums %></h3>
+
+<a href="/bands/<%= @band.id %>/edit">Edit</a>
+<a href="/bands/<%= @band.id %>/delete">Delete</a>

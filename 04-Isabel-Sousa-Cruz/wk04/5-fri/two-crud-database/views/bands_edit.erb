@@ -1,0 +1,17 @@
+<div>
+    <h1>Edit band</h1>
+
+    <form action="/bands/<%= @band.id %>" method="post">
+        <label>Band</label>
+        <input value="<%= @band.name %>" name="name" required>
+
+        <label>Band image</label>
+        <input value="<%= @band.image %>" name="image" required>
+
+        <label>Albums</label>
+        <input value="<%= @band.albums %>" name="albums" required>
+
+        <br>
+        <button>Edit</button>
+    </form>
+</div>
