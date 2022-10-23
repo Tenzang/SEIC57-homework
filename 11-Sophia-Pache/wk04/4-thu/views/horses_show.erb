@@ -1,0 +1,22 @@
+<% unless @horse["image"].nil? || @horse["image"].empty? %>
+    <img class="profpic" src="<%= @horse["image"] %>" width="300" height="400"><br>
+<% end %>
+
+<div class="navigation">
+    <a href="/horses/<%= @horse["id"] %>/edit" id="link">Edit Horse Profile</a><br>
+    <a href="/horses/<%= @horse["id"] %>/delete" id="link">Delete Horse Profile</a>
+</div>
+
+<h1>
+    Horse's Name: <%= @horse["name"] %>
+</h1>
+
+<h3>
+    Horse's Breed: <%= @horse["breed"] %>
+</h3>
+
+<h3>
+    Horse's Age: <%= @horse["age"] %>
+</h3>
+
+
