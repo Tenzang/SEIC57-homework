@@ -1,0 +1,9 @@
+<h1>List of Horses</h1>
+
+<% @horses.each do |horse|  %>
+    <p>
+        <a href="/horses/<%= horse["id"] %>" id="link">
+            <%= horse["name"] %>
+        </a>
+    </p>
+<% end %>
