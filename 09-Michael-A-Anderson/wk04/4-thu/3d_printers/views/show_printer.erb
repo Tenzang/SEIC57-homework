@@ -1,0 +1,10 @@
+<h1><%= "#{@printer['brand']} #{@printer['model']}" %></h1>
+<img src="<%= @printer["image"] %>" alt="">
+<p>Print Bed Size: <%= @printer["print_size"] %></p>
+<p>Resolution: <%= @printer["resolution"] %></p>
+<p>Monochrome Screen: <%= @printer["monoscreen"]==1 ? "yes": "no" %></p>
+
+<div class="controls">
+<a href="/3d_printers/<%= @printer["id"] %>/edit_printer">Edit</a>
+<a href="/3d_printers/<%= @printer["id"] %>/delete">Delete</a>
+</div>

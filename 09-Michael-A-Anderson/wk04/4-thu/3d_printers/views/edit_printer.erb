@@ -1,0 +1,16 @@
+<h1>Edit <%= "#{@printer['brand']} #{@printer['model']}" %></h1>
+
+<form action="/3d_printers/<%= @printer['id'] %>" method="post">
+    <label>
+    Brand: <input name="brand" value="<%= @printer['brand'] %>"></label>
+    <label>
+    Model: <input name="model" value="<%= @printer['model'] %>"></label>
+    <label>
+    Print Bed Size: <input name="print_size" value="<%= @printer['print_size'] %>"></label>
+    <label>
+    Resolution: <input name="resolution" value="<%= @printer['resolution'] %>"></label>
+    <label>
+    Monochrome Screen: <input name="monoscreen" placeholder="yes=1 no=0" value="<%= @printer['monoscreen'] %>"></label>
+    <label>image URL: <input name="image" value="<%= @printer['image'] %>"></label>
+    <button>Edit Printer</button>
+</form>

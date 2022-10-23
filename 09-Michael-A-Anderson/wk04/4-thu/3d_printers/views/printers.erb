@@ -1,0 +1,7 @@
+<h1>All Resin Printers</h1>
+
+<% @printers.each do |printer| %>
+<p>
+    <a href="/3d_printers/<%= printer['id'] %>"><%= "#{printer['brand']} #{printer['model']}"%></a>
+</p>
+<% end %>
