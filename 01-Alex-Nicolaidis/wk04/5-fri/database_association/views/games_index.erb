@@ -1,0 +1,21 @@
+<h1>Games</h1>
+
+<% @games.each do |game| %>
+    <p>
+        <a href="/games/<%= game.id %>"><%= game.name %></a>
+        <ul>
+            <% char.each do |character| %>
+                <li><a href="/character/<%= character.id %>"><%=character.name%></a></li>
+            <% end %>
+        </ul>
+    </p>
+<% end %>
+
+<p>
+<a href="/games/new">New Game</a>
+</p>
+
+
+
+<!-- Loop through the database table of games and display a game in a link  -->
+
