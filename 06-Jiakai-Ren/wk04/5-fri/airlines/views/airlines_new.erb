@@ -1,0 +1,31 @@
+<h1>Create a New Airline</h1>
+
+<form action="/airlines" method="post">
+    <label>
+        *New airline:
+        <input name="name" required placeholder="Qantas Airways">
+    </label>
+    <label>
+        *IATA code:
+        <input name="code" required placeholder="QF">
+    </label>
+    <label>
+        *Registered country:
+        <input name="country" required placeholder="Australia">
+    </label>
+    <label>
+        Fleet size:
+        <input type="number" name="fleet_size" placeholder="223">
+    </label>
+    <label>
+        Logo link:
+        <input type="url" name="logo" placeholder="https://...">
+    </label>
+    <label>
+        Incident count:
+        <input type="number" name="incident_count" placeholder="1">
+    </label>
+    <button>Make it fly</button>
+</form>
+
+<p>* - Required</p>

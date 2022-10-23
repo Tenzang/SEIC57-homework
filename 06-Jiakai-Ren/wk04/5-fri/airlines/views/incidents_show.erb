@@ -1,0 +1,20 @@
+<h1><%= @incident.code %> <%= @incident.flight_number %></h1>
+
+<% if @incident.image.present? %>
+    <img src="<%= @incident.image %>" alt="Incident image of <%= @incident.code %> <%= @incident.flight_number %>>" class="feature">
+<% end %>
+
+<h3>Incident Description:</h3>
+<p><%= @incident.description %></p>
+<p>Death: <%= @incident.death %></p>
+<p>Injury: <%= @incident.injury %></p>
+<p>Survival: <%= @incident.survival %></p>
+
+<div class="controls">
+    <form action="/incidents/<%= @incident.id %>/edit">
+        <button>Modify history</button>
+    </form>
+    <form action="/incidents/<%= @incident.id %>/delete">
+        <button>Pretend it didn't happen</button>
+    </form>
+</div>

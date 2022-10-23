@@ -1,0 +1,5 @@
+<h1>All Incidents</h1>
+
+<% @incidents.each do |incident| %>
+    <a href="/incidents/<%= incident.id %>"><%= incident.code %> <%= incident.flight_number%></a>
+<% end %>
