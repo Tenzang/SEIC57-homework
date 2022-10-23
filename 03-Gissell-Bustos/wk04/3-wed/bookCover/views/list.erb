@@ -1,0 +1,18 @@
+<div class="list">
+    <ul>
+        <% @result['items'].each do |item| %>
+        
+            <li>
+            <div><%= item['volumeInfo']['title'] %></div>
+                <% if item['volumeInfo'].key?('imageLinks') %>
+                <img src="<%= item['volumeInfo']['imageLinks']['thumbnail']%>" />
+            <% else %>
+                <div> No imagen</div>
+            <% end %>
+            </li>
+            
+        <% end %>
+    </ul>
+
+</div>
+
