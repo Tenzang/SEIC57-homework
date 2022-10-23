@@ -1,0 +1,15 @@
+<h1>Directors</h1>
+<div class="stage">
+    <% @directors.each do |director| %>
+        <div class="square">
+            <a href="/directors/<%= director.id_d %>">
+                <img class="feature" src="<%= director.image %>" alt="<%= director.name %>">
+            </a>
+            <p>
+                <a href="/directors/<%= director.id_d %>">
+                    <%= director.name %>
+                </a>
+            </p>
+        </div>
+    <% end %>
+</div>

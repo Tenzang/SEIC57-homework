@@ -1,0 +1,20 @@
+
+<div class="show">
+    <h1><%= @movie.name.upcase %></h1>
+
+    <% unless @movie.image.nil? || @movie.image.empty? %>
+        <img class="feature" src="<%= @movie.image %>" alt="<%= @movie.name %>">
+    <% end %>
+
+    <p>Director: 
+        <a href="/directors/<%= @movie.id_d %>">
+            <%= @director.name %>
+        </a>
+    </p>
+
+    <div class="controls">
+        <a href="/movies/<%= @movie.id_m %>/edit">Edit Movie</a>
+        <a href="/movies/<%= @movie.id_m %>/delete">Delete Movie</a>
+    </div>
+</div>
+
