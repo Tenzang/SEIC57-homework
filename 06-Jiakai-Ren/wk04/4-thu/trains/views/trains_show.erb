@@ -1,0 +1,25 @@
+<h1><%= @train["name"] %> Set</h1>
+
+<% unless @train["image"].nil? || @train["image"].empty? %>
+    <img class="feature" src="<%= @train["image"] %>" alt="<%= @train["name"]%> set train">
+<% end %>
+
+<% unless @train["review"].nil? || @train["review"].empty? %>
+    <p>This train type has a user rating of <span class="score"><%= @train["review"] %></span>/ 10.</p>
+<% end %>
+
+<p>This train type runs on the following lines:</p>
+<div class="line-squares-container">
+    <% @lines.sort.each do |line| %>
+        <div class="line-squares" id="<%= line %>"><div><%= line %></div></div>
+    <% end %>
+</div>
+
+<div class="actions">
+    <form class="action-buttons" action="/trains/<%= @train["id"] %>/edit">
+        <button>Edit</button>
+    </form>
+    <form class="action-buttons" action="/trains/<%= @train["id"] %>/delete">
+        <button>Delete</button>
+    </form>
+</div>
