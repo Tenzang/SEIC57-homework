@@ -1,0 +1,14 @@
+<!-- Page about all the sports -->
+
+<h1>Sports Below</h1>
+
+<!--display all the sports names on the page and have a link embedded in the name-->
+
+
+<% @sports.each do |sport| %>
+    <p>
+        <a href="/sports/<%=sport["id"]%>">
+        <%= sport["name"] %>
+        </a>
+    </p>
+<% end %>

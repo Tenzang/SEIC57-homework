@@ -1,0 +1,27 @@
+<h1>Create a new train type!</h1>
+
+<form action="/trains" method="post">
+    <label>
+        New set:
+        <input name="name" placeholder="C" required>
+    </label>
+
+    <label>
+        On lines:
+        <input name="lines" placeholder="T1, T3, T4, etc" required>
+    </label>
+
+    <label>
+        Image:
+        <input type="url" name="image" placeholder="https://...">
+    </label>
+
+    <label>
+        Rating:
+        <input type="number" step="0.1" min="0" max="10" name="review" placeholder="e.g. 7.6 (0-10)">
+    </label>
+
+    <div class="long-button-container">
+        <button class="long-button">Deploy the train</button>
+    </div>
+</form>
