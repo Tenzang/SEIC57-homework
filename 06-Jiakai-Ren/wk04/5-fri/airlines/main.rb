@@ -9,9 +9,11 @@ ActiveRecord::Base.establish_connection(
 ActiveRecord::Base.logger = Logger.new(STDERR)
 
 class Airline < ActiveRecord::Base
+    has_many :incidents, dependent: :destroy
 end
 
 class Incident < ActiveRecord::Base
+    belongs_to :airline
 end
 
 # HOME
@@ -106,4 +108,31 @@ end
 get '/incidents/:id' do
     @incident = Incident.find params[:id]
     erb :incidents_show
+end
+
+# EDIT
+get '/incidents/:id/edit' do
+    @incident = Incident.find params[:id]
+    erb :incidents_edit
+end
+
+# UPDATE
+post '/incidents/:id' do
+    incident = Incident.find params[:id]
+    incident.code = params[:code]
+    incident.flight_number = params[:flight_number]
+    incident.death = params[:death]
+    incident.injury = params[:injury]
+    incident.survival = params[:survival]
+    incident.image = params[:image]
+    incident.description = params[:description]
+    incident.save
+    redirect to("/incidents/#{ incident.id }")
+end
+
+# DESTROY
+get '/incidents/:id/delete' do
+    incident = Incident.find params[:id]
+    incident.destroy
+    redirect to('/incidents')
 end

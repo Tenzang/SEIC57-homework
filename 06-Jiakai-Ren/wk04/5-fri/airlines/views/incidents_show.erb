@@ -1,20 +1,30 @@
 <h1><%= @incident.code %> <%= @incident.flight_number %></h1>
 
-<% if @incident.image.present? %>
-    <img src="<%= @incident.image %>" alt="Incident image of <%= @incident.code %> <%= @incident.flight_number %>>" class="feature">
-<% end %>
+<div class="incident-container">
+    <div class="incident-image-container">
+        <% if @incident.image.present? %>
+            <img src="<%= @incident.image %>" alt="Incident image of <%= @incident.code %> <%= @incident.flight_number %>>" class="feature incident-image">
+        <% end %>
+    </div>
 
-<h3>Incident Description:</h3>
-<p><%= @incident.description %></p>
-<p>Death: <%= @incident.death %></p>
-<p>Injury: <%= @incident.injury %></p>
-<p>Survival: <%= @incident.survival %></p>
+    <div class="incident-info-container">
+        <div class="stats-container">
+            <p>Death: <%= @incident.death %></p>
+            <p>Injury: <%= @incident.injury %></p>
+            <p>Survival: <%= @incident.survival %></p>
+        </div>
+        <div class="description-container">
+            <h4>Incident Description:</h4>
+            <p><%= @incident.description %></p>
+        </div>
+    </div>
+</div>
 
 <div class="controls">
     <form action="/incidents/<%= @incident.id %>/edit">
-        <button>Modify history</button>
+        <button class="long-button">Modify history</button>
     </form>
     <form action="/incidents/<%= @incident.id %>/delete">
-        <button>Pretend it didn't happen</button>
+        <button class="long-button bankrupt">It didn't happen</button>
     </form>
 </div>

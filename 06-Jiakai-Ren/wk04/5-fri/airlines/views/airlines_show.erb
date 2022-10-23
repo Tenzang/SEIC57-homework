@@ -1,25 +1,31 @@
 <h1><%= @airline.name %></h1>
 
-<% if @airline.logo.present? %>
-    <img src="<%= @airline.logo %>" alt="<%= @airline.name %>" class="feature">
-<% end %>
+<div class="airlines-container">
+    <div class="logo-container">
+        <% if @airline.logo.present? %>
+            <img src="<%= @airline.logo %>" alt="<%= @airline.name %>" class="feature">
+        <% end %>
+    </div>
 
-<p>IATA code: <%= @airline.code %></p>
-<p>Registered country: <%= @airline.country %></p>
+    <div class="info-container">
+        <p>IATA code: <%= @airline.code %></p>
+        <p>Registered country: <%= @airline.country %></p>
 
-<% if @airline.fleet_size.present? %>
-    <p>Fleet size: <%= @airline.fleet_size %></p>
-<% end %>
+        <% if @airline.fleet_size.present? %>
+            <p>Fleet size: <%= @airline.fleet_size %></p>
+        <% end %>
 
-<% if @airline.incident_count.present? %>
-    <p>Incident count: <%= @airline.incident_count %></p>
-<% end %>
+        <% if @airline.incident_count.present? %>
+            <p>Incident count: <%= @airline.incident_count %></p>
+        <% end %>
+    </div>
+</div>
 
 <div class="controls">
     <form action="/airlines/<%= @airline.id %>/edit">
         <button>Edit</button>
     </form>
     <form action="/airlines/<%= @airline.id %>/delete">
-        <button>Bankrupt it</button>
+        <button class="bankrupt">Bankrupt</button>
     </form>
 </div>

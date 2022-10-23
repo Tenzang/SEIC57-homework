@@ -1,31 +1,34 @@
 <h1>Edit <%= @airline.name %> (<%= @airline.code %>)</h1>
 
 <form action="/airlines/<%= @airline.id %>" method="post">
-    <label>
-        *Airline name:
-        <input name="name" required value="<%= @airline.name %>">
-    </label>
-    <label>
-        *IATA code:
-        <input name="code" required value="<%= @airline.code %>">
-    </label>
-    <label>
-        *Registered country:
-        <input name="country" required value="<%= @airline.country %>">
-    </label>
-    <label>
-        Fleet size:
-        <input type="number" name="fleet_size" value="<%= @airline.fleet_size %>">
-    </label>
-    <label>
-        Logo link:
-        <input type="url" name="logo" value="<%= @airline.logo %>">
-    </label>
-    <label>
-        Incident count:
-        <input type="number" name="incident_count" value="<%= @airline.incident_count %>">
-    </label>
-    <button>Fix this airline</button>
+    <div class="form-entry">
+        <label>
+            *Airline name:
+            <input name="name" required value="<%= @airline.name %>">
+        </label>
+        <label>
+            *IATA code:
+            <input name="code" required value="<%= @airline.code %>">
+        </label>
+        <label>
+            *Registered country:
+            <input name="country" required value="<%= @airline.country %>">
+        </label>
+        <label>
+            Fleet size:
+            <input type="number" name="fleet_size" value="<%= @airline.fleet_size %>" min="0">
+        </label>
+        <label>
+            Logo link:
+            <input type="url" name="logo" value="<%= @airline.logo %>">
+        </label>
+        <label>
+            Incident count:
+            <input type="number" name="incident_count" value="<%= @airline.incident_count %>" min="0">
+        </label>
+        <p class="required-text">Fields marked with (*) are required</p>
+    </div>
+    <div class="controls">
+        <button class="long-button">Fix this airline</button>
+    </div>
 </form>
-
-<p>* - Required</p>
