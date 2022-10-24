@@ -1,0 +1,16 @@
+<h1>Edit your note</h1>
+
+<form action="/notes/<%= @note["id"] %>" method="post">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Title</label>
+        <br>
+        <input name="title"  value="<%= @note["title"] %>" class="form-control" id="exampleFormControlInput1" placeholder="Title" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Note</label>
+        <br>
+        <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="3" required><%= @note["content"] %></textarea>
+        <button>Edit note</button>
+        <a class="btn btn-primary" href="/notes" role="button">Cancel</a>
+    </div>
+</form>
