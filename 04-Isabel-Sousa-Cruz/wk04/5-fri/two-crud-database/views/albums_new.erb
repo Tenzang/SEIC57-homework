@@ -1,27 +1,49 @@
 <div>
-    <h1>Add a new album</h1>
-
     <% if @already_exists %>
-        <div>This album already exists!</div>
+        <div class="alert alert-warning" role="alert">
+            This album already exists!
+        </div>
     <% end %>
 
+    <% if @non_existing_band %>
+        <div class="alert alert-warning" role="alert">
+            The author band of this album still wasn't added. Please, first add the band so we can make a link to this album.
+        </div>
+    <% end %>
+
+    <h1>Add a new album</h1>
+
     <form action="/albums" method="post">
-        <label>Name</label>
-        <input placeholder="TRAUMA" name="name" required>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <br>
+            <input name="name" class="form-control" id="exampleFormControlInput1" placeholder="TRAUMA" required>
+        </div>
 
-        <label>Band</label>
-        <input placeholder="I Prevail" name="band" required>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Album image</label>
+            <br>
+            <input name="image" class="form-control" id="exampleFormControlInput1" placeholder="url" required>
+        </div>
 
-        <label>Thumbnail</label>
-        <input placeholder="url" name="image" required>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Band</label>
+            <br>
+            <input name="band" class="form-control" id="exampleFormControlInput1" placeholder="I Prevail" required>
+        </div>
 
-        <label>Released year</label>
-        <input placeholder="2010" name="released_year">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Released year</label>
+            <br>
+            <input name="released_year" class="form-control" id="exampleFormControlInput1" placeholder="2010" required>
+        </div>
 
-        <label>Info</label>
-        <input placeholder="Fun facts" name="info">
-
-        <br>
-        <button>Add</button>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Info</label>
+            <br>
+            <textarea name="info" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+            <button>Add</button>
+            <a class="btn btn-primary" href="/albums" role="button">Cancel</a>
+        </div>
     </form>
 </div>

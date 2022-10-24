@@ -37,11 +37,15 @@ nav a {
     font-size: 130%;
 }
 
+nav a:hover {
+    color: rgb(95, 38, 38);
+}
+
 img {
     width: 400px;
     height: 500px;
     align-self: center;
-    border-radius: 0.5em;
+    border-radius: 40px;
     padding-top: 1em;
     padding-bottom: 1em;
 }
@@ -49,7 +53,6 @@ img {
 main {
     display: flex;
     flex-direction: column;
-
 }
 
 aside {

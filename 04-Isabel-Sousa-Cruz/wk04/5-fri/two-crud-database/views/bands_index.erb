@@ -1,11 +1,20 @@
-<h1>Bands list</h1>
+<div class="all-index">
+    <% if @bands.empty? %>
+        <div>
+            You don't have any bands yet :(
+        </div>
+    <% end %>
 
-<%  @bands.each do |band| %>
-    <div>
-        <a href="/bands/<%= band.id %>">
-            <%= band.name %>
-        </a>
-        <br>
-        <img class="thumbnail" src="<%= band.image %>" >
-    </div>
-<% end %>
+    <% @bands.each do |band| %>
+        <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+            <img class="card-img-top" src="<%= band.image %>">
+            <div class="card-body">
+                <h5 class="card-title"><%= band.name %></h5>
+                <a class="btn btn-primary" href="bands/<%= band.id %>"> 
+                    Open 
+                </a></div>
+            <div class="card-body">
+            </div>
+        </div>
+    <% end  %>
+</div>

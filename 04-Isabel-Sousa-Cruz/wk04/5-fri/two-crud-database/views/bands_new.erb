@@ -6,16 +6,21 @@
     <% end %>
 
     <form action="/bands" method="post">
-        <label>Band</label>
-        <input placeholder="The Kooks" name="name" required>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Band</label>
+            <br>
+            <input name="name" class="form-control" id="exampleFormControlInput1" placeholder="The Kooks" required>
+        </div>
 
-        <label>Band image</label>
-        <input placeholder="url" name="image" required>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Band image</label>
+            <br>
+            <input name="image" class="form-control" id="exampleFormControlInput1" placeholder="url" required>
+        </div>
 
-        <label>Albums</label>
-        <input placeholder="Inside In/Inside Out, Konk, Junk of the Heart..." name="albums">
-
-        <br>
-        <button>Add</button>
+        <div class="mb-3">
+            <button>Add</button>
+            <a class="btn btn-primary" href="/bands" role="button">Cancel</a>
+        </div>
     </form>
 </div>

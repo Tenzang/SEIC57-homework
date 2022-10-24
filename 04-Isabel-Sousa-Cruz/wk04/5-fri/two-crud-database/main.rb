@@ -1,7 +1,7 @@
 require "sinatra"
 require "sinatra/reloader"
 require "active_record"
-
+require "pry"
 
 ActiveRecord::Base.establish_connection(
     :adapter => "sqlite3",
@@ -10,8 +10,15 @@ ActiveRecord::Base.establish_connection(
 
 ActiveRecord::Base.logger = Logger.new(STDERR)
 
-class Album < ActiveRecord::Base
+class Band < ActiveRecord::Base
+    has_many :albums, dependent: :destroy
 end
+
+class Album < ActiveRecord::Base
+    belongs_to :band
+end
+
+######
 
 get "/" do
     erb :home
@@ -29,28 +36,34 @@ get "/albums/new" do
     if params[:already_exists]
         @already_exists = true
     end
+    if params[:non_existing_band]
+        @non_existing_band = true
+    end
     erb :albums_new
 end
 
 # create
 
 post "/albums" do
-    allAlbums = Album.all
-    for album in allAlbums do
-        if album.name === params[:name] && album.band === params[:band]
+    band = Band.where(name: params[:band]).first
+    if !band
+        redirect to("/albums/new?non_existing_band=true")
+    else
+        existing_album = Album.where(name: params[:name], band: band).first
+        if existing_album
             redirect to("/albums/new?already_exists=true")
+        else
+            album = Album.new
+            album.name = params[:name]
+            album.band = band          # gets the band(author) related to the album
+            album.image = params[:image]
+            album.released_year = params[:released_year]
+            album.info = params[:info]
+            album.save
+
+            redirect to("/albums/#{album.id}")
         end
-    end  
-
-    album = Album.new
-    album.name = params[:name]
-    album.band = params[:band]
-    album.image = params[:image]
-    album.released_year = params[:released_year]
-    album.info = params[:info]
-    album.save
-
-    redirect to("/albums/#{album.id}")
+    end
 end
 
 # show
@@ -63,6 +76,10 @@ end
 # edit 
 
 get "/albums/:id/edit" do
+    if params[:non_existing_band]
+        @non_existing_band = true
+    end
+
     @album = Album.find params[:id]
     erb :albums_edit
 end
@@ -70,9 +87,20 @@ end
 
 # update
 post "/albums/:id" do
+    allBands = Band.all # change this
+    author = nil
+    for band in allBands do
+        if band.name === params[:band]
+            author = band
+        end
+    end
+    if !author
+        redirect to("/albums/#{album.id}/edit?non_existing_band=true")
+    end
+
     album = Album.find params[:id]
     album.name = params[:name]
-    album.band = params[:band]
+    album.band = author
     album.image = params[:image]
     album.released_year = params[:released_year]
     album.info = params[:info]
@@ -90,10 +118,6 @@ get "/albums/:id/delete" do
 end
 
 #######################################
-
-
-class Band < ActiveRecord::Base
-end
 
 get "/" do
     erb :home
@@ -122,12 +146,11 @@ post "/bands" do
         if band.name === params[:name]
             redirect to("/bands/new?already_exists=true")
         end
-    end  
+    end
 
     band = Band.new
     band.name = params[:name]
     band.image = params[:image]
-    band.albums = params[:albums]
     band.save
 
     redirect to("/bands/#{band.id}")
