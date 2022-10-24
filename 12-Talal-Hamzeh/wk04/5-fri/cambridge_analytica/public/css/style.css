@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fasthand&family=Josefin+Sans:wght@100&family=Pacifico&family=Silkscreen&display=swap');
+body {
+    background-color: white;
+    background-image: url("https://i.ytimg.com/vi/Q91nvbJSmS4/maxresdefault.jpg");
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+p{
+   
+    color: white;
+    font-size: 30px;
+    border-color: white;
+    font-family: 'Bebas Neue', cursive;
+    
+}
+h1{
+    text-align: center;
+    color: aliceblue;
+}
+.boxed {
+    border: 1px solid grey ;
+    height: fit-content;
+    padding: 50px;
+    box-shadow: 0px 0px 14px 2px grey;
+    opacity: 0.5;
+    margin: auto;
+    background-color:black;
+    color: black;
+    border-radius: 5% ;
+
+    
+   
+  }
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    font-family: 'Bebas Neue', cursive;
+
+}
+
+nav {
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    padding-left:10px;
+    padding-right:10px;
+}
+a{
+    margin-left : 1em;
+        margin-right : 1em;
+        color:yellow;
+        padding-top: 5%;
+}
+
+h2{
+    color:yellow;
+}
+.feature {
+    max-width: 100%;
+}
+.controls{
+    color: white;
+    font-size: 30px;
+}
+img{
+    width: 50%;
+    border-radius: 8px;
+}
+.set{
+    border: 3px solid grey ;
+    
+    height: fit-content;
+    padding: 20px;
+    box-shadow: 0px 0px 14px 2px grey;
+    opacity: 0.8;
+    margin: auto;
+    background-color:black;
+    color: pink;
+    border-radius: 25%;
+    
+}
+label{
+    color: yellow;
+}

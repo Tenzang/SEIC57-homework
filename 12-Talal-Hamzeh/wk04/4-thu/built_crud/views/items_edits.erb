@@ -1,0 +1,22 @@
+<h1> Edit Items </h1>
+<form action="/items/ <%= @item["id"]  %> " methods="post" >
+
+
+<label>name
+Item Name :
+<input name="name" required value=  " <%= @item["name"] %>" >
+</label>
+
+<label>Family
+Item <Details></Details> :
+<input name="family" required value=  " <%= @item["family"] %>" >
+</label>
+
+    <label>
+        Image:
+        <input type="url" name="image" value="<%= @item["image"] %>">
+    </label>
+
+    <button>Update Item</button>
+
+</form> 
