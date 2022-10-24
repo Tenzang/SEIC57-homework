@@ -1,0 +1,24 @@
+<h1>Edit Country</h1>
+
+<form action="/countries/<%= @country["id"] %>" method="post">
+    <label>
+        Name:
+        <input name="name" required value="<%= @country["name"] %>">
+    </label><p>
+
+    <label>
+        Image:
+        <input type="url" name="image" value="<%= @country["image"] %>">
+    </label><p>
+
+        Climate:
+        <input name="climate" value="<%= @country["climate"] %>">
+    </label><p>
+
+    <label>
+        Land Area: 
+        <input name="area" value="<%= @country["area"] %>">
+    </label><p>
+
+    <button>Update Country</button>
+</form>

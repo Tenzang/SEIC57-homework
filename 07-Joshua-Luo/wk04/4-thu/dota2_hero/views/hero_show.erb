@@ -1,0 +1,45 @@
+<h1><%= @hero["name"].upcase %></h1>
+
+<% unless @hero["image"].nil? || @hero["image"].empty? %>
+    <img class="feature" src="<%= @hero["image"] %>" alt="<%= @hero["name"] %>">
+<% end %>
+
+<!--{"id"=>1, "name"=>"Abaddon", "image"=>"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/abaddon.png", "Primary_Stat"=>"STR", "Agility"=>17.0, "Agility_Gain"=>1.5, "Intelligence"=>21.0, "Intelligence_Gain"=>2.0, "Strength"=>23.0, "Strength_Gain"=>2.6, "Health"=>660.0, "Health_Regen"=>1.75, "Mana"=>327.0, "Mana_Regen"=>1.28} -->
+<h5>
+    <%= @hero["Primary_Stat"] %>
+</h5>
+<p>
+    Agility: <%= @hero["Agility"] %>
+</p>
+<p>
+    Agility_Gain: <%= @hero["Agility_Gain"] %>
+</p>
+<p>
+    Intelligence: <%= @hero["Intelligence"] %>
+</p>
+<p>
+    Intelligence_Gain: <%= @hero["Intelligence_Gain"] %>
+</p>
+<p>
+    Strength: <%= @hero["Strength"] %>
+</p>
+<p>
+    Strength_Gain: <%= @hero["Strength_Gain"] %>
+</p>
+<p>
+    Health: <%= @hero["Health"] %>
+</p>
+<p>
+    Health_Regen: <%= @hero["Health_Regen"] %>
+</p>
+<p>
+    Mana: <%= @hero["Mana"] %>
+</p>
+<p>
+    Mana_Regen: <%= @hero["Mana_Regen"] %>
+</p>
+
+<div class="controls">
+    <a href="/heros/<%= @hero["id"] %>/edit">Edit Hero</a>
+    <a href="/heros/<%= @hero["id"] %>/delete">Delete Hero</a>
+</div>

@@ -1,0 +1,11 @@
+<h1> All Predators  </h1>
+
+<% @predator.each do |predator| %>
+    <p class="set">
+        <a href="/predators/<%= predator["id"] %>">
+            <%= predator["name"] %>
+            
+        </a>
+        
+    </p>
+<% end %>

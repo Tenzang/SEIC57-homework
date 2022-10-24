@@ -1,0 +1,8 @@
+<h1><%= @bourbon.name %></h1>
+<% if @bourbon.image.present? %>
+<img src="<%= @bourbon["image"] %>" alt="<%= @bourbon['name'] %>" class="feature">
+<% end %>
+<p>Alcohol Content: <%= @bourbon.alcohol_content %></p>
+
+<a href="/bourbons/<%= @bourbon.id %>/edit">Edit</a>
+<a href="/bourbons/<%= @bourbon.id %>/delete">Delete</a>

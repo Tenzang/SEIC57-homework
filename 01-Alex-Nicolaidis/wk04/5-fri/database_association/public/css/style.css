@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0 auto;
+    max-width: 0 auto;
+}
+
+.game-display{
+    border: 1px solid black;
+    display:flex;
+    justify-content: space-between;
+}
+.left{
+    border: 1px solid black;
+    width: 40%;
+}
+
+.right{
+    border: 1px solid black;
+    width: 50%;
+}

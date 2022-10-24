@@ -1,0 +1,15 @@
+<h1>Heros</h1>
+<div class="stage">
+    <% @heros.each do |hero| %>
+    <div class="square">
+        <a href="/heros/<%= hero["id"] %>">
+            <img class="feature" src="<%= hero["image"] %>" alt="<%= hero["name"] %>">
+        </a>
+        <p>
+            <a href="/heros/<%= hero["id"] %>">
+                <%= hero["name"] %>
+            </a>
+        </p>
+    </div>
+    <% end %>
+</div>

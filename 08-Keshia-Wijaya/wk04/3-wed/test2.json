@@ -1,0 +1,418 @@
+{
+    "kind": "books#volumes",
+    "totalItems": 2530,
+    "items": [
+        {
+            "kind": "books#volume",
+            "id": "eVpqDwAAQBAJ",
+            "etag": "L1VoCBI6xOw",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/eVpqDwAAQBAJ",
+            "volumeInfo": {
+                "title": "Ulysses",
+                "readingModes": {
+                    "text": false,
+                    "image": true
+                },
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "full-1.0.0",
+                "language": "en",
+                "previewLink": "http://books.google.com.au/books?id=eVpqDwAAQBAJ&pg=PP1&dq=title:Ulysses&hl=&cd=1&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=eVpqDwAAQBAJ&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=eVpqDwAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "AU",
+                "saleability": "FREE",
+                "isEbook": true,
+                "buyLink": "https://play.google.com/store/books/details?id=eVpqDwAAQBAJ&rdid=book-eVpqDwAAQBAJ&rdot=1&source=gbs_api"
+            },
+            "accessInfo": {
+                "country": "AU",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=eVpqDwAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "In his novel, Joyce parodies and retells a lot of plots and works from the world literature, quotes old myths and creates new ones. This makes the novel so unique."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "scvXAQAACAAJ",
+            "etag": "pEsdA9TShJY",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/scvXAQAACAAJ",
+            "volumeInfo": {
+                "title": "James Joyce's Ulysses",
+                "subtitle": "A Study (Classic Reprint)",
+                "authors": [
+                    "Stuart Gilbert"
+                ],
+                "publisher": "Forgotten Books",
+                "publishedDate": "2017-03-18",
+                "description": "Excerpt from James Joyce's Ulysses: A Study The 'key' to Ulysses, as M. Valery Larbaud has remarked, is plain to see on its title-page: the name 'ulysses'. It is in the story of the Odyssey that we may find a clue to the obscurities in this modern epic of a Dublin day. And the justification for this approximation of the ancient to the modem is founded on mysticism, 'upon incertitude, upon unlikelihood', like the Church, like all the theories that, hot for certainties, sapient man has concocted to solve the scheme of things. In writing this study I have not hesitated to emphasize the importance of the Homeric analogies and to explore certain remote hinterlands of esoteric thought. The analogy-hunter, like the cryptogrammatist dissecting a Shakespearian text, is liable to cut a somewhat ridiculous figure, if he let his hobby run away with him. But it is a far cry from Ithaca to Dublin, from the wisdom of the East to the practical reason of the West, and, if some of my analogies seem far-fetched, they are, I make bold to say, none the less apposite for that. Moreover, a reader of Ulysses needs to bear in mind that, though it is in no sense a parody of the Odyssey. About the Publisher Forgotten Books publishes hundreds of thousands of rare and classic books. Find more at www.forgottenbooks.com This book is a reproduction of an important historical work. Forgotten Books uses state-of-the-art technology to digitally reconstruct the work, preserving the original format whilst repairing imperfections present in the aged copy. In rare cases, an imperfection in the original, such as a blemish or missing page, may be replicated in our edition. We do, however, repair the vast majority of imperfections successfully; any imperfections that remain are intentionally left to preserve the state of such historical works.",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0243961731"
+                    },
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780243961733"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": false
+                },
+                "pageCount": 414,
+                "printType": "BOOK",
+                "averageRating": 5,
+                "ratingsCount": 2,
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "preview-1.0.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=scvXAQAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=scvXAQAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com.au/books?id=scvXAQAACAAJ&dq=title:Ulysses&hl=&cd=2&source=gbs_api",
+                "infoLink": "http://books.google.com.au/books?id=scvXAQAACAAJ&dq=title:Ulysses&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/James_Joyce_s_Ulysses.html?hl=&id=scvXAQAACAAJ"
+            },
+            "saleInfo": {
+                "country": "AU",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "AU",
+                "viewability": "NO_PAGES",
+                "embeddable": false,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=scvXAQAACAAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "NONE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "About the Publisher Forgotten Books publishes hundreds of thousands of rare and classic books. Find more at www.forgottenbooks.com This book is a reproduction of an important historical work."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "qrKhCgAAQBAJ",
+            "etag": "UfNVDKsWvPQ",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/qrKhCgAAQBAJ",
+            "volumeInfo": {
+                "title": "Ulysses Explained",
+                "subtitle": "How Homer, Dante, and Shakespeare Inform Joyce’s Modernist Vision",
+                "authors": [
+                    "David Weir"
+                ],
+                "publisher": "Springer",
+                "publishedDate": "2015-06-03",
+                "description": "When it comes to James Joyce's landmark work, Ulysses , the influence of three literary giants, Homer, Shakespeare, and Dante, cannot be overlooked. Examining Joyce in terms of Homeric narrative, Dantesque structure, and Shakespearean plot, Weir rediscovers Joyce's novel through the lens of his renowned predecessors.",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781137482877"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1137482877"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 254,
+                "printType": "BOOK",
+                "categories": [
+                    "Literary Criticism"
+                ],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "1.1.2.0.preview.3",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=qrKhCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=qrKhCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com.au/books?id=qrKhCgAAQBAJ&pg=PP1&dq=title:Ulysses&hl=&cd=3&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=qrKhCgAAQBAJ&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=qrKhCgAAQBAJ"
+            },
+            "saleInfo": {
+                "country": "AU",
+                "saleability": "FOR_SALE_AND_RENTAL",
+                "isEbook": true,
+                "listPrice": {
+                    "amount": 169,
+                    "currencyCode": "AUD"
+                },
+                "retailPrice": {
+                    "amount": 117.29,
+                    "currencyCode": "AUD"
+                },
+                "buyLink": "https://play.google.com/store/books/details?id=qrKhCgAAQBAJ&rdid=book-qrKhCgAAQBAJ&rdot=1&source=gbs_api",
+                "offers": [
+                    {
+                        "finskyOfferType": 1,
+                        "listPrice": {
+                            "amountInMicros": 169000000,
+                            "currencyCode": "AUD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 117290000,
+                            "currencyCode": "AUD"
+                        },
+                        "giftable": true
+                    },
+                    {
+                        "finskyOfferType": 3,
+                        "listPrice": {
+                            "amountInMicros": 59150000,
+                            "currencyCode": "AUD"
+                        },
+                        "retailPrice": {
+                            "amountInMicros": 53240000,
+                            "currencyCode": "AUD"
+                        },
+                        "rentalDuration": {
+                            "unit": "DAY",
+                            "count": 90
+                        }
+                    }
+                ]
+            },
+            "accessInfo": {
+                "country": "AU",
+                "viewability": "PARTIAL",
+                "embeddable": true,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com.au/books/download/Ulysses_Explained-sample-epub.acsm?id=qrKhCgAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "pdf": {
+                    "isAvailable": true,
+                    "acsTokenLink": "http://books.google.com.au/books/download/Ulysses_Explained-sample-pdf.acsm?id=qrKhCgAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=qrKhCgAAQBAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "SAMPLE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "Examining Joyce in terms of Homeric narrative, Dantesque structure, and Shakespearean plot, Weir rediscovers Joyce&#39;s novel through the lens of his renowned predecessors."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "NBTZzQEACAAJ",
+            "etag": "4rQ2nUDM/0E",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/NBTZzQEACAAJ",
+            "volumeInfo": {
+                "title": "Alfred Lord Tennyson",
+                "subtitle": "A Memoir by His Son",
+                "authors": [
+                    "Hallam Tennyson Baron Tennyson"
+                ],
+                "publisher": "Franklin Classics",
+                "publishedDate": "2018-10-10",
+                "description": "This work has been selected by scholars as being culturally important and is part of the knowledge base of civilization as we know it. This work is in the public domain in the United States of America, and possibly other nations. Within the United States, you may freely copy and distribute this work, as no entity (individual or corporate) has a copyright on the body of the work. Scholars believe, and we concur, that this work is important enough to be preserved, reproduced, and made generally available to the public. To ensure a quality reading experience, this work has been proofread and republished using a format that seamlessly blends the original graphical elements with text in an easy-to-read typeface. We appreciate your support of the preservation process, and thank you for being an important part of keeping this knowledge alive and relevant.",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "0342149059"
+                    },
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9780342149056"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": false
+                },
+                "pageCount": 560,
+                "printType": "BOOK",
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "preview-1.0.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=NBTZzQEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=NBTZzQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com.au/books?id=NBTZzQEACAAJ&dq=title:Ulysses&hl=&cd=4&source=gbs_api",
+                "infoLink": "http://books.google.com.au/books?id=NBTZzQEACAAJ&dq=title:Ulysses&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/Alfred_Lord_Tennyson.html?hl=&id=NBTZzQEACAAJ"
+            },
+            "saleInfo": {
+                "country": "AU",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "AU",
+                "viewability": "NO_PAGES",
+                "embeddable": false,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=NBTZzQEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "NONE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "This work has been selected by scholars as being culturally important and is part of the knowledge base of civilization as we know it. This work is in the public domain in the United States of America, and possibly other nations."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "b2GbzQEACAAJ",
+            "etag": "seZ1xAUtXC8",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/b2GbzQEACAAJ",
+            "volumeInfo": {
+                "title": "Welcome Ulysses",
+                "subtitle": "Baby's Daily LogBook with Customized Name (Ulysses), Immunizations, Breastfeeding Tracker Journal, Health Log Book for Newborns, Sleeping, Diaper and Baby Activity Notebook, 8. 5 X 11 In, 120 Pages, Matte Cover",
+                "authors": [
+                    "Tection Care"
+                ],
+                "publishedDate": "2020-06-17",
+                "description": "Perfect Baby's Daily Log Book record For New Parents Or Nannies to track daily Newborn activities, Baby's Daily Log Book for Ulysses, Great Gift for new parents, moms, baby shower gift, Birthday or for Christmas. This Baby Daily log book is Perfect For: Tracking Immunizations Baby's First Months logbook Tracking Feed (Breastfeeding / Bottle) Baby Sleep tracker (duration and time) Baby Health log Tracking Medicine (Time, Dosage) Diaper Baby Activity Tracking Log Book Details: Size: 8.5 x 11 in Pages: 120 pages Cover: Beautiful, Simple Design With Matte Finish Buy yours now and get a fast delivery service from Amazon. Click on author's name below the title to check more custom baby's daily Logbooks!",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9798654805140"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": false
+                },
+                "pageCount": 120,
+                "printType": "BOOK",
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": false,
+                "contentVersion": "preview-1.0.0",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com.au/books?id=b2GbzQEACAAJ&dq=title:Ulysses&hl=&cd=5&source=gbs_api",
+                "infoLink": "http://books.google.com.au/books?id=b2GbzQEACAAJ&dq=title:Ulysses&hl=&source=gbs_api",
+                "canonicalVolumeLink": "https://books.google.com/books/about/Welcome_Ulysses.html?hl=&id=b2GbzQEACAAJ"
+            },
+            "saleInfo": {
+                "country": "AU",
+                "saleability": "NOT_FOR_SALE",
+                "isEbook": false
+            },
+            "accessInfo": {
+                "country": "AU",
+                "viewability": "NO_PAGES",
+                "embeddable": false,
+                "publicDomain": false,
+                "textToSpeechPermission": "ALLOWED",
+                "epub": {
+                    "isAvailable": false
+                },
+                "pdf": {
+                    "isAvailable": false
+                },
+                "webReaderLink": "http://play.google.com/books/reader?id=b2GbzQEACAAJ&hl=&printsec=frontcover&source=gbs_api",
+                "accessViewStatus": "NONE",
+                "quoteSharingAllowed": false
+            },
+            "searchInfo": {
+                "textSnippet": "Perfect Baby&#39;s Daily Log Book record For New Parents Or Nannies to track daily Newborn activities, Baby&#39;s Daily Log Book for Ulysses, Great Gift for new parents, moms, baby shower gift, Birthday or for Christmas."
+            }
+        },
+        {
+            "kind": "books#volume",
+            "id": "u0DPDwAAQBAJ",
+            "etag": "B8uQ5/Eazoc",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/u0DPDwAAQBAJ",
+            "volumeInfo": {
+                "title": "Ulysses",
+                "subtitle": "An Illustrated Edition",
+                "authors": [
+                    "James Joyce"
+                ],
+                "publisher": "Other Press, LLC",
+                "publishedDate": "2022-01-25",
+                "description": "This strikingly illustrated edition presents Joyce’s epic novel in a new, more accessible light, while showcasing the incredible talent of a leading Spanish artist. The neo-figurative artist Eduardo Arroyo (1937–2018), regarded today as one of the greatest Spanish painters of his generation, dreamed of illustrating James Joyce’s Ulysses. Although he began work on the project in 1989, it was never published during his lifetime: Stephen James Joyce, Joyce’s grandson and the infamously protective executor of his estate, refused to allow it, arguing that his grandfather would never have wanted the novel illustrated. In fact, a limited run appeared in 1935 with lithographs by Henri Matisse, which reportedly infuriated Joyce when he realized that Matisse, not having actually read the book, had merely depicted scenes from Homer’s Odyssey. Now available for the first time in English, this unique edition of the classic novel features three hundred images created by Arroyo—vibrant, eclectic drawings, paintings, and collages that reflect and amplify the energy of Joyce’s writing.",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781635420272"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "163542027X"
+                    }
+                ],
+                "readingModes": {
+                    "text": true,
+                    "image": true
+                },
+                "pageCount": 720,
+                "printType": "BOOK",
+                "categories": [
+                    "Fiction"
+                ],
+                "maturityRating": "NOT_MATURE",
+                "allowAnonLogging": true,
+                "contentVersion": "1.2.2.0.preview.3",
+                "panelizationSummary": {
+                    "containsEpubBubbles": false,
+                    "containsImageBubbles": false
+                },
+                "imageLinks": {
+                    "smallThumbnail": "http://books.google.com/books/content?id=u0DPDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                    "thumbnail": "http://books.google.com/books/content?id=u0DPDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+                },
+                "language": "en",
+                "previewLink": "http://books.google.com.au/books?id=u0DPDwAAQBAJ&pg=PP1&dq=title:Ulysses&hl=&cd=6&source=gbs_api",
+                "infoLink": "https://play.google.com/store/books/details?id=u0DPDwAAQBAJ&source=gbs_api",
+                "canonicalVolumeLink": "https://play.google.com/store/books/details?id=u0DPDwAAQBAJ"
+            },

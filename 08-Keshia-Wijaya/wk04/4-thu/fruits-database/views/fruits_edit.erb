@@ -1,0 +1,20 @@
+<h1>Edit Fruit</h1>
+
+<form action="/fruits/<%= @fruit["id"] %>" method="post">
+    <label>
+        Name:
+        <input name="name" required value="<%= @fruit["name"] %>">
+    </label>
+
+    <label>
+        Family:
+        <input name="family" value="<%= @fruit["family"] %>">
+    </label>
+
+    <label>
+        Image:
+        <input type="url" name="image" value="<%= @fruit["image"] %>">
+    </label>
+
+    <button>Update fruit</button>
+</form>
