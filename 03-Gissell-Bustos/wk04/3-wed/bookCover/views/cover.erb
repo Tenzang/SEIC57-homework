@@ -1,0 +1,10 @@
+     
+<div class="oneBook">
+    <div><%= @item['title'] %></div>
+        <% if @item.key?('imageLinks') %>
+        <img src="<%= @item['imageLinks']['thumbnail']%>" />
+    <% else %>
+        <div>No imagen</div>
+    <% end %>
+</div>  
+

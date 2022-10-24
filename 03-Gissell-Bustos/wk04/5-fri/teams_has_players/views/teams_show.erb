@@ -1,0 +1,16 @@
+<h1>
+    <%= @team.name%>
+</h1>
+
+<h2>
+    Gema: <%= @team.gema%>
+</h2>
+
+<% unless @team["logo"].nil? || @team["logo"].empty? %>
+    <img src="<%= @team["logo"]%>" alt="<%= @team["name"]%>">
+<% end %>
+
+<div class="controls">
+    <a href="/teams/<%= @team["id"]%>/edit">Edit team</a>
+    <a href="/teams/<%= @team["id"]%>/delete">Delete team</a>
+</div>
