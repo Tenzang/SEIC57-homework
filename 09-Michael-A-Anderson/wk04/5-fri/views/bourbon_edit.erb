@@ -1,0 +1,7 @@
+<h1>Edit Bourbon</h1>
+<form action="/bourbons/<%= @bourbon.id %>" method="post">
+<label>Name: <input name="name" value="<%= @bourbon.name %>" ></label>
+<label>Alcohol Content: <input name="alcohol_content" value="<%= @bourbon.alcohol_content %>" ></label>
+<label>Image: <input name="image" value=" <%= @bourbon.image %>" ></label>
+<button>Edit Brewery</button>
+</form>
