@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+
+.container {
+    max-width: 960px;
+    width: 90%;
+    margin: 20px auto;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    border-top: 2px solid #5d5c61;
+    padding: 10px;
+}
+
+nav {
+    text-align: center;
+}
+
+nav a {
+    transition: 0.2s all;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #5d5c61;
+    padding: 5px;
+}
+
+nav a:hover {
+    color: white;
+    background-color: #5d5c61;
+}
+
+.index-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 40%;
+}
+
+main a {
+    transition: 0.2s all;
+    text-align: center;
+    text-decoration: none;
+    color: #557a95;
+    margin: 5px 0px;
+    padding: 5px;
+}
+
+main a:hover {
+    color: white;
+    background-color: #557a95;
+}
+
+.airlines-container {
+    display: flex;
+}
+
+.logo-container {
+    width: 33%;
+    padding: 10px;
+}
+
+.info-container {
+    width: 66%;
+    padding: 10px;
+}
+
+.feature {
+    width: 100%;
+}
+
+.controls {
+    display: flex;
+    justify-content: right;
+    margin: 10px 0px;
+    padding: 10px;
+    border-top: 2px solid #5d5c61;
+}
+
+.controls form {
+    display: inline-block;
+    margin: 0px 10px;
+}
+
+button {
+    transition: 0.2s all;
+    width: 100px;
+    background-color: #b1a296;
+    color: white;
+    border: 1px solid #b1a296;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px;
+}
+
+button:hover {
+    color: #b1a296;
+    background-color: white;
+}
+
+.long-button {
+    width: 120px;
+}
+
+.longer-button {
+    width: 140px;
+}
+
+.bankrupt:hover {
+    color: red;
+    border: 1px solid red;
+}
+
+.form-entry {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.form-entry label {
+    display: flex;
+    margin: 5px;
+    justify-content: space-between;
+}
+
+.required-text {
+    font-size: 0.6em;
+    padding: 0 5px;
+}
+
+.incident-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.incident-image-container {
+    width: 75%;
+}
+
+.incident-info-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+
+.stats-container {
+    width: 33%;
+    text-align: right;
+    padding: 0 20px;
+    border-right: 1px solid #5d5c61;
+}
+
+.description-container {
+    width: 66%;
+    padding: 0 20px;
+}
+
+h4{
+    margin: 10px 0;
+}
+
+input, textarea {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}

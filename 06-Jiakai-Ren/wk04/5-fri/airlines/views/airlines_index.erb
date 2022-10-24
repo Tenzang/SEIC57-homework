@@ -1,0 +1,7 @@
+<h1>All Airlines</h1>
+
+<div class="index-container">
+    <% @airlines.each do |airline| %>
+        <a href="/airlines/<%= airline.id %>"><%= airline.name %> (<%= airline.code %>)</a>
+    <% end %>
+</div>
