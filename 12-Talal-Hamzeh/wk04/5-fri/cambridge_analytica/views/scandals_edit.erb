@@ -1,0 +1,19 @@
+<h1>Edit Diagram</h1>
+
+<form action="/diagram/<%= @scandal["id"] %>" method="post">
+    <label>
+        Name:
+        <input name="name" required value="<%= @scandal["name"] %>">
+    </label>
+     <label>
+        Edit paragraph :
+        <input name="paragraph" required value="<%= @scandal["paragraph"] %>">
+    </label>
+
+    <label>
+        Image:
+        <input type="url" name="image" value="<%= @scandal["image"] %>">
+    </label>
+
+    <button>Update Diagram</button>
+</form>

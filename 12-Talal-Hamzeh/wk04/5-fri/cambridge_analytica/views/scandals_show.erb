@@ -1,0 +1,13 @@
+
+<h1>
+    <%= @scandal["name"] %>
+</h1>
+<h2><%= @scandal["paragraph"] %></h2>
+<% unless @scandal["image"].nil? || @scandal["image"].empty? %>
+    <img class="feature" src="<%= @scandal["image"] %>" alt="<%= @scandal["name"] %>">
+<% end %>
+
+<div class="controls">
+    <a href="/diagram/<%= @scandal["id"] %>/edit">Edit</a>
+    <a href="/diagram/<%= @scandal["id"] %>/delete">Delete </a>
+</div>
