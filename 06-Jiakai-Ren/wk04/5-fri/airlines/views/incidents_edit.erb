@@ -1,0 +1,38 @@
+<h1>Edit Incident <%= @incident.code %> <%= @incident.flight_number %></h1>
+
+<form action="/incidents/<%= @incident.id %>" method="post">
+    <div class="form-entry">
+        <label>
+            *Airline IATA code:
+            <input name="code" required placeholder="XX" value="<%= @incident.code %>">
+        </label>
+        <label>
+            *Flight number:
+            <input type="number" name="flight_number" required placeholder="123" value="<%= @incident.flight_number %>" min="0">
+        </label>
+        <label>
+            *Death:
+            <input type="number" name="death" required placeholder="0" value="<%= @incident.death %>" min="0">
+        </label>
+        <label>
+            *Injury:
+            <input type="number" name="injury" required placeholder="2" value="<%= @incident.injury %>" min="0">
+        </label>
+        <label>
+            *Survival:
+            <input type="number" name="survival" required placeholder="20" value="<%= @incident.survival %>" min="0">
+        </label>
+        <label>
+            Image:
+            <input type="url" name="image" placeholder="https://..." value="<%= @incident.image %>">
+        </label>
+        <label>
+            *Description:
+            <textarea name="description" required placeholder="This flight was from..." rows="5" cols="20"><%= @incident.description %></textarea>
+        </label>
+        <p class="required-text">Fields marked with (*) are required</p>
+    </div>
+    <div class="controls">
+        <button class="longer-button">Apply new history</button>
+    </div>
+</form>

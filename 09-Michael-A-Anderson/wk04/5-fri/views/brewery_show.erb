@@ -1,0 +1,8 @@
+<h1><%= @brewery.name %></h1>
+<% if @brewery.image.present? %>
+<img src="<%= @brewery["image"] %>" alt="<%= @brewery['name'] %>" class="feature">
+<% end %>
+<p>Produced in: <%= @brewery.country %></p>
+
+<a href="/breweries/<%= @brewery.id %>/edit">Edit</a>
+<a href="/breweries/<%= @brewery.id %>/delete">Delete</a>

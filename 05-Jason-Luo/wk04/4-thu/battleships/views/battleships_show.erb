@@ -1,0 +1,24 @@
+<h1>
+<%= @battleship["name"] %>
+</h1>
+
+<h2>
+    Commissioned Date: <%= @battleship["commissioneddate"] %>
+</h2>
+
+<h2>
+    Main Caliber: <%= @battleship["maincaliber"] %>
+</h2>
+
+<h2>
+    Torpedos: <%= @battleship["torpedos"] %>
+</h2>
+
+ <% unless @battleship["image"].nil? || @battleship["image"].empty? %>
+    <img class="feature" src="<%= @battleship["image"] %>" alt="<%= @battleship["name"] %>">
+<% end %>
+
+<div class="controls">
+<a href="/battleships/<%= @battleship["id"] %>/edit">Edit Battleship Details</a>
+<a href="/battleships/<%= @battleship["id"] %>/delete">Delete Battleship Details</a>
+</div>

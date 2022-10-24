@@ -1,0 +1,34 @@
+body {
+  background-color: aquamarine;
+  background-image: url(/img/battleships.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgb(15, 91, 156);
+  padding: 1em;
+  min-height: 90vh;
+}
+
+#photo {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 5px;
+  min-width: auto;
+  width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav {
+  text-align: right;
+}
+
+.feature {
+  max-width: 100%;
+}

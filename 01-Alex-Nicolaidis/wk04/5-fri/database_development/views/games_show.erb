@@ -1,0 +1,21 @@
+<h1><%= @game.name %></h1>
+<div class="game-display">
+    <div class="left">
+        <p>Developer: <%= @game.developer %></p>
+        <p>Release Date: <%= @game.release %></p>
+        <p>Game Description <%= @game.information %></p>
+
+    </div>
+    <div class="right">
+        <img src="<%= @game.image %>" alt="<%= @game.name%>">
+    </div>
+
+    <footer>
+        <a href="/games/<%= params[:id] %>/edit">Edit Game</a>
+        <a href="/games/<%= params[:id] %>/delete">Delete Game</a>
+    </footer>
+</div>
+
+
+
+

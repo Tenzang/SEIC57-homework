@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battleships</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+
+  <div class="container">
+    <nav>
+      <a href="/">Home</a>
+      <a href="/battleships">All Battleships</a>
+      <a href="/battleships">New Battleships</a>
+    </nav>
+
+    <h1>Battleship Directory</h1>
+    <!-- Content will appear below -->
+    <%= yield %>
+    <!-- Content appears above -->
+  </div>
+  </body>
+</html>

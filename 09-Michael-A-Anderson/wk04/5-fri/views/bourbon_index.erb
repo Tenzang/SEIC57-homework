@@ -1,0 +1,6 @@
+<h1>Bourbons</h1>
+<% @bourbons.each do |bourbon| %>
+<p>
+<a href="/bourbons/<%= bourbon.id %>"><%= bourbon.name %></a>
+</p>
+<% end%>
