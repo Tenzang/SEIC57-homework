@@ -1,0 +1,21 @@
+
+<div class = "edit-city">
+<form action="/cities/<%= @city["id"] %>" method="post">
+    <label>
+        Name:
+        <input name="name" required value="<%= @city["name"] %>">
+    </label>
+
+    <label>
+        Note:
+        <input name="note" value="<%= @city["note"] %>">
+    </label>
+
+    <label>
+        Image:
+        <input type="url" name="image" value="<%= @city["image"] %>">
+    </label>
+
+    <button>Update city</button>
+</form>
+</div>

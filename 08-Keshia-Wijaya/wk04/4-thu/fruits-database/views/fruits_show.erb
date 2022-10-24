@@ -1,0 +1,16 @@
+<h1>
+    <%= @fruit["name"] %>
+</h1>
+
+<h2>
+    Family: <%= @fruit["family"] %>
+</h2>
+
+<% unless @fruit["image"].nil? || @fruit["image"].empty? %>
+    <img class="feature" src="<%= @fruit["image"] %>" alt="<%= @fruit["name"] %>">
+<% end %>
+
+<div class="controls">
+    <a href="/butterflies/<%= @fruit["id"] %>/edit">Edit fruit</a>
+    <a href="/butterflies/<%= @fruit["id"] %>/delete">Delete fruit</a>
+</div>

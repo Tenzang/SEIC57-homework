@@ -1,0 +1,15 @@
+<h1>Edit Countries</h1>
+
+<form action="/countries/<%= @country.id %>" method="post">
+    <label>
+        Name:
+        <input name="name" required value="<%= @country.name %>">
+    </label>
+
+    <label>
+        Image:
+        <input type="url" name="image" value="<%= @country.image %>">
+    </label>
+
+    <button>Update Country</button>
+</form> 

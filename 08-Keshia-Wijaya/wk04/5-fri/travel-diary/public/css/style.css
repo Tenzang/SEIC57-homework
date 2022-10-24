@@ -1,0 +1,107 @@
+body {
+    background-image: url(../images/image.jpg);
+    background-size: cover;
+    font-family: "Montserrat";
+}
+
+a:link { text-decoration: none;}
+
+a {
+    color: black;
+}
+
+.header {
+    padding-top: 35px;
+    padding-left: 50px;
+    width: 750px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.all-cities{
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+.new-city {
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+.show-city {
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+.edit-city {
+    padding-left: 50px;
+    padding-top: 50px;
+}
+.all-countries {
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+.new-country {
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+.controls {
+    padding-left: 50px;
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+}
+
+.div1 {
+    font-family: "Lora", sans-serif;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-left: 50px;
+    padding-top: 195px;
+    font-size: 80px;
+    position: relative;
+}
+.div2 {
+    font-family: "Lora", sans-serif;
+    font-size: 85px;
+    padding-top: 0px;
+    margin-top: 0px; 
+    padding-left: 50px; 
+}
+h1 {
+    margin-bottom: 0px;
+    color: aliceblue;
+}
+h2 {
+    padding-top: 0px;
+    margin-top: 0px;
+    color: aliceblue;
+}
+
+.images-container {
+    display: grid;
+    grid-template-columns:repeat(3,auto);
+    width: 1600px;
+    height: 600px;
+    margin: auto;
+    text-align: center;
+    vertical-align: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.cell {
+    width: 500px;
+    height: 500px;
+    box-shadow: 0 0 0 1px aliceblue;
+    border: 1px solid aliceblue;
+    cursor: pointer;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 15px;
+    font-size: 100px;
+    margin: auto;
+    text-align: center;
+}
