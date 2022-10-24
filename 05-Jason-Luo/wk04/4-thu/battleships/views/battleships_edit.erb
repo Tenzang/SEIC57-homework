@@ -1,0 +1,31 @@
+<h1>Edit Battleship</h1>
+
+<!-- post allows to send data to SQL server to create/update resource -->
+<form action="/battleships/<%= @battleship["id"] %>"  method="post">
+    <label>
+        Name:
+        <input name="name" required value="<%= @battleship["name"] %>">
+    </label>
+
+    <label>
+        Commissioned Date:
+        <input name="commissioneddate" value="<%= @battleship["commissioneddate"] %>">
+    </label>
+
+    <label>
+        Main Caliber:
+        <input name="maincaliber" value="<%= @battleship["maincaliber"] %>">
+    </label>
+
+    <label>
+        Torpedos:
+        <input name="torpedos" value="<%= @battleship["torpedos"] %>">
+    </label>
+
+    <label>
+        Image:
+        <input type="url" name="image" value="<%= @battleship["image"] %>">
+    </label>
+
+    <button>Battleship Update</button>
+</form>
