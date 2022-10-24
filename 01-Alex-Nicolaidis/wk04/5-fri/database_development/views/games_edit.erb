@@ -1,0 +1,28 @@
+<h1>Edit Game</h1>
+
+<div class="edit-game">
+    <form action="/games/<%= @game.id %>" method="post" >
+        <label>
+            Name of Game:
+            <input type="text" name="name" placeholder="Apex Legends" required value="<%= @game.name %>">
+        </label>
+        <label>
+            Game Developer:
+            <input type="text" name="developer"placeholder="Respawn" value="<%= @game.developer %>">
+        </label>
+        <label>
+            Release Date:
+            <input type="text" name="release" placeholder="2022-02-04" value="<%= @game.release %>">
+        </label>
+        <label>
+            Game Information:
+            <input type="text" name="information" placeholder="Game Info here" value="<%= @game.information %>">
+        </label>
+        <label>
+            Game Cover Image
+            <input type="url" name="image" placeholder="https://www.gameimage.com" value="<%= @game.image %>">
+        </label>
+        
+    <button>Update Game Info</button>
+    </form>
+</div>

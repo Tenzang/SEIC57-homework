@@ -1,0 +1,13 @@
+<h1>Characters</h1>
+
+
+<% @characters.each do |character| %>
+<p>
+    <a href="/characters/<%= character.id %>"><%= character.name %></a>
+</p>
+
+<% end %>
+
+<p class="new-character">
+    <a href="/characters/new">Add New</a>
+</p>
