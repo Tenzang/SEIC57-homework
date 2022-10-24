@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fasthand&family=Josefin+Sans:wght@100&family=Pacifico&family=Silkscreen&display=swap');
+
+body {
+    background-color: white;
+    /*background-image: url("https://entrepreneurship.columbia.edu/wp-content/uploads/2015/06/GA.jpg");*/
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+p{
+   
+    color: white;
+    font-size: 40px;
+    border-color: grey;
+    
+}
+.boxed {
+    border: 1px solid grey ;
+    
+    height: fit-content;
+    padding: 50px;
+    box-shadow: 0px 0px 14px 2px grey;
+    opacity: 0.8;
+    margin: auto;
+    background-color: #000;
+    color: #fff;
+   
+  }
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    font-family: 'Bebas Neue', cursive;
+
+}
+
+nav {
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+    padding-left:30px;
+    padding-right:30px;
+}
+a{
+    margin-left : 2em;
+        margin-right : 2em;
+        color:red;
+        padding-top: 5%;
+}
+
+.feature {
+    max-width: 100%;
+}
+.controls{
+    
+
+
+    font-size: 20px;
+}

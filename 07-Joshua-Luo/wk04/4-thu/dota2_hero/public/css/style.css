@@ -1,0 +1,35 @@
+body {
+    background-color: burlywood;
+}
+
+.container {
+    margin: 0 auto;
+    max-height: 900px;
+    max-width: 960px;
+    background-color: white;
+}
+
+.stage {
+    background-color: green;
+    max-width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.square {
+    height: 200px;
+    width: 300px;
+    margin: auto;
+}
+
+.square img {
+    width: 250px;
+    margin: 0 auto;
+    display: block;
+}
+
+.square p {
+    cursor: pointer;
+    text-align: center;
+}

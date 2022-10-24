@@ -1,0 +1,11 @@
+
+
+<h1>All items</h1>
+
+<% @items.each do |items| %>
+    <p>
+        <a href="/items/<%= items["id"] %>">
+            <%= items["name"] %>
+        </a>
+    </p>
+<% end %>

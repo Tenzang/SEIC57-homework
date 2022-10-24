@@ -1,0 +1,28 @@
+<h1>Edit City</h1>
+
+<form action="/cities/<%= @city["id"] %>" method="post">
+    <label>
+        Name:
+        <input name="name" required value="<%= @city["name"] %>">
+    </label><p>
+
+    <label>
+        Image:
+        <input type="url" name="image" value="<%= @city["image"] %>">
+    </label><p>
+
+        Landmark:
+        <input name="landmark" value="<%= @city["landmark"] %>">
+    </label><p>
+
+    <label>
+        Cost of Living: 
+        <input name="cost" value="<%= @city["cost"] %>">
+    </label><p>
+
+    <label>
+        Country: 
+        <input name="countryid" value="<%= @city["countryid"] %>">
+    </label><p>
+    <button>Update City</button>
+</form>

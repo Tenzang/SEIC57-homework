@@ -1,0 +1,10 @@
+
+<div class = "all-countries">
+    <% @countries.each do |country| %>
+        <p>
+            <a href="/countries/<%= country.id %>">
+                <%= country.name %>
+            </a>
+        </p>
+    <% end %>
+</div>

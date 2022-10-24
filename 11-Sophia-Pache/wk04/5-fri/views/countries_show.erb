@@ -1,0 +1,20 @@
+<% if @country.image.present? %>
+    <img class="profpic" src="<%= @country.image %>" alt="<%= @country.name %>" width="500" height="300">
+<% end %>
+
+<h1>
+    <%= @country["name"] %>
+</h1>
+
+<h2>
+    Climate: <%= @country["climate"] %>
+</h2>
+
+<h2>
+    Land Area: <%= @country["area"] %> km2
+</h2> <p>
+
+<div class="controls">
+    <a href="/countries/<%= @country["id"] %>/edit">Edit Country</a>
+    <a href="/countries/<%= @country["id"] %>/delete">Delete Country</a>
+</div>

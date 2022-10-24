@@ -1,0 +1,19 @@
+<h1>Create Movie</h1>
+
+<form action="/movies" method="post">
+    <label>
+        Name: <input name = "name" required>
+    </label>
+    <label>
+        Image: <input type="url" name = "image">
+    </label>
+    <label>
+        Director: 
+        <select name = "d_name" value="">
+            <% @directors.each do |director| %>
+                <option value="<%= director.name %>"><%= director.name %></option>
+            <% end %>
+        </select>
+    </label>
+    <button>Create Movie</button>
+</form>
