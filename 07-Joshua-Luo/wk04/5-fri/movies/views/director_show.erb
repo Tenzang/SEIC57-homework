@@ -1,0 +1,48 @@
+<h1><%= @director.name.upcase %></h1>
+
+<% unless @director.image.nil? || @director.image.empty? %>
+    <img class="feature" src="<%= @director.image %>" alt="<%= @director.name %>">
+<% end %>
+
+
+<div class="controls">
+    <a href="/directors/<%= @director.id_d %>/edit">Edit director</a>
+    <a href="/directors/<%= @director.id_d %>/delete">Delete director</a>
+</div>
+
+
+<!--
+<h5>
+    <%= @director["Primary_Stat"] %>
+</h5>
+<p>
+    Agility: <%= @director["Agility"] %>
+</p>
+<p>
+    Agility_Gain: <%= @director["Agility_Gain"] %>
+</p>
+<p>
+    Intelligence: <%= @director["Intelligence"] %>
+</p>
+<p>
+    Intelligence_Gain: <%= @director["Intelligence_Gain"] %>
+</p>
+<p>
+    Strength: <%= @director["Strength"] %>
+</p>
+<p>
+    Strength_Gain: <%= @director["Strength_Gain"] %>
+</p>
+<p>
+    Health: <%= @director["Health"] %>
+</p>
+<p>
+    Health_Regen: <%= @director["Health_Regen"] %>
+</p>
+<p>
+    Mana: <%= @director["Mana"] %>
+</p>
+<p>
+    Mana_Regen: <%= @director["Mana_Regen"] %>
+</p>
+-->

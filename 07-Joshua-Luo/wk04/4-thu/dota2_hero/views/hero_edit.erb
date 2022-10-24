@@ -1,0 +1,49 @@
+<h1>Edit Hero</h1>
+
+<form action="/heros/<%= @hero["id"] %>" method="post">
+    <label>
+        Name: <input name = "name" required value="<%= @hero["name"] %>">
+    </label>
+    <label>
+        Image: <input type="url" name = "image" value="<%= @hero["image"] %>">
+    </label>
+    <label>
+        Primary Stat: 
+        <select name = "Primary_Stat" value="<%= @hero["Primary_Stat"] %>">
+            <option value="STR">STR</option>
+            <option value="INT">INT</option>
+            <option value="AGI">AGI</option>
+        </select>
+    </label>
+    <label>
+        Agility: <input name = "Agility" value="<%= @hero["Agility"] %>">
+    </label>
+    <label>
+        Agility_Gain: <input name = "Agility_Gain" value="<%= @hero["Agility_Gain"] %>">
+    </label>
+    <label>
+        Intelligence: <input name = "Intelligence" value="<%= @hero["Intelligence"] %>">
+    </label>
+    <label>
+        Intelligence_Gain: <input name = "Intelligence_Gain" value="<%= @hero["Intelligence_Gain"] %>">
+    </label>
+    <label>
+        Strength: <input name = "Strength" value="<%= @hero["Strength"] %>">
+    </label>
+    <label>
+        Strength_Gain: <input name = "Strength_Gain" value="<%= @hero["Strength_Gain"] %>">
+    </label>
+    <label>
+        Health: <input name = "Health" value="<%= @hero["Health"] %>">
+    </label>
+    <label>
+        Health_Regen: <input name = "Health_Regen" value="<%= @hero["Health_Regen"] %>">
+    </label>
+    <label>
+        Mana: <input name = "Mana" value="<%= @hero["Mana"] %>">
+    </label>
+    <label>
+        Mana_Regen: <input name = "Mana_Regen" value="<%= @hero["Mana_Regen"] %>">
+    </label>
+    <button>Edit Hero</button>
+</form>
