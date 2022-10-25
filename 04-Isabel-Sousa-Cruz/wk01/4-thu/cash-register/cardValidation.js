@@ -1,5 +1,5 @@
 /*
-Ideas: check expiration date! Check out the Luhn Algorithm for inspiration.
+
 */
 
 const CURRENT_YEAR = 2022;

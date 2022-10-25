@@ -1,0 +1,26 @@
+<div>
+    <h1>Add a new band</h1>
+
+    <% if @already_exists %>
+        <div>This band already exists!</div>
+    <% end %>
+
+    <form action="/bands" method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Band</label>
+            <br>
+            <input name="name" class="form-control" id="exampleFormControlInput1" placeholder="The Kooks" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Band image</label>
+            <br>
+            <input name="image" class="form-control" id="exampleFormControlInput1" placeholder="url" required>
+        </div>
+
+        <div class="mb-3">
+            <button>Add</button>
+            <a class="btn btn-primary" href="/bands" role="button">Cancel</a>
+        </div>
+    </form>
+</div>

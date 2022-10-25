@@ -1,0 +1,16 @@
+<div>
+    <h1><%= @album.name %></h1>
+
+    <img class="thumbnail" src="<%= @album.image %>" alt=<%= @album.name %> >
+    <h3>Band</h3>
+    <a href="/bands/<%= @album.band.id %>"><p><%= @album.band.name %></p></a>
+    <h3>Released year</h3>
+    <p><%= @album.released_year %></p>
+    <h3>Info</h3>
+    <p><%= @album.info %></p>
+
+    <div>
+        <a class="btn btn-primary" href="/albums/<%= @album.id %>/edit" role="button">Edit</a>
+        <a class="btn btn-primary" href="/albums/<%= @album.id %>/delete" role="button">Delete</a>
+    </div>
+</div>

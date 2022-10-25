@@ -1,0 +1,19 @@
+<div class="all-index">
+    <% if @albums.empty? %>
+        <div>
+            You don't have any albums yet :(
+        </div>
+    <% end %>
+    <% @albums.each do |album| %>
+        <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+            <div class="card-header">
+                <a href="albums/<%= album.id %>"> 
+                    <%= album.name %> 
+                </a>
+            </div>
+            <div class="card-body">
+                <img src="<%= album.image %>">
+            </div>
+        </div>
+    <% end  %>
+</div>
