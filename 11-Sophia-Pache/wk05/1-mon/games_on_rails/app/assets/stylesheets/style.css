@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+html, body, .page-container {
+    height: 100%;
+}
+
+body {
+    font-family: 'Bangers', cursive;
+    font-size: 19px;
+    font-weight: 300;
+    color: red;
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #000000;
+    line-height: 1.0;
+    text-align: center;
+    background-image: url('https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/347610/cf0a9d8c3796bb152f750e5634ac84577f79e724.jpg');
+    background-size: cover;
+    letter-spacing: 0.5em;
+    -webkit-text-stroke: 1px black;
+}
+
+a {
+	color: rgb(238, 85, 85);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+	color: rgb(255, 255, 51);
+}
+
+p {
+    line-height: 1.7;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+.highlight {
+    color: #99FF66;
+}
+
+.container {
+    /* background-color: rgb(16, 57, 30); */
+    background-image: url('https://media0.giphy.com/media/5oWpOD8Thsmo8/giphy.gif');
+    padding: 1em;
+    opacity: 0.8;
+    width: 500px;
+    margin-left: 30%;
+    margin-top: 10%;
+}

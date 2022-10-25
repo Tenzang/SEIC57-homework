@@ -1,11 +1,6 @@
-// Times Square, 34th, 28th, 23rd, Union Square, and 8th
-// The L line has the following stops: 8th, 6th, Union Square, 3rd, and 1st
-// The 6 line has the following stops: Grand Central, 33rd, 28th, 23rd, Union Square, and Astor Place.
-
-const INTERSECTION_LINE = "Union Square"
+const INTERSECTION_STOP = "Union Square"
 const TRAVEL_TYPE = "travel";
 const CHANGE_TYPE = "change";
-
 
 const lineFactory = function(lineName, stopNames) {
     return {
@@ -17,131 +12,124 @@ const lineFactory = function(lineName, stopNames) {
 const lineNStops = ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"];
 const lineLStops = ["8th", "6th", "Union Square", "3rd", "1st"];
 const line6Stops = ["Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place"];
-
 const allLines = [lineFactory("N", lineNStops), lineFactory("L", lineLStops), lineFactory("6", line6Stops)];
 
-
-const getLineStops = function(line) {
+const getLineStops = function(lineName) {
     for (let i = 0; i < allLines.length; i++) {
         const currentLine = allLines[i];
-        if (line === currentLine.lineName) {
+        if (lineName === currentLine.lineName) {
             return currentLine.stops;
         }
     }
+    return null;
 };
 
-const getStops = function(fromStop, toStop, line) {
-    if(fromStop < toStop) {
-        return line.slice(fromStop + 1, toStop + 1);
+const getStops = function(fromStop, toStop, lineStops) {
+    if (fromStop < toStop) {
+        return lineStops.slice(fromStop + 1, toStop + 1);
     } else {
-        return line.slice(toStop, fromStop).reverse();
+        return lineStops.slice(toStop, fromStop).reverse();
     }
 }
 
+const travelToIntersectionStop = function(fromStop, lineStops) {
+    const intersectionStopIndex = lineStops.indexOf(INTERSECTION_STOP);
+    const fromStopIndex = lineStops.indexOf(fromStop);
 
-const travelToIntersectionStop = function(fromStop, line) {
-    const intersectionStopIndex = line.indexOf(INTERSECTION_LINE);
-    const fromStopIndex = line.indexOf(fromStop);
-
-    return getStops(fromStopIndex, intersectionStopIndex, line);
+    return getStops(fromStopIndex, intersectionStopIndex, lineStops);
 };
 
-const travelFromIntersectionStop = function(toStop, line) {
-    const intersectionStopIndex = line.indexOf(INTERSECTION_LINE);
-    const toStopIndex = line.indexOf(toStop);
-    return getStops(intersectionStopIndex, toStopIndex, line);
+const travelFromIntersectionStop = function(toStop, lineStops) {
+    const intersectionStopIndex = lineStops.indexOf(INTERSECTION_STOP);
+    const toStopIndex = lineStops.indexOf(toStop);
+
+    return getStops(intersectionStopIndex, toStopIndex, lineStops);
 }
 
-const planTrip = function(startLine, startStop, endLine, endStop) {
+const planTrip = function(startLineName, startStop, endLineName, endStop) {
     const trip = []
-    if (startLine === endLine && startStop === endStop) {
+    if (startLineName === endLineName && startStop === endStop) {
         return trip;
     }
 
-    const startLineStops = getLineStops(startLine);
-    const endLineStops = getLineStops(endLine);
-    let stopsMade = [];
+    const startLineStops = getLineStops(startLineName);
+    const endLineStops = getLineStops(endLineName);
 
-    if (startLine === endLine) {
+    if(!startLineStops || !endLineStops) {
+        return null;
+    }
+    
+    if (startLineName === endLineName) {
         const startStopIndex = startLineStops.indexOf(startStop);
         const endStopIndex = endLineStops.indexOf(endStop);
-
-        if (startStopIndex < endStopIndex) {
-            stopsMade = getStopsUp(startStopIndex, endStopIndex, startLineStops);
-        } else {
-            stopsMade = getStopsDown(startStopIndex, endStopIndex, endLineStops);
+        
+        if (startStopIndex === -1 || endStopIndex === -1) {
+            return null;
         }
 
-        trip.push( {
+        trip.push({
             type: TRAVEL_TYPE,
-            line: startLine,
-            stops: stopsMade
+            line: startLineName,
+            stops: getStops(startStopIndex, endStopIndex, startLineStops)
         });
         return trip;
     }
 
     if (endStop === "Union Square") {
-        stopsMade = travelToIntersectionStop(startStop, startLineStops)
-
-        trip.push( {
+        trip.push({
             type: TRAVEL_TYPE,
-            line: startLine,
-            stops: stopsMade
-        });
-
-        trip.push( {
+            line: startLineName,
+            stops: travelToIntersectionStop(startStop, startLineStops)
+        }, {
             type: CHANGE_TYPE,
-            line: INTERSECTION_LINE
-        });
-
-        trip.push( {
+            line: INTERSECTION_STOP
+        }, {
             type: TRAVEL_TYPE,
-            line: endLine,
+            line: endLineName,
             stops: []
         });
         
     } else {
-        stopsMade = travelToIntersectionStop(startStop, startLineStops);
-        trip.push( {
+        trip.push({
             type: TRAVEL_TYPE,
-            line: startLine,
-            stops: stopsMade
-        });
-
-        trip.push( {
+            line: startLineName,
+            stops: travelToIntersectionStop(startStop, startLineStops)
+        }, {
             type: CHANGE_TYPE,
-            line: INTERSECTION_LINE
-        });
-
-        const nextStopsMade = travelFromIntersectionStop(endStop, endLineStops);
-        trip.push( {
+            line: INTERSECTION_STOP
+        }, {
             type: TRAVEL_TYPE,
-            line: endLine,
-            stops: nextStopsMade
-        });        
+            line: endLineName,
+            stops: travelFromIntersectionStop(endStop, endLineStops)
+        });
     }
     return trip;
 }
 
 const printTripInfo = function(trip) {
+    if (!trip) {
+        console.log("Stop or line not found!");
+        return;
+    }
+
     if (trip.length === 0) {
-        console.log("You are already on your end station and stop");
+        console.log("You are already on your end line and stop");
         return;
     }
 
     for (let i = 0; i < trip.length; i++) {
-        const currentTrip = trip[i];
-        if (i === trip.length - 1 && currentTrip.stops.length === 0) {
-            console.log(`Your final destination is on ${INTERSECTION_LINE} on line ${currentTrip.line}`);
-            return
+        const tripSection = trip[i];
+        if (i === trip.length - 1 && tripSection.stops.length === 0) {
+            console.log(`Your final destination is on ${INTERSECTION_STOP} on line ${tripSection.line}`);
+            return;
         }
 
-        if (currentTrip.type === TRAVEL_TYPE && i === 0) {
-            console.log(`You must travel through the following stop(s) on the ${currentTrip.line} line: ${currentTrip.stops.join(", ")}.`);
-        } else if (currentTrip.type === TRAVEL_TYPE) {
-            console.log(`Your journey continues on the ${currentTrip.line} line through the following stop(s): ${currentTrip.stops.join(", ")}.`);
-        } else {
-            console.log(`Change at ${currentTrip.line}`);
+        if (tripSection.type === TRAVEL_TYPE && i === 0) {
+            console.log(`You must travel through the following stop(s) on the ${tripSection.line} line: ${tripSection.stops.join(", ")}.`);
+        } else if (tripSection.type === TRAVEL_TYPE) {
+            console.log(`Your journey continues on the ${tripSection.line} line through the following stop(s): ${tripSection.stops.join(", ")}.`);
+        } else if (tripSection.type === CHANGE_TYPE) {
+            console.log(`Change at ${tripSection.line}`);
         }
     }
 };
