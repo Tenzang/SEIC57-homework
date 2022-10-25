@@ -1,0 +1,16 @@
+<h1>Movies</h1>
+<div class="stage">
+    <% @movies.each do |movie| %>
+        <div class="square">
+            <a href="/movies/<%= movie.id_m %>">
+                <img class="feature" src="<%= movie.image %>" alt="<%= movie.name %>">
+            </a>
+            <p>
+                <a href="/movies/<%= movie.id_m %>">
+                    <%= movie.name %>
+                </a>
+            </p>
+            
+        </div>
+    <% end %>
+</div>

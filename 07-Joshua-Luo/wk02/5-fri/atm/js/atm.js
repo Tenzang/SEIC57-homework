@@ -58,7 +58,49 @@ $(document).ready(function () {
             $('#savings-balance').attr('class', 'balance zero');
         }
     })
-    // $('#checking-deposit').on('click',function(){
+
+
+    $('#savings-deposit').on('click', function () {
+        const savingsAmount = parseInt($('#savings-amount').val());
+        const balance = parseInt($('#savings-balance').text().substring(1));
+        const newBalance = balance + savingsAmount;
+        if (newBalance > 0) {
+            $('#savings-balance').attr('class', 'balance');
+        }
+        $('#savings-balance').html(`$${newBalance}`);
+    })
+
+    $('#savings-withdraw').on('click', function () {
+        const savingsAmount = parseInt($('#savings-amount').val());
+        const balance = parseInt($('#savings-balance').text().substring(1));
+        const checkingBalance = parseInt($('#checking-balance').text().substring(1));
+        const newBalance = balance - savingsAmount;
+        const newCheckingBlance = balance + checkingBalance - savingsAmount;
+        if (newBalance > 0) {
+            $('#savings-balance').html(`$${newBalance}`);
+            $('#savings-balance').attr('class', 'balance');
+        } else if (newBalance === 0) {
+            $('#savings-balance').html(`$${newBalance}`);
+            $('#savings-balance').attr('class', 'balance zero');
+        } else if (newBalance < 0 && newCheckingBlance > 0) {
+            $('#savings-balance').html(`$0`);
+            $('#savings-balance').attr('class', 'balance zero');
+            $('#checking-balance').html(`$${newCheckingBlance}`);
+            $('#checking-balance').attr('class', 'balance');
+        } else if (newBalance < 0 && newCheckingBlance === 0) {
+            $('#savings-balance').html(`$0`);
+            $('#savings-balance').attr('class', 'balance zero');
+            $('#checking-balance').html(`$0`);
+            $('#checking-balance').attr('class', 'balance zero');
+        }
+
+    })
+
+
+
+})
+
+// $('#checking-deposit').on('click',function(){
     //     const checkingAmount = parseInt($('#checking-amount').val());
     //     const balance = parseInt($('#checking-balance').text().substring(1));
     //     const newBalance = balance + checkingAmount;
@@ -103,47 +145,6 @@ $(document).ready(function () {
     //         $('#savings-balance').attr('class', 'balance zero');
     //     }
     // })
-
-    $('#savings-deposit').on('click', function () {
-        const savingsAmount = parseInt($('#savings-amount').val());
-        const balance = parseInt($('#savings-balance').text().substring(1));
-        const newBalance = balance + savingsAmount;
-        if (newBalance > 0) {
-            $('#savings-balance').attr('class', 'balance');
-        }
-        $('#savings-balance').html(`$${newBalance}`);
-    })
-
-    $('#savings-withdraw').on('click', function () {
-        const savingsAmount = parseInt($('#savings-amount').val());
-        const balance = parseInt($('#savings-balance').text().substring(1));
-        const checkingBalance = parseInt($('#checking-balance').text().substring(1));
-        const newBalance = balance - savingsAmount;
-        const newCheckingBlance = balance + checkingBalance - savingsAmount;
-        if (newBalance > 0) {
-            $('#savings-balance').html(`$${newBalance}`);
-            $('#savings-balance').attr('class', 'balance');
-        } else if (newBalance === 0) {
-            $('#savings-balance').html(`$${newBalance}`);
-            $('#savings-balance').attr('class', 'balance zero');
-        } else if (newBalance < 0 && newCheckingBlance > 0) {
-            $('#savings-balance').html(`$0`);
-            $('#savings-balance').attr('class', 'balance zero');
-            $('#checking-balance').html(`$${newCheckingBlance}`);
-            $('#checking-balance').attr('class', 'balance');
-        } else if (newBalance < 0 && newCheckingBlance === 0) {
-            $('#savings-balance').html(`$0`);
-            $('#savings-balance').attr('class', 'balance zero');
-            $('#checking-balance').html(`$0`);
-            $('#checking-balance').attr('class', 'balance zero');
-        }
-
-    })
-
-
-
-})
-
 
 
 

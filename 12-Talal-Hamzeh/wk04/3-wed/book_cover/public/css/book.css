@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Pacifico&family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Josefin+Sans:wght@100&family=Pacifico&family=Silkscreen&display=swap');
+
+a{
+    font-size: 30px;
+    font-family: 'Fasthand', cursive;
+    color: #4285F4;
+}
+#title{
+    margin: 0 auto;
+}
+
+nav{
+    margin: 0 auto;
+    text-align: center;
+}
+h1{
+    color: yellow;
+    text-align: center;
+    text-decoration: double;
+    font-size: 40px;
+    position: inherit;
+    font-family: 'Josefin Sans', sans-serif;
+}
+div {
+    text-align: center;
+   
+    width: 300px;
+    border: 15px solid #34A853;
+    padding: 50px;
+    margin: 0 auto;
+     border-radius: 10%;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+h2{
+    size: 40px;
+    color:	#EA4335;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }

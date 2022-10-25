@@ -1,0 +1,7 @@
+<h1>Guess the number!</h1>
+
+<form action="/secretnumber/result">
+    <% @num_array.each do |n| %>
+        <input type="submit" value="<%= n %>" name="choice">
+    <% end %>
+</form>

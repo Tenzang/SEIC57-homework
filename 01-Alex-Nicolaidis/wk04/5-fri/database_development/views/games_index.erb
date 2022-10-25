@@ -1,0 +1,16 @@
+<h1>Games</h1>
+
+<% @games.each do |game| %>
+    <p>
+        <a href="/games/<%= game.id %>"><%= game.name %></a>
+    </p>
+<% end %>
+
+<p class="new-game">
+    <a href="/games/new">New Game</a>
+</p>
+
+
+
+<!-- Loop through the database table of games and display a game in a link  -->
+

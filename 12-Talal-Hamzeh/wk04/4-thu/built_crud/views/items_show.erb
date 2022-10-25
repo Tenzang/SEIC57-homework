@@ -1,0 +1,17 @@
+<h1>
+   item:  <%= @item["name"] %>
+</h1>
+
+<h2>
+    Family: <%= @item["family"] %>
+</h2>
+
+<% unless @item["image"].nil? || @item["image"].empty? %>
+    <img class="feature" src="<%= @item["image"] %>" alt="<%= @item["name"] %>">
+<% end %>
+
+<div class="controls">
+
+    <a href="/items/<%= @item["id"] %>/edit">Edit item</a>
+    <a href="/items/<%= @item["id"] %>/delete">Delete item</a>
+</div>

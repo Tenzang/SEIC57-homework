@@ -1,0 +1,13 @@
+<div>
+    <h1> <%= @note["title"] %></h1>
+    <h3> <%= @note["content"] %></h3>
+    <h6> <%= @note["creation_date"] %></h6>
+</div>
+
+<div>
+    <a href="/notes/<%= @note["id"] %>/edit">Edit note</a>
+    <a href="/notes/<%= @note["id"] %>/delete">Delete note</a>
+
+    <a class="btn btn-primary" href="/notes/<%= @note["id"] %>/edit" role="button">Edit</a>
+    <a class="btn btn-primary" href="/notes/<%= @note["id"] %>/delete" role="button">Delete</a>
+</div>

@@ -1,0 +1,19 @@
+<h1>Edit predator</h1>
+
+<form action="/predators/<%= @predator["id"] %>" method="post">
+    <label>
+        Name:
+        <input name="name" required value="<%= @predator["name"] %>">
+    </label>
+     <label>
+        Edit paragraph :
+        <input name="paragraph" required value="<%= @predator["paragraph"] %>">
+    </label>
+
+    <label>
+        Image:
+        <input type="url" name="image" value="<%= @predator["image"] %>">
+    </label>
+
+    <button>Update predator</button>
+</form>

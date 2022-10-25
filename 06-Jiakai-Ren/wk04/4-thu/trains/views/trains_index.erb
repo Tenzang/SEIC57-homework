@@ -1,0 +1,7 @@
+<h1>All train types</h1>
+
+<% @trains.each do |train| %>
+    <p class="index-list">
+        <a href="/trains/<%= train["id"] %>"><%= train["name"] %> Set</a>
+    </p>
+<% end %>

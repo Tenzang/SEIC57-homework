@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,500&family=Montserrat:wght@100;200;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Travel Diary</title>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+        <div class = header>
+            <a href="/">Home</a>
+            <a href="/cities">All Cities</a>
+            <a href="/cities/new">New City</a>
+            |
+            <a href="/countries">All Countries</a>
+            <a href="/countries/new">New Country</a>
+        </div>
+        </nav>
+
+        <%= yield %>
+    </div>
+
+</body>
+</html>
