@@ -1,0 +1,21 @@
+<h1>Edit band</h1>
+
+<form action="/bands/<%= @band.id %>" method="post">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Band</label>
+        <br>
+        <input name="name" value="<%= @band.name %>" class="form-control" id="exampleFormControlInput1" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Band image</label>
+        <br>
+        <input name="image" value="<%= @band.image %>" class="form-control" id="exampleFormControlInput1" required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Albums</label>
+        <br>
+        <textarea name="albums" class="form-control" id="exampleFormControlTextarea1" rows="3" required><%= @band.albums %></textarea>
+        <button>Edit band</button>
+        <a class="btn btn-primary" href="/bands" role="button">Cancel</a>
+    </div>
+</form>

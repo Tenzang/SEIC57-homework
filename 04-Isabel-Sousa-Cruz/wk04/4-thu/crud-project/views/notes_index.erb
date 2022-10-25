@@ -1,0 +1,17 @@
+<h1 class="index-header">Here are all your notes</h1>
+
+
+<div class="all-notes">
+    <% @notes.each do |note| %>
+        <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+        <div class="card-header">
+            <a href="notes/<%= note["id"] %>"> 
+                <%= note["title"] %> 
+            </a></div>
+        <div class="card-body">
+            <h5 class="card-text"><%= note["content"] %></h5>
+            <p class="card-title">Created on <%= note["creation_date"] %></p>
+        </div>
+        </div>
+    <% end  %>
+</div>
