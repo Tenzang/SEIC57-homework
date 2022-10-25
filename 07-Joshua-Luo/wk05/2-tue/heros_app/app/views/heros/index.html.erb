@@ -1,0 +1,8 @@
+<h1>heros</h1>
+
+<% @heros.each do |hero| %>
+    <%= image_tag hero.image, :alt => hero.name, :class => 'feature' %>
+    <p>
+        <%= link_to hero.name, hero_path(hero.id) %>
+    </p>
+<% end %>

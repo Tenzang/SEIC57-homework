@@ -1,0 +1,35 @@
+<h1>Edit Hero</h1>
+
+<form action="<%= hero_path(@hero.id) %>" method="post">
+    <label>
+        Name:
+        <input name="name" required value="<%= @hero.name %>">
+    </label>
+
+    <label>
+        Image:
+        <input name="image" type="url" value="<%= @hero.image %>" >
+    </label>
+
+    <label>
+        Primarystat:
+        <input name="primarystat" value="<%= @hero.primarystat %>" >
+    </label>
+
+    <label>
+        Agility:
+        <input name="agility" value="<%= @hero.agility %>" >
+    </label>
+
+    <label>
+        Intelligence:
+        <input name="intelligence" value="<%= @hero.intelligence %>" >
+    </label>
+
+    <label>
+        Strength:
+        <input name="strength" value="<%= @hero.strength %>" >
+    </label>
+
+    <button>update</button>
+</form>
