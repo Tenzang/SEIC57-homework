@@ -1,0 +1,22 @@
+<div>
+    <h1><%= @band.name %></h1>
+
+    <figure class="figure">
+        <img src="<%= @band.image %>" class="figure-img img-fluid rounded" alt=<%= @band.name %>>
+    </figure>
+
+
+    <% if !@band.albums.empty? %>
+        <h3>Albums</h3>
+        <ul>
+            <% for album in @band.albums %>
+                <a href="/albums/<%= album.id %>"><li><%= album.name %></li></a>
+            <% end %>
+        </ul>
+    <% end%>
+    <div>
+        <a class="btn btn-primary" href="/bands/<%= @band.id %>/edit" role="button">Edit</a>
+        <a class="btn btn-primary" href="/albums/new" role="button">Add album</a>
+        <a class="btn btn-primary" href="/bands/<%= @band.id %>/delete" role="button">Delete</a>
+    </div>
+</div>
