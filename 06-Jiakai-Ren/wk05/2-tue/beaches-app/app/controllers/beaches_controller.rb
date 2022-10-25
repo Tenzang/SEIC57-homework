@@ -11,13 +11,7 @@ class BeachesController < ApplicationController
     end
 
     def create
-        beach = Beach.new
-        beach.name = params[:name].capitalize
-        beach.suburb = params[:suburb].capitalize
-        beach.distance_from_sydney = params[:distance_from_sydney]
-        beach.image = params[:image]
-        beach.map_link = params[:map_link]
-        beach.save
+        beach = Beach.create :name => params[:name].capitalize, :suburb => params[:suburb].capitalize, :distance_from_sydney => params[:distance_from_sydney], :image => params[:image], :map_link => params[:map_link]
         redirect_to beach_path(beach.id)
     end
 
