@@ -2,7 +2,8 @@ class RockController < ApplicationController
     def choice
     end
     def result
-        value = params[:throw_id]
+        raise
+        value = params[:throw]
         random_choice = ['rock','paper','scissors'].sample
 
         if value == random_choice

@@ -11,6 +11,6 @@ Rails.application.routes.draw do
 
 
   get '/rock' => 'rock#choice'
-  get '/rock/:throw' => 'rock#result'
+  get '/rock/result' => 'rock#result'
 
 end
