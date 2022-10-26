@@ -1,0 +1,35 @@
+<h1>Create Hero</h1>
+
+<form action="<%= heros_path %>" method="post">
+    <label>
+        Name:
+        <input name="name" required>
+    </label>
+
+    <label>
+        Image:
+        <input name="image" type="url">
+    </label>
+
+    <label>
+        Primarystat:
+        <input name="primarystat">
+    </label>
+
+    <label>
+        Agility:
+        <input name="agility">
+    </label>
+
+    <label>
+        Intelligence:
+        <input name="intelligence">
+    </label>
+
+    <label>
+        Strength:
+        <input name="strength">
+    </label>
+
+    <button>create hero</button>
+</form>

@@ -1,0 +1,10 @@
+<h1><%= @drink.brand %> <%= @drink.flavor%></h1>
+<p>Brand: <%= @drink.brand %></p>
+<p>Flavor: <%= @drink.flavor %></p>
+<p>Caffeine: <%= @drink.caffeine ? 'Yes' : 'No' %> </p>
+<%= image_tag @drink.image if @drink.image.present? %>
+
+<div>
+<%= link_to 'Edit', edit_fizzy_drink_path %>
+<%= link_to 'Delete', delete_fizzy_drink_path %>
+</div>

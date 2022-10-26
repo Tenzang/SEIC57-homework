@@ -1,0 +1,17 @@
+<h1>
+    <%= @mountain.name %>
+</h1>
+
+<%= image_tag @mountain.image if @mountain.image.present? %>
+
+<ul>
+    <li>Name: <%= @mountain.name %></li>
+    <li>Height: <%= @mountain.height %></li>
+    <li>Country: <%= @mountain.country %></li>
+
+</ul>
+
+<div class="controls">
+    <%= link_to "Edit mountain", edit_mountain_path(@mountain.id) %>
+    <%= link_to "Delete mountain", delete_mountain_path(@mountain.id) %>
+</div>

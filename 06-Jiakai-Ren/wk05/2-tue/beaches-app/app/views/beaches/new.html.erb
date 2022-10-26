@@ -1,0 +1,30 @@
+<h1>Create a Beach</h1>
+
+<form action="<%= beaches_path %>" method="post">
+    <label>
+        Name of the beach:
+        <input name="name" required placeholder="Bondi">
+    </label>
+
+    <label>
+        Suburb:
+        <input name="suburb" required placeholder="Bondi">
+    </label>
+
+    <label>
+        Distance from Sydney (km):
+        <input type="number" name="distance_from_sydney" required placeholder="7" step="0.001">
+    </label>
+
+    <label>
+        Image link:
+        <input type="url" name="image" placeholder="https://...">
+    </label>
+
+    <label>
+        Google Maps link:
+        <input type="url" name="map_link" placeholder="http://...">
+    </label>
+
+    <button>Plop</button>
+</form>

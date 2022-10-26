@@ -1,0 +1,21 @@
+<h1><%= @beach.name %> Beach</h1>
+
+<%= image_tag @beach.image if @beach.image.present? %>
+
+<p><%= @beach.name %> Beach is located <%= @beach.distance_from_sydney %>km from the Sydney CBD in the suburb of <%= @beach.suburb %>.</p>
+
+<% if @beach.map_link.present? %>
+    <div class="map">
+        <iframe src="<%= @beach.map_link %>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+<% end %>
+
+<div class="controls">
+    <form action="<%= edit_beach_path(@beach.id) %>">
+        <button>Edit</button>
+    </form>
+
+    <form action="<%= destroy_beach_path(@beach.id) %>">
+        <button>Delete</button>
+    </form>
+</div>
