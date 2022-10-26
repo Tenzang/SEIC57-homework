@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 960px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+iframe {
+    width: 100%;
+}
+
+nav {
+    border-bottom: 2px solid white;
+    padding: 0px 0px 20px 0px;
+    text-align: center;
+}
+
+nav a {
+    margin: 0px 10px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding: 5px;
+}
+
+nav a:hover {
+    border: 1px solid white;
+    text-decoration: none;
+}
+
+button {
+    width: 120px;
+}

@@ -1,0 +1,7 @@
+<h1>Sydney Beaches</h1>
+
+<% @beaches.each do |beach| %>
+    <p>
+        <%= link_to beach.name + " Beach", beach_path(beach.id) %>
+    </p>
+<% end %>
