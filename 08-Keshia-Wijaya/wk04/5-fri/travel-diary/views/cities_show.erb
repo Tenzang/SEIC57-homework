@@ -1,0 +1,25 @@
+<div class = "show-city">
+    <p>
+        <%= @city["name"] %>
+    <p>
+
+    <p>
+        Note: <%= @city["family"] %>
+    </p>
+</div>
+
+<div class="images-container">
+            <div cellIndex="0" class="cell"></div>
+            <div cellIndex="1" class="cell"></div>
+            <div cellIndex="2" class="cell"></div>
+</div>
+
+
+<% unless @city["image"].nil? || @city["image"].empty? %>
+    <img class="feature" src="<%= @city["image"] %>" alt="<%= @city["name"] %>">
+<% end %>
+
+<div class="controls">
+    <a href="/cities/<%= @city["id"] %>/edit">Edit city</a>
+    <a href="/cities/<%= @city["id"] %>/delete">Delete city</a>
+</div>

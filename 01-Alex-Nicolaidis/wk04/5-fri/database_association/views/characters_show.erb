@@ -1,0 +1,19 @@
+<h1><%= @character.name %></h1>
+<div class="character-display">
+    <div class="left">
+        <img src="<%= @character.image %>" alt="<%= @character.name%>">
+    </div>
+    <div class="right">
+        <p>Category: <%= @character.category %></p>
+        <p>Ultimate: <%= @character.ultimate %></p>
+    </div>
+
+    <footer>
+    <a href="/characters/<%= params[:id] %>/edit">Edit Character</a>
+    <a href="/characters/<%= params[:id] %>/delete">Delete Character</a>
+    </footer>
+</div>
+
+
+
+

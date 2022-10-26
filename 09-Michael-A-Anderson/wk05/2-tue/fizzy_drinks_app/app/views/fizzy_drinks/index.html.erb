@@ -1,0 +1,6 @@
+<h1>Fizzy Drinks</h1>
+<% @drinks.each do |drink|%>
+<p>
+<%= link_to "#{drink.brand} #{drink.flavor}", fizzy_drink_path(drink.id) %>
+</p>
+<% end%>

@@ -1,0 +1,20 @@
+<h1>Edit Movie</h1>
+
+<form action="/movies/<%= @movie.id_m %>" method="post">
+    <label>
+        Name: <input name = "name" required value="<%= @movie.name %>">
+    </label>
+    <label>
+        Image: <input type="url" name = "image" value="<%= @movie.image %>">
+    </label>
+    <label>
+        Director: 
+        <select name = "d_name" value="<%= @director.name %>">
+            <% @directors.each do |director| %>
+                <option value="<%= director.name %>"><%= director.name %></option>
+            <% end %>
+        </select>
+    </label>
+
+    <button>Edit Movie</button>
+</form>

@@ -1,0 +1,14 @@
+
+<h1>
+    <%= @predator["name"] %>
+</h1>
+<h2><%= @predator["paragraph"] %></h2>
+
+<% if @predator.image.present? %>
+    <img class="feature" src="<%= @predator.image %>" alt="<%= @predator.name %>">
+<% end %>
+
+<div class="controls">
+    <a href="/predators/<%= @predator["id"] %>/edit">Edit</a>
+    <a href="/predators/<%= @predator["id"] %>/delete">Delete </a>
+</div>

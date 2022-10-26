@@ -1,0 +1,39 @@
+<div>
+    <% if @non_existing_band %>
+            <div class="alert alert-warning">
+                The author band of this album still wasn't added. Please, first add the band so we can make a link to this album.
+            </div>
+    <% end %>
+
+    <h1>Edit album</h1>
+
+    <form action="/albums/<%= @album.id %>" method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Album</label>
+            <br>
+            <input name="name" value="<%= @album.name %>" class="form-control" id="exampleFormControlInput1" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Album image</label>
+            <br>
+            <input name="image" value="<%= @album.image %>" class="form-control" id="exampleFormControlInput1" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Band</label>
+            <br>
+            <input name="band" value="<%= @album.band %>" class="form-control" id="exampleFormControlInput1" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Released year</label>
+            <br>
+            <input name="released_year" value="<%= @album.released_year %>" class="form-control" id="exampleFormControlInput1" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Info</label>
+            <br>
+            <textarea name="info" class="form-control" id="exampleFormControlTextarea1" rows="3" required><%= @album.info %></textarea>
+            <button>Edit</button>
+            <a class="btn btn-primary" href="/albums" role="button">Cancel</a>
+        </div>
+    </form>
+</div>

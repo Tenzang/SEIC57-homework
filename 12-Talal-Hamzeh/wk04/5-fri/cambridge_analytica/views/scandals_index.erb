@@ -1,0 +1,11 @@
+<h1>Scandal Explained </h1>
+
+<% @scandals.each do |scandal| %>
+    <p class="set" >
+        <a href="/diagram/<%= scandal["id"] %>">
+            <%= scandal["name"] %>
+            
+        </a>
+        
+    </p>
+<% end %>

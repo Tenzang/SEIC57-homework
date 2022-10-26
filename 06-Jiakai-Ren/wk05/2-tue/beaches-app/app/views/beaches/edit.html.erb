@@ -1,0 +1,30 @@
+<h1>Edit <%= @beach.name %> Beach</h1>
+
+<form action="<%= beach_path(@beach.id) %>" method="post">
+    <label>
+        Name of the beach:
+        <input name="name" required placeholder="Bondi" value="<%= @beach.name %>">
+    </label>
+
+    <label>
+        Suburb:
+        <input name="suburb" required placeholder="Bondi" value="<%= @beach.suburb %>">
+    </label>
+
+    <label>
+        Distance from Sydney (km):
+        <input type="number" name="distance_from_sydney" required placeholder="7" value="<%= @beach.distance_from_sydney %>" step="0.001">
+    </label>
+
+    <label>
+        Image link:
+        <input type="url" name="image" placeholder="https://..." value="<%= @beach.image %>">
+    </label>
+
+    <label>
+        Google Maps link:
+        <input type="url" name="map_link" placeholder="http://..." value="<%= @beach.map_link %>">
+    </label>
+
+    <button>Save</button>
+</form>

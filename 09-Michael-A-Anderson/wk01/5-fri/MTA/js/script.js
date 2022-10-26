@@ -67,21 +67,7 @@ function tripadvisor(onLine,onStop,offLine,offStop){
     }
 }
 
-// function findLine(line,stop){ // selects the appropriate array
-//     let station
-//     switch (line){
-//         case 'N': 
-//             station = findStop(N,stop);
-//             break;
-//         case 'L':
-//             station = findStop(L,stop);
-//             break;
-//         case '6':
-//             station = findStop(six,stop);
-//             break;
-//     }
-//     return station
-// }
+
 function findLine(line,stop){ // selects the appropriate array
     switch (line){
         case 'N': 
@@ -134,21 +120,6 @@ function forwards(arr,on,off){ //loops through the line from point to point
     return stops;
 }
 
-// function legBuilder(on,off){ // makes info more easily accessible and chooses a direction
-//     let arr = on[0];
-//     if(start>finish){
-//         console.log('reverse')
-//         arr = arr.reverse()
-//     }
-//     const start = on[1];
-//     const finish = off[1];
-//     let stops = []
-
-//     for( let i = start+1;i<=finish;i++){
-//         stops.push(arr[i].name);
-//     }
-//     return stops;
-// }
 
 function displayStops(stops){ 
     console.log(`${stops.length} stops`)

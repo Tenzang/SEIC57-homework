@@ -1,0 +1,13 @@
+<h1>
+    <%= @country.name %>
+</h1>
+
+<% if @country.image.present? %>
+    <img class="feature" src="<%= @country.image %>" alt="<%= @country.name %>">
+<% end %>
+
+<div class="controls">
+    <a href="/countrys/<%= @country.id %>/edit">Edit country</a>
+    <a href="/countrys/<%= @country.id %>/delete">Delete country</a>
+</div>
+

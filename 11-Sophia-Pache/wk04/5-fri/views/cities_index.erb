@@ -1,0 +1,9 @@
+<h1>All Cities</h1>
+
+<% @cities.each do |city| %>
+    <p>
+        <a href="/cities/<%= city["id"] %>">
+        <%= city["name"] %>
+        </a>
+    </p>
+<% end %>

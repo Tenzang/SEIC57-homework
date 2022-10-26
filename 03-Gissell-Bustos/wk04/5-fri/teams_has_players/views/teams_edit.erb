@@ -1,0 +1,17 @@
+<h1>Edit team</h1>
+
+<form action="/teams/<%= @team["id"]%>" method="post">
+    <label>
+        Name:
+        <input name="name" required value="<%= @team["name"]%>">
+    </label>
+     <label>
+        Gema:
+        <input gema ="gema" value="<%= @team["gema"]%>">
+    </label>
+    <label>
+        Logo:
+        <input type="url" name="logo" value="<%= @team["logo"]%>">
+    </label>
+    <button>Update teams</button>
+</form>

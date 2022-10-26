@@ -1,0 +1,38 @@
+<h1>Create a New Incident</h1>
+
+<form action="/incidents" method="post">
+    <div class="form-entry">
+        <label>
+            Airline IATA code*:
+            <input name="code" required placeholder="XX">
+        </label>
+        <label>
+            Flight number*:
+            <input type="number" name="flight_number" required placeholder="123" min="0">
+        </label>
+        <label>
+            Death*:
+            <input type="number" name="death" required placeholder="0" min="0">
+        </label>
+        <label>
+            Injury*:
+            <input type="number" name="injury" required placeholder="2" min="0">
+        </label>
+        <label>
+            Survival*:
+            <input type="number" name="survival" required placeholder="20" min="0">
+        </label>
+        <label>
+            Image:
+            <input type="url" name="image" placeholder="https://...">
+        </label>
+        <label>
+            Description*:
+            <textarea name="description" required placeholder="This flight was from..." rows="5" cols="20"></textarea>
+        </label>
+        <p class="required-text">Fields marked with (*) are required</p>
+    </div>
+    <div class="controls">
+        <button>Kerplunk</button>
+    </div>
+</form>

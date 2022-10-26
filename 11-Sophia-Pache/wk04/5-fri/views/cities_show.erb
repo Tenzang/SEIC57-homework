@@ -1,0 +1,24 @@
+<% if @city.image.present? %>
+    <img class="profpic" src="<%= @city.image %>" alt="<%= @city.name %>" width="500" height="300">
+<% end %>
+
+<h1>
+    <%= @city["name"] %>
+</h1>
+
+<h2>
+    Landmark: <%= @city["landmark"] %>
+</h2>
+
+<h2>
+    Cost of Living: <%= @city["cost"] %>
+</h2>
+
+<h2>
+    Country: <%= @city["countryid"] %>
+</h2>
+
+<div class="controls">
+    <a href="/cities/<%= @city["id"] %>/edit">Edit City</a>
+    <a href="/cities/<%= @city["id"] %>/delete">Delete City</a>
+</div>

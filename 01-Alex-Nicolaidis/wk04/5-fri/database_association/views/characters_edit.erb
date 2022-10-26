@@ -1,0 +1,24 @@
+<h1>Edit Character</h1>
+
+<div class="edit-character">
+    <form action="/characters/<%= @character.id %>" method="post">
+        <label>
+            Character Name:
+            <input type="text" name="name" placeholder="Horizon" value="<%= @character.name %>" required>
+        </label>
+        <label>
+            Character Type:
+            <input type="text" name="category" placeholder="Attack" value="<%= @character.category %>">
+        </label>
+        <label>
+            Characters Ultimate Ability:
+            <input type="text" name="ultimate" placeholder="Black Hole" value="<%= @character.ultimate %>">
+        </label>
+        <label>
+            Character Image
+            <input type="url" name="url" placeholder="https://www.characterimage.com" value="<%= @character.image %>">
+        </label>
+        
+    <button>Edit Character</button>
+    </form>
+</div>

@@ -39,3 +39,5 @@ const calculator = function(number) {
 }
 
 calculator(Math.round(Math.random() * 10));
+
+console.log(percentOf(4, 700));
