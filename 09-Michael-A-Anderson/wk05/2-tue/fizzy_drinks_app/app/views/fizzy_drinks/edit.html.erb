@@ -1,0 +1,8 @@
+<h1>Edit Drink</h1>
+<form action="<%= fizzy_drink_path(params[:id]) %>" method="post">
+<label>Brand: <input value="<%= @drink.brand %>" name="brand"></label>
+<label>Flavor: <input value="<%= @drink.flavor %>" name="flavor"></label>
+<label>Caffeine: <input type="number" value="<%= @drink.caffeine %>" name="caffeine"></label>
+<label>Image: <input value="<%= @drink.image %>" name="image"></label>
+<button>Edit Drink</button>
+</form>

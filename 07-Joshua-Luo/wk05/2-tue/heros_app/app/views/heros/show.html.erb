@@ -1,0 +1,18 @@
+<h1>
+    <%= @hero.name %>
+</h1>
+
+<%= image_tag @hero.image, :alt => @hero.name, :class =>"feature" %>
+
+
+<ul>
+    <li>Primarystat: <%= @hero.primarystat %></li>
+    <li>Agility: <%= @hero.agility %></li>
+    <li>Intelligence: <%= @hero.intelligence %></li>
+    <li>Strength: <%= @hero.strength %></li>
+</ul>
+
+<div class="controls">
+    <%= link_to "Edit Hero", edit_path(@hero.id) %>
+    <%= link_to "Delete Hero", delete_path(@hero.id) %>
+</div>
