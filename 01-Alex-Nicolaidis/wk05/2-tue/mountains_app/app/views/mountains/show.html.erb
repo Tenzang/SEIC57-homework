@@ -1,0 +1,14 @@
+<h1><%= @mountain.name %></h1>
+
+<ul>
+    <li>Height: <%= number_to_human(@mountain.height, units: {unit:"m"}) %></li>
+    <li>Country: <%= @mountain.country %></li>
+</ul>
+
+<%= image_tag @mountain.image if @mountain.image.present? %>
+
+
+<div class="controls">
+<%= link_to 'Edit', edit_mountain_path(@mountain.id) %>
+<%= link_to 'Delete', delete_mountain_path(@mountain.id) %>
+</div>
