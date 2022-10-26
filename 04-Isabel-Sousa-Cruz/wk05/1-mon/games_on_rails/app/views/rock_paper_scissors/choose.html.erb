@@ -1,0 +1,17 @@
+<div class="rock-paper-scissors-choose-container view-container">
+    <h1>Please, choose one of the following options</h1>
+    <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Choose your weapon
+        </a>
+        <ul class="dropdown-menu">
+            <% @image_options.each do |key, value| %>
+                <li>
+                    <a class="dropdown-item" href="/rock_paper_scissors/result?chosen=<%= key.to_s %>">
+                        <img width=200 height=200 src="<%= value %>">
+                    </a>
+                </li>
+            <% end %>
+        </ul>
+    </div>
+</div>
