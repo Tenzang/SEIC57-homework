@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+body {
+    font-family: 'Cinzel', serif;
+    background-image: url('https://images.unsplash.com/photo-1596865249308-2472dc5807d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2slMjB0ZXh0dXJlfGVufDB8fDB8fA%3D%3D&w=1000&q=80');
+    background-size: cover;
+    color: black;
+}
+
+h1, h2 {
+    color: black;
+}
+label {
+    display: block;
+}
+
+.thumbnail {
+    height: 15em;
+}
+
+.feature {
+    max-height: 20em;
+}
+
+a {
+    color: darkblue;
+}
+
+a:hover {
+    color: rgb(77, 77, 109);
+}
+
+.container {
+    /* background-color: rgb(16, 57, 30); */
+    background-image: url('https://img.freepik.com/premium-photo/close-up-white-poster-texture_293060-1697.jpg?w=2000');
+    background-size: cover;
+    padding: 1em;
+    opacity: 0.8;
+    width: 800px;
+    height: 70%;
+    font-size: 100%;
+    margin-left: 0%;
+    margin-top: 1%;
+    overflow: auto;
+}
