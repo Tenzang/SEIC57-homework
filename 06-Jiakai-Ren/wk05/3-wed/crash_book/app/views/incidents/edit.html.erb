@@ -1,0 +1,3 @@
+<h1>Edit Incident: <%= @incident.airline.present? ? @incident.airline.code : "Flight " %><%= @incident.flight_number%></h1>
+
+<%= render :partial => 'form' %>
