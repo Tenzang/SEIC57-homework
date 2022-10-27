@@ -1,0 +1,20 @@
+<h1>
+    <%= @player.alias%>
+</h1>
+
+<h2>
+    player status: <%= @player.status%>
+</h2>
+<h2>
+    player age: <%= @player.age%>
+</h2>
+
+
+<% unless @player["logo"].nil? || @player["logo"].empty? %>
+    <img src="<%= @player["logo"]%>" alt="<%= @player["alias"]%>">
+<% end %>
+
+<div class="controls">
+    <a href="/players/<%= @player["id"]%>/edit">Edit player</a>
+    <a href="/players/<%= @player["id"]%>/delete">Delete player</a>
+</div>

@@ -1,0 +1,16 @@
+<h1><%= @mountan.name %></h1>
+
+
+<%= image_tag @mountan.image if @mountan.image.present? %>
+
+<ul>
+    <li>Name: <%= @mountan.name %></li>
+    <li>Elevation: <%= @mountan.elevation %></li>
+    <li>Prominence: <%= @mountan.prominence %></li>
+    <li>Country: <%= @mountan.country %></li>
+</ul>
+
+<div class="controls">
+    <%= link_to "Edit Mountan", edit_mountan_path(@mountan.id) %>
+    <%= link_to "Delete Mountan", delete_mountan_path(@mountan.id) %>
+</div> 

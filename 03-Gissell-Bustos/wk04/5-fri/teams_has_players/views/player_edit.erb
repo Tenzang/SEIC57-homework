@@ -1,0 +1,25 @@
+<h1>Edit player</h1>
+
+<form action="/players/<%= @player["id"]%>" method="post">
+    <label>
+        Name:
+        <input alias="alias" required value="<%= @player["alias"]%>">
+    </label>
+     <label>
+        Team id:
+        <input team_id ="team_id" value="<%= @player["team_id"]%>">
+    </label>
+      <label>
+        Status:
+        <input status ="status" value="<%= @player["status"]%>">
+    </label>
+      <label>
+        Age:
+        <input age ="age" value="<%= @player["age"]%>">
+    </label>
+    <label>
+        Logo:
+        <input type="url" name="logo" value="<%= @team["logo"]%>">
+    </label>
+    <button>Update teams</button>
+</form>
