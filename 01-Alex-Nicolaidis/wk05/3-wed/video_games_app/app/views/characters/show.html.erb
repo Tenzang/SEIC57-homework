@@ -1,0 +1,18 @@
+<h1><%= @character.name %></h1>
+
+<div class="character">
+    <ul>
+        <li>Category:<%= @character.category %></li>
+        <li>Age: <%= @character.age %></li>
+        <li>Ability <%= @character.ability %></li>
+        <% if @character.game.present? %>
+            <li>From: <%= link_to @character.game.name, @character.game  %></li>
+        <% end %>
+    </ul>
+    <%= image_tag @character.image, :alt => "Character Image" %>
+</div>
+
+<div class="controls">
+<%= link_to 'Edit', edit_character_path(@character.id) %>
+<%= link_to 'Delete', @character, :method =>'delete', :data => {:confirm => "Are you sure?"} %>
+</div>
