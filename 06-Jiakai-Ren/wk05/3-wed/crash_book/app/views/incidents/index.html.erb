@@ -1,0 +1,10 @@
+<h1>All Incidents</h1>
+
+<% @incidents.each do |incident| %>
+    <%= link_to image_tag(incident.image, :class => 'thumbnail'), incident %>
+    <% if incident.airline.present? %>
+        <%= link_to "#{ incident.airline.code }#{ incident.flight_number }", incident %>
+    <% else %>
+        <%= link_to "Flight #{ incident.flight_number }", incident %>
+    <% end %>
+<% end %>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CrashBook</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav>
+        <%= link_to 'All Airlines', airlines_path %>
+        <%= link_to 'New Airline', new_airline_path %>
+        <%= link_to 'All Incidents', incidents_path %>
+        <%= link_to 'New Incident', new_incident_path %>
+      </nav>
+      <%= yield %>
+    </div>
+  </body>
+</html>
