@@ -1,0 +1,32 @@
+body{
+    background-color: beige;
+}
+
+.cover-small{
+    max-width: 15em;
+}
+
+div h3{
+    text-align: center;
+}
+
+div.games{
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+div.characters{
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+label{
+    display: block;
+    padding-top: 1em;
+}
+
+img{
+    max-width: 15em;
+}

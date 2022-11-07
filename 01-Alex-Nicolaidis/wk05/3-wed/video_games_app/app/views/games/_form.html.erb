@@ -1,0 +1,15 @@
+<%= form_for @game do |f| %> <!-- f is for formhelper-->
+    <%= f.label :name %>
+    <%= f.text_field :name, :required => true %>
+
+    <%= f.label :dor, "Date of Release" %>
+    <%= f.text_field :dor, :placeholder => "YYYY-MM-DD" %>
+
+    <%= f.label :developer %>
+    <%= f.text_field :developer %>
+
+    <%= f.label :image %>
+    <%= f.url_field :image, :required => true %>
+
+    <%= f.submit %>
+<% end %>
