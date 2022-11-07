@@ -1,0 +1,11 @@
+<h1>Games</h1>
+
+
+<div class="games">
+<% @games.each do |game|%>
+    <div>
+        <%= link_to image_tag(game.image, :alt => "Game Image", :class => 'cover-small'), game if game.image.present?%>
+        <h3><%= game.name %></h3>
+    </div>
+<% end %>
+</div>

@@ -1,0 +1,27 @@
+<%= form_for @incident do |f| %>
+    <%= f.label :flight_number %>
+    <%= f.number_field :flight_number, :required => true, :placeholder => '123', :min => 0 %>
+
+    <%= f.label :airline_id %>
+    <%= f.select :airline_id, Airline.pluck(:name, :id), :include_blank => true %>
+
+    <%= f.label :date %>
+    <%= f.date_field :date, :required => true %>
+
+    <%= f.label :death %>
+    <%= f.number_field :death, :required => true, :placeholder => 0, :min => 0 %>
+
+    <%= f.label :injury %>
+    <%= f.number_field :injury, :required => true, :placeholder => 0, :min => 0 %>
+
+    <%= f.label :survival %>
+    <%= f.number_field :survival, :required => true, :placeholder => 100, :min => 0 %>
+
+    <%= f.label :image, 'Image link' %>
+    <%= f.url_field :image, :placeholder => 'https:// ...' %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description, :required => true, :placeholder => 'The flight was from ...' %>
+
+    <%= f.submit %>
+<% end %>

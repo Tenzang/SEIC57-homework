@@ -1,0 +1,18 @@
+<%= form_for @character do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+
+    <%= f.label :ability %>
+    <%= f.text_field :ability %>
+    
+    <%= f.label :image %>
+    <%= f.url_field :image, :required => true%>
+
+    <%= f.label :game_id %>
+    <%= f.select :game_id, Game.pluck(:name,:id), :include_blank => true %>
+
+    <%= f.submit %>
+<% end %>
