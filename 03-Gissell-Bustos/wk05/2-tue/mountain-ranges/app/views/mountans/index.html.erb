@@ -1,0 +1,6 @@
+<h1>All mountans</h1>
+<% @mountans.each do |mountan| %>
+    <p>
+      <%= link_to mountan.name, mountans_path(mountan.id) %> it's <%= mountan.country %>.
+    </p>
+<% end %>

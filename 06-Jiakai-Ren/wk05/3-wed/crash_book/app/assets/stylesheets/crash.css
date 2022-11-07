@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 960px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.thumbnail {
+    display: block;
+    width: 10em;
+    margin: 20px;
+}
+
+.feature {
+    width: 20em;
+    margin: 20px;
+}
+
+label {
+    display: block;
+}

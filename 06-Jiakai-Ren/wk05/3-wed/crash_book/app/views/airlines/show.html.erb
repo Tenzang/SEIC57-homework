@@ -1,0 +1,24 @@
+<h1><%= @airline.name %> (<%= @airline.code %>)</h1>
+
+<%= image_tag @airline.logo, :class => 'feature' %>
+
+<ul>
+    <li>Name: <%= @airline.name %></li>
+    <li>IATA Code: <%= @airline.code %></li>
+    <li>Country of Registration: <%= @airline.country %></li>
+    <li>Fleet size: <%= @airline.fleet %></li>
+</ul>
+
+<% if @airline.incidents.count > 0 %>
+    <h3>Incidents: </h3>
+<% end %>
+
+<% @airline.incidents.each do |incident| %>
+    <%= link_to image_tag(incident.image, :class => 'thumbnail'), incident %>
+    <%= link_to "#{ incident.airline.code }#{ incident.flight_number }", incident %>
+<% end %>
+
+<div class="controls">
+    <%= button_to 'Edit Airline', edit_airline_path(@airline.id), :method => :get %>
+    <%= button_to 'Delete Airline', @airline, :method => :delete, :data => {:confirm => 'Are you sure?'} %>
+</div>
