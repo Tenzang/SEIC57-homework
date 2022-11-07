@@ -1,0 +1,18 @@
+<%= form_for @artist do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :hometown %>
+    <%= f.text_field :hometown %>
+
+    <%= f.label :genre%>
+    <%= f.text_field :genre %>
+
+    <%= f.label :startyear%>
+    <%= f.text_field :startyear, :placeholder => 'YYYY'%>
+
+    <%= f.label :image%>
+    <%= f.url_field :image%>
+
+    <%= f.submit %>
+<% end %>
