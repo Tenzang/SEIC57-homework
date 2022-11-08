@@ -1,0 +1,17 @@
+<%= form_for @movie do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+
+    <%= f.label :date %>
+    <%= f.text_field :date %>
+
+    <%= f.label :director_id %>
+    <%= f.select :director_id, Director.pluck(:name, :id), :include_blank => true %>
+
+    <%= f.submit  %>
+
+<% end %>
+
