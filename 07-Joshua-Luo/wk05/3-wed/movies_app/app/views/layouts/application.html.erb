@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MoviesApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <nav>
+        <%= link_to 'All Movies', movies_path %>
+        <%= link_to 'New Movies', new_movie_path %>
+        |
+        <%= link_to 'All Directors', directors_path %>
+        <%= link_to 'New Directors', new_director_path %>
+
+    </nav>
+
+    <%= yield %>
+  </body>
+</html>
