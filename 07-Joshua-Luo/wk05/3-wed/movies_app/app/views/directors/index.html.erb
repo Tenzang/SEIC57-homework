@@ -1,0 +1,7 @@
+<h1>All Directors</h1>
+<% @directors.each do |director| %>
+    <%= image_tag director.image, :class => 'thunb' if director.image.present? %>
+    <ul>
+        <li>Name: <%= link_to director.name, director %> </li>
+    </ul>
+<% end %>
