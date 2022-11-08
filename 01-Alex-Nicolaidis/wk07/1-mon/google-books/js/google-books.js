@@ -14,7 +14,7 @@ const fetchBookCover = function(e){
         }
         const data = JSON.parse(xhr.responseText);
         const cover = data.items[0].volumeInfo.imageLinks.thumbnail
-        const title = data.items[0].volumeInfo.title
+        const title = data.items[0].volumeInfo.title;
         const author = data.items[0].volumeInfo.authors[0]
         
         const img = document.createElement('img');
