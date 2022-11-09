@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+<body>
+   <header>
+        <h2>Have you ever wanted to give some excuse but it was too much trouble thinking on one?</h2>
+        <h4>Problem solved!</h4>
+   </header>
+
+   <div id="page-container">
+        <div id="excuses">
+            <form id="search-form">
+                <select id="categories" class="form-select" required>
+                    <option value="">Excuse categories</option>
+                    <option value="family">Family</option>
+                    <option value="office">Office</option>
+                    <option value="children">Children</option>
+                    <option value="college">College</option>
+                    <option value="party">Party</option>
+                    <option value="funny">Funny</option>
+                    <option value="unbelievable">Unbelievable</option>
+                    <option value="developers">Developers</option>
+                    <option value="gaming">Gaming</option>
+                </select>
+                <input id="amount" type="number" min="1" max="4" placeholder="amount" required>
+                <input id="search-button" type="submit" value="Get excuse">
+            </form>
+
+            <div>
+                <h3 class="random-h">If you don't really care and just want a random excuse, click right here</h3>
+                <button id="random-button">Right here</button>
+            </div>
+        
+            <div id="excuse-container"></div>
+        </div>
+
+        <div id="be-better">
+            <h4>
+                You can get a phrase and be a better person too!
+            </h4>
+            <button id="advice-button">I want to be better!</button>
+            <div id="advice"></div>
+        </div>
+    </div>
+    
+
+    <script src="js/jquery.js"></script>
+    <script src="js/api.js"></script>
+</body>
+</html>
