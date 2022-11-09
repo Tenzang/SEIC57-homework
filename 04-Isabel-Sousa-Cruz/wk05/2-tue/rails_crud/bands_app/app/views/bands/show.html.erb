@@ -1,0 +1,22 @@
+<div class="page-container">
+    <h1><%= @band.name %></h1>
+
+    <%= image_tag @band_image if @band_image.present? %>
+
+    <ul>
+        <% if @band.albums_number %> <li>Albums number: <%= @band.albums_number %></li> <% end %>
+        <% if @band_genre %> <li>Genre: <%= @band_genre %></li> <% end %>
+        <% if @band_description %> <li>Description: <%= @band_description %></li> <% end %>
+        <% if @band.top_song %> <li>Top song: <%= @band.top_song %></li> <% end %>
+        <% if @band_wiki_url %> <li><%= link_to "Wikipedia link", @band_wiki_url %></li> <% end %>
+    </ul>
+
+    <div>
+        <button class="btn mr-md-2 mb-md-0 mb-2 btn-primary btn-round btn-info">
+            <%= link_to 'Edit', edit_band_path(@band.id) %>
+        </button>
+        <button class="btn mr-md-2 mb-md-0 mb-2 btn-primary btn-round btn-info">
+            <%= link_to 'Delete', delete_band_path(@band.id) %>
+        </button>
+    </div>
+</div>
