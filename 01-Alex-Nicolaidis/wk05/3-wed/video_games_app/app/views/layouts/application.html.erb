@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VideoGamesApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <%= link_to 'Home', games_path %>
+      <%= link_to 'Games', games_path %>
+      <%= link_to 'Characters', characters_path %>
+      <%= link_to 'New Game', new_game_path %>
+      <%= link_to 'New Character', new_character_path %>
+    </nav>
+
+    <%= yield %>
+  </body>
+</html>

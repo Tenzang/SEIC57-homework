@@ -1,0 +1,20 @@
+<h1><%= @incident.airline.present? ? @incident.airline.code : "Flight " %><%= @incident.flight_number%></h1>
+
+<%= image_tag @incident.image, :class => 'feature' unless @incident.image.nil? %>
+
+<ul>
+    <% if @incident.airline.present? %>
+        <li>Airline: <%= link_to @incident.airline.name, @incident.airline %></li>
+    <% end %>
+    <li>Flight number: <%= @incident.flight_number %></li>
+    <li>Date: <%= @incident.date.strftime '%A, %B %e, %Y' %></li>
+    <li>Death: <%= @incident.death %></li>
+    <li>Injury: <%= @incident.injury %></li>
+    <li>Survival: <%= @incident.survival %><%= " (all)" if @incident.death == 0 %></li>
+    <p><%= @incident.description %></p>
+</ul>
+
+<div class="controls">
+    <%= button_to 'Edit History', edit_incident_path(@incident.id), :method => :get %>
+    <%= button_to 'Delete Incident', @incident, :method => :delete, :data => {:confirm => 'Are you sure?'} %>
+</div>

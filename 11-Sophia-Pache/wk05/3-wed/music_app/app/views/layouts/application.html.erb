@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Artists & Albums</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <div class="container">
+      <nav>
+      <%= link_to 'All Artists', artists_path %>
+      <%= link_to 'New Artist', new_artist_path %> |
+      <%= link_to 'All Albums', albums_path %>
+      <%= link_to 'New Album', new_album_path %>
+    </nav>
+    <%= yield %>
+  </div>
+  </body>
+</html>

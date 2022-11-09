@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css"
+    />
+    <title>Studio Ghibli</title>
+  </head>
+  <body>
+    <h1>Studio Ghibli Works</h1>
+
+    <form id="search">
+      <label>
+        Work title:
+        <input
+          type="search"
+          id="title"
+          placeholder="My Neighbour Totoro"
+          autofocus
+        />
+      </label>
+
+      <button>Search</button>
+    </form>
+    <div id="root">
+      <img id="cover" />
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/ghibli.js"></script>
+  </body>
+</html>

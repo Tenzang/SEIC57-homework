@@ -1,0 +1,15 @@
+.thumb {
+    height: 12em;
+}
+
+.feature {
+    max-height: 30em;
+}
+
+label {
+    display: block;
+}
+
+body {
+    background-color: #ccd;
+}
