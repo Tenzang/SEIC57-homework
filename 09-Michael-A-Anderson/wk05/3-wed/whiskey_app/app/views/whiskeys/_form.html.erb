@@ -1,0 +1,11 @@
+<%= form_for @whiskey do |f|%>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :alcohol_content %>
+<%= f.number_field :alcohol_content %>
+<%= f.label :aged %>
+<%= f.number_field :aged %>
+<%= f.label :brewery_id %>
+<%= f.select :brewery_id, Brewery.pluck(:name, :id), :include_blank => true %>
+<%= f.submit %>
+<% end%>
