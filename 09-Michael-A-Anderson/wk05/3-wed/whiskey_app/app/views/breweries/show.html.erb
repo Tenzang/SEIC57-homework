@@ -1,0 +1,18 @@
+<header>
+<%= image_tag @brewery.logo, :class => "thumb" %>
+<h1><%= @brewery.name %></h1>
+</header>
+<p>Name: <%= @brewery.name %></p>
+<p>Country: <%= @brewery.country %></p>
+<p>Est.: <%= @brewery.est_year %></p>
+
+<ul>
+<% @brewery.whiskeys.each do |whiskey| %>
+<li><%= link_to whiskey.name, whiskey %></li>
+<% end %>
+
+<div class="controls">
+    <%= link_to 'Edit', edit_brewery_path(@brewery) %>
+    <%= link_to "Delete", @brewery, :method => 'delete', :data => {:confirm =>"Are you sure?"} %>
+</div>
+</ul>
