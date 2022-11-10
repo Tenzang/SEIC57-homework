@@ -20,3 +20,7 @@ $('#get-weather').on('submit', function(event){
     fetchWeatherInfo(title)
 })
 
+
+
+
+$('<img>').attr('src', weatherIcon).appendTo('#display-info')
