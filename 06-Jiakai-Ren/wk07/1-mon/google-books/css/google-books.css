@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 960px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.search-area {
+    display: flex;
+    justify-content: center;
+}
+
+#search-button {
+    margin: 0 10px;
+}
+
+.result-area {
+    margin: 0 auto;
+    width: 50%;
+    padding: 10px;
+}
+
+#book-image {
+    height: 20vh;
+    display: block;
+    margin: 0 auto;
+}
+
+#book-title {
+    text-align: center;
+}
+
+#book-author {
+    text-align: center;
+}

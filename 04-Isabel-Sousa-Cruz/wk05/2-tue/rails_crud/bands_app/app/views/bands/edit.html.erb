@@ -1,0 +1,22 @@
+<div class="page-container">
+    <h1>Edit band</h1>
+
+    <form action="<%= band_path(@band.id) %>" method="post" >
+        <label>
+            Name:
+            <input type="text" name="name" value="<%= @band.name %>" required>
+        </label>
+
+        <label>
+            Total albums number:
+            <input type="number" name="albums_number" value="<%= @band.albums_number %>">
+        </label>
+
+        <label>
+            Top song:
+            <input type="text" name="top_song" value="<%= @band.top_song %>">
+        </label>
+
+        <button class="btn mr-md-2 mb-md-0 mb-2 btn-primary btn-round btn-info">Update</button>
+    <form>
+</div>

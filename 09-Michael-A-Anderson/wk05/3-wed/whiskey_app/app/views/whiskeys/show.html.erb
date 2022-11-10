@@ -1,0 +1,10 @@
+<h1><%= @whiskey.name %></h1>
+<p>Brand: <%= link_to @whiskey.brewery.name, brewery_path(@whiskey.brewery.id) %></p>
+<p>Name: <%= @whiskey.name %></p>
+<p>Aged: <%= @whiskey.aged %> years</p>
+<p>Alcohol Content: <%= @whiskey.alcohol_content %>%</p>
+
+<div class="controls">
+    <%= link_to 'Edit', edit_whiskey_path(@whiskey) %>
+    <%= link_to "Delete", @whiskey, :method => 'delete', :data => {:confirm =>"Are you sure?"} %>
+</div>

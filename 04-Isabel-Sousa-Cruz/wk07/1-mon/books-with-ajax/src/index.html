@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+
+</head>
+<body class="bg-slate-500">
+
+    <div class="container">
+        <form id="searchForm">
+            <div>
+                <label for="book_name">
+                    Enter a book's name
+                </label>
+                <input type="text" name="book_name" id="book-name" required>
+            </div>
+            <div>
+                <input type="submit" value="Search" id="search-button">
+            </div>
+        </form>
+
+        <div id="book-info">
+            <div id="row"></div>
+        </div>
+    </div>
+
+    <script src="books.js"></script>
+</body>
+</html>
