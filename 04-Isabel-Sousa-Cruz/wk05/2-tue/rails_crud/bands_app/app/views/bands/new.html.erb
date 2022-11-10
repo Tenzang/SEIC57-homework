@@ -1,0 +1,28 @@
+<div class="page-container">
+    <h1>New band</h1>
+
+    <% if @already_exists %>
+            <div>This band already exists!</div>
+    <% end %>
+
+    <form action="<%= bands_path %>" method="post">
+        <label>
+            Name:
+            <input type="text" name="name" required>
+        </label>
+
+        <label>
+            Total albums number:
+            <input type="number" name="albums_number">
+        </label>
+
+        <label>
+            Top song:
+            <input type="text" name="top_song">
+        </label>
+
+        <button class="btn mr-md-2 mb-md-0 mb-2 btn-primary btn-round btn-info">
+            Add
+        </button>
+    <form>
+</div>

@@ -1,0 +1,28 @@
+<h1 style="text-align: center;">All bands</h1>
+<div class="page-container">
+    <% if @bands.empty? %>
+        <div>
+            You don't have any bands yet :(
+        </div>
+    <% end %>
+    <% @bands.each do |band| %>
+        <div class="col-xs-12 col-sm-4">
+            <div class="card">
+                <%=
+                    require "httparty"
+                    band_wiki_url = "https://en.wikipedia.org/api/rest_v1/page/summary/#{band.name.gsub(' ', '_')}"
+                    wiki_response = HTTParty.get band_wiki_url
+                    if wiki_response
+                        band_image = wiki_response.dig("originalimage", "source")
+                        image_tag band_image
+                    else
+                        ""
+                    end
+                %> 
+                <div class="card-description">
+                    <h2><%= link_to band.name, band_path(band.id) %></h2>
+                </div>
+            </div>
+        </div>
+    <% end %>
+<div>

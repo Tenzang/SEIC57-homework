@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Julius+Sans+One&display=swap');
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 15em;
+    background-color: #25313f;
+    justify-content: center;
+    font-family: 'Julius Sans One', sans-serif;
+    padding: 35px;
+    border-radius: 10px;
+}
+
+#page-container {
+    display: flex;
+    height: 30em;
+    margin-top: 40px;
+    font-family: 'Archivo Narrow', sans-serif;
+}
+
+.form-select {
+    width: 50%;
+}
+
+.random-h {
+    font-size: 20px;
+    width: 55%;
+}
+
+#amount {
+    width: 30%;
+}
+
+#excuses {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+#be-better {
+    padding-left: 20px;
+}
+
+#advice-button {
+    animation: wiggle 2s linear infinite;
+}
+
+@keyframes wiggle {
+    0%, 7% {
+        transform: rotateZ(0);
+    }
+    15% {
+        transform: rotateZ(-15deg);
+    }
+    20% {
+        transform: rotateZ(10deg);
+    }
+    25% {
+        transform: rotateZ(-10deg);
+    }
+    30% {
+        transform: rotateZ(6deg);
+    }
+    35% {
+        transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+        transform: rotateZ(0);
+    }
+}
+
+button, #categories, #amount, #search-button {
+    border-top: 3px solid orange;
+    margin-top: 1em;
+}
+
+#advice-button {
+
+    height: 6em;
+    width: 7em;
+
+    background: #161f27;
+    background: linear-gradient(top, #555, #333);
+    border: none;
+    border-top: 3px solid orange;
+    border-radius: 0 0 0.2em 0.2em;
+    color: #fff;
+    font-family: Helvetica, Arial, Sans-serif;
+    font-size: 1em;
+    transform-origin: 50% 5em;
+}
