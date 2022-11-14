@@ -1,0 +1,17 @@
+<h1> Shop Away <h1>
+<% @yeezys.each do |yeezy| %>
+
+<div class="item">
+  
+  <div class="ola">
+    <%= image_tag yeezy.image , :alt => 'yeezysneaker' if yeezy.image.present?  %> 
+    </div>
+     <p>
+        <%= link_to yeezy.name, yeezy_path(yeezy.id) %>
+      </p>
+</div>
+
+
+
+<% end %>
+

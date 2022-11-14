@@ -1,0 +1,20 @@
+<h1> <%= @yeezy.name %> </h1>
+
+
+<%= image_tag @yeezy.image if @yeezy.image.present? %>
+
+<ul>
+<li>Name: <%= @yeezy.name %></li>
+
+<li>Size: <%= @yeezy.size %></li>
+
+<li>Availability: <%= @yeezy.availability %></li>
+
+<li>Description: <%= @yeezy.description %></li>
+
+</ul>
+
+<div class="controls">
+    <%= link_to "Edit Item", edit_yeezy_path(@yeezy.id) %>
+    <%= link_to "Delete Item", delete_yeezy_path(@yeezy.id) %>
+</div>
