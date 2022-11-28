@@ -1,0 +1,58 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700');
+nav {
+    text-align: center;
+    font-size: 20px;
+}
+a{
+    margin-left : 1em;
+    margin-right : 1em;
+    color:black;
+    
+}
+p{
+    font-size: 20px;
+    font-family: 'Lato', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    text-align:center;
+}
+
+body{
+    box-sizing: border-box;
+    background: white;
+ 
+ 
+    font-family: 'Lato', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  }
+  
+  .item{
+    width:200px;
+    text-align:center;
+    display:block;
+    background-color: transparent;
+    border: 1px solid transparent;
+    margin-right: 10px;
+    margin-bottom: 1px;
+    float:left;
+  }
+  .ola {
+    display: block;
+    max-width:200px;
+    max-height:100px;
+    width: auto;
+    height: auto;
+  }
