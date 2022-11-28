@@ -1,0 +1,5 @@
+<h1>All Whiskeys</h1>
+
+<% @whiskeys.each do |whiskey|%>
+    <p><%= link_to whiskey.name, whiskey %></p>
+<% end%>

@@ -1,0 +1,34 @@
+<h1>Edit Item </h1>
+
+
+<form action="<%= yeezy_path(@yeezy.id) %>" method="post">
+
+<label>
+Name : 
+<input name="name" required value="<%= @yeezy.name %>" >
+</label>
+
+<label>
+Image: 
+<input type="url" name="image" value="<%= @yeezy.image %>">
+</label>
+
+
+<label>
+Size : 
+<input type="number" name="size"  value="<%= @yeezy.size %>">
+</label>
+
+<label>
+Availability : 
+<input type="number" name="availability" value="<%= @yeezy.availability %>">
+</label>
+
+<label>
+Description : 
+<input type="text" name="description" value="<%= @yeezy.description %>">
+</label>
+
+<button>UPDATE Item ! </button>
+
+</form>
