@@ -52,7 +52,22 @@ function coinFlips(number){
     // Represent the two outcomes of each flip as "H" or "T"
 }
 
-function letterCombinations(){
+function letterCombinations(array){
+
+    const combinations = []
+
+    const helper = function(soFar = ''){
+        if(soFar.length === array.length){
+            combinations.push(soFar);
+        }
+        else{
+            combinations.push(helper(soFar(array[0])))
+        }
+    }
+    helper();
+
+    return combinations
+    
     // This function returns an array of all combinations of the given letters
     // Input type: Array of single characters
     // For example, letterCombinations(["a","b","c"]) would return the following:
