@@ -1,0 +1,19 @@
+.container {
+    max-width: 960px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+img {
+    max-width: 480px;
+    width: 30%;
+    margin: 10px;
+}

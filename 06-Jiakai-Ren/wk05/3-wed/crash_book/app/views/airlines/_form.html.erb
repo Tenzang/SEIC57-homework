@@ -1,0 +1,18 @@
+<%= form_for @airline do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, :required => true, :placeholder => 'Qantas Airways' %>
+
+    <%= f.label :code %>
+    <%= f.text_field :code, :required => true, :placeholder => 'QF' %>
+
+    <%= f.label :country %>
+    <%= f.text_field :country, :required => true, :placeholder => 'Australia' %>
+
+    <%= f.label :fleet %>
+    <%= f.number_field :fleet, :required => true, :placeholder => '126' %>
+
+    <%= f.label :logo, 'Logo link' %>
+    <%= f.url_field :logo, :required => true, :placeholder => 'https://...' %>
+
+    <%= f.submit %>
+<% end %>

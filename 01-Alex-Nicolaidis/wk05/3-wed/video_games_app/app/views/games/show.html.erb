@@ -1,0 +1,20 @@
+<h1><%= @game.name %></h1>
+
+<div class="game-info">
+    <ul>
+        <li>Date of Release: <%= @game.dor.strftime '%A %B %e, %Y' unless @game.dor.nil? %></li>
+        <li>Developer: <%= @game.developer %></li>
+        <li>Characters:</li>
+            <ul>
+            <% @game.characters.each do |character|%>
+                <li><%= link_to character.name, character %></li>
+            <% end %>
+            </ul>
+    </ul>
+    <%= image_tag @game.image if @game.image.present?%>
+</div>
+
+<div class="controls">
+    <%= link_to 'Edit Game', edit_game_path(@game)  %>
+    <%= link_to 'Delete Game', @game, :method => :delete, :data => {:confirm => "Are you sure"}%>
+</div>

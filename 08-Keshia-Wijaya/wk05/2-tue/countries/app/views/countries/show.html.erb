@@ -1,0 +1,12 @@
+<h1>
+    <%= @country.name %>
+</h1>
+
+<%= image_tag @country.image if @country.image.present? %>
+
+<ul>
+    <li>Name: <%= @country.name %></li>
+    <li>Capital: <%= @country.capital %></li>
+    <li>Population: <%= @country.population%></li>
+
+</ul>

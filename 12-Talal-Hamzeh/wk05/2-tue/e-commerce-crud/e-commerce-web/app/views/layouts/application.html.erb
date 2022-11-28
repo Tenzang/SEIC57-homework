@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css">
+  <head>
+    <title>ECommerceWeb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <nav>
+    <a><%= link_to'Shop',yeezys_path %></a>
+  
+    <a>Help</a>
+    <a>Terms</a>
+    <a>Sign Up</a>
+    <a><%= link_to'New Item',new_yeezy_path %></a>
+    <a id="logo" href="/">
+    <img src="https://s20.postimg.cc/8rsxvbezx/logo.png" alt="logo">
+    </a>
+   
+
+    </nav>
+      
+   
+    <%= yield %>
+    
+  </body>
+</html>

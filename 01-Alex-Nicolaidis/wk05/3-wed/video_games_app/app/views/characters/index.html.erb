@@ -1,0 +1,12 @@
+<h1>Characters</h1>
+
+
+<div class="characters">
+<% @characters.each do |character| %>
+    <div>
+        <%= link_to image_tag(character.image, :alt => "Character Image", :class => 'cover-small'), character if character.image.present? %>
+        <h3><%= character.name %></h3>
+    </div>
+    <% end %>
+</div>
+

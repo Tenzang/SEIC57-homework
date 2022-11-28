@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/google-books.css">
+    <title>Google Books API with AJAX</title>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Welcome to Book Search</h1>
+        
+        <div class="search-area">
+            <label>
+                Enter book name here
+                <input type="text" id="search-box" placeholder="Harry Potter">
+            </label>
+            
+            <button id="search-button">Search!</button>
+        </div>
+
+        <div class="result-area">
+            <div class="image-container">
+                <img src="" alt="" id="book-image">
+            </div>
+            <h3 id="book-title"></h3>
+            <p id="book-author"></p>
+        </div>
+    </div>
+    <script src="js/google-books.js"></script>
+</body>
+</html>

@@ -71,8 +71,50 @@ get '/teams/:id/delete' do
 end
 
 #################        PLAYERS         ################
+# INDEX
 get '/players' do
     @players =Player.all
     erb :players_index
 end
+# NEW
+get '/players/new' do
+    erb :players_new
+end
+# CREATE
+post '/players' do
+    player = Player.new
+    player.alias = params[:alias]
+    player.status = params[:status]
+    player.team_id = params[:team_id]
+    player.age = params[:age]
+    player.save
+    redirect to("/players/#{ player.id }") 
+end
+#SHOW
+get '/players/:id' do
+    @player = Player.find params[:id]
+    erb :players_show
+end
 
+#EDIT
+get '/players/:id/edit' do
+    @player = Player.find params[:id]
+    erb :players_edit
+end
+
+#UPDATE
+post '/players/:id' do
+    player = Player.new
+    player.alias = params[:alias]
+    player.status = params[:status]
+    player.team_id = params[:team_id]
+    player.age = params[:age]
+    player.save
+    redirect to("/players/#{params[:id]}")
+end
+#DELETE
+get '/players/:id/delete' do
+    player = Players.find params[:id]
+    player.destroy
+    redirect to('/players')                     
+end
