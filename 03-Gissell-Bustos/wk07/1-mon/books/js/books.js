@@ -5,7 +5,7 @@ function thumbnails(searchTerm) {
     if (xhr.readyState !== 4) {
       return;
     }
-    const data = JSON.parse(xhr.response);
+    const data = JSON.parse(xhr.responseText);
     console.log(data);
     data.items.forEach((item) => {
       console.log(item["volumeInfo"]["title"]);
