@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+.main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+}
+.app-header {
+  font-size: 25px;
+  font-family: Permanent;
+  margin: 20px;
+}
+.weater-card {
+  display: flex;
+  justify-content: space-between;
+}
