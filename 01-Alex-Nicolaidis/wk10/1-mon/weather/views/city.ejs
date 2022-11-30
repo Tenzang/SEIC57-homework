@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>City Weather</title>
+  </head>
+  <body>
+    <div>
+      <p>This is the weather for <%= city %></p>
+      <p>The latitude is <%= lat %></p>
+      <p>The longitude is <%= long %></p>
+      <p>The temperature is <%= temperature %></p>
+      <img
+        src="http://openweathermap.org/img/wn/<%= icon %>@2x.png"
+        alt="Weather Icon"
+      />
+      <p><%= description %></p>
+    </div>
+  </body>
+</html>
