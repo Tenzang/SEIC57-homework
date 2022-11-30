@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cocktail DB</title>
+  </head>
+  <body>
+    <h1>Search results for <%= drink %></h1>
+    <% data.forEach((drink) => { %>
+    <h4><%= drink.strDrink %></h4>
+    <img src="<%= drink.strDrinkThumb %>" alt="<%= drink.strDrink %>" />
+    <% }) %>
+  </body>
+</html>
