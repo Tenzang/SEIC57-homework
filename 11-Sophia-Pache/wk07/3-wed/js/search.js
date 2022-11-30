@@ -63,7 +63,7 @@ const scrollPage = function () {
         }
 };
 
-const throttledScroll = _.throttle(scrollPage, 800);
+const throttledScroll = _.throttle(scrollPage, 500);
 
 $(window).on('scroll',throttledScroll);
 
