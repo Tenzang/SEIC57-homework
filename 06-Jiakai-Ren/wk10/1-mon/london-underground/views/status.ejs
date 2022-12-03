@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>London Underground</title>
+  </head>
+  <body>
+    <h1>Underground Status</h1>
+    <% data.forEach((line) => { %>
+    <h4><%= line.name %> Line</h4>
+    <p><%= line.lineStatuses[0].statusSeverityDescription %></p>
+    <% if (line.lineStatuses[0].reason) { %>
+    <p><%= line.lineStatuses[0].reason %></p>
+    <% } %> <% }) %>
+  </body>
+</html>
