@@ -1,4 +1,5 @@
 class SinglyLinkedList
+include Enumerable #mixin: simulates inheriting from multiple classes
   class Node
     attr_accessor :value, :next
     def initialize (value = nil)
@@ -46,14 +47,27 @@ class SinglyLinkedList
 
   #tricky
   def reverse #non-destructive
+    reverse_list = SinglyLinkedList.new
+    current_node = @head
+    while current_node
+      reverse_list.prepend current_node.value
+      current_node = current_node.next
+    end
+    reverse_list
   end
 
   #trickier
   def reverse!
+    @head = self.reverse.head
   end
 
   #Trickiest
   def each
+    current_node = @head
+    while current_node
+      yield current_node.value if block_given?
+      current_node = current_node.next
+    end
   end
 
   #Bonus: .map() .reduce() .select() .reject() .length() AKA .size AKA .count()
